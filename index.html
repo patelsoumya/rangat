@@ -1,0 +1,4400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Rangat Films </title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<style>
+:root {
+    --primary-color: #a3b18a;
+    --secondary-color: #dad7cd;
+    --dark-color: #344e41;
+    --accent-color: #C37656;
+    --highlight-color: #3a5a40;
+    --button-bg-color: #C37656;
+    --heading-color: #624332; /* Sage Light Scheme - Headings */
+  }
+
+  body {
+	 background-color: #e6dccf ;/* #ece4da */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+letter-spacing:1.5px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    color: var(--heading-color);
+  }
+span{
+font-family: 'Antic Didone', serif;
+}
+  .lead {
+    font-family: 'Antic Didone', serif;
+    font-weight: 300;
+    color: var(--heading-color);
+  }
+
+  p {
+    font-family: 'Antic Didone', sans-serif;
+    font-weight: 300;
+	line-height: 1.8;
+	font-size: 1rem;
+  	margin-bottom: 1em;
+ 
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-success {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    background-color: var(--button-bg-color);
+    border: none;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-success:hover {
+    background-color: #a3543a;
+  }
+/*  Change to other */
+
+body.no-scroll {
+	overflow: hidden;
+}
+section {
+	position: relative;
+	overflow: hidden;
+}
+        /* Animations */
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.5s ease; /* transition: opacity 0.8s ease, transform 0.8s ease; */
+}
+.fade-in.show {
+	opacity: 1;
+	transform: translateY(0);
+}  
+
+/************************************ Button Primary and  *************************/
+.btn-primary {
+	background-color: var(--accent-color);
+	border: none;
+	padding: 12px 30px;
+	border-radius: 30px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+.btn-primary:hover {
+	background-color: var(--primary-color);
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
+<style>
+.logo-side-text{
+color:white;
+letter-spacing:5px;
+font-size:12px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+ @media (max-width: 768px) {
+.logo-side-text {
+  letter-spacing:4px;
+font-size:10px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+}
+</style>
+</head>
+<body>
+
+<!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
+<nav class="navbar" id="mainNavbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img alt="Logo" id="siteLogo" src="rangat-logo.png" />
+      <span class="align-self-end logo-side-text" id="toggleText">BY SUMAN MISHRA</span>
+    </a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Right-side slide menu -->
+<div class="custom-drawer" id="customDrawer">
+  <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="wedding.html">WEDDINGS</a></li>
+    <!-----<li class="nav-item dropdown">------->
+      <!-----<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">PORTFOLIO</a>------->
+      <!-----<ul class="dropdown-menu">------->
+       <!----- <li><a class="dropdown-item" href="weddinggallery.html">Wedding</a></li>------->
+        <!-----<li><a class="dropdown-item" href="culturegallery.html">Culture</a></li>------->
+        <!-----<li><a class="dropdown-item" href="travelgallery.html">Travel</a></li>------->
+        <!-----<li><hr class="dropdown-divider" /></li>------->
+        <!-----<li><a class="dropdown-item" href="gallery.html">Gallery</a></li>------->
+      <!-----</ul>------->
+    <!-----</li>------->
+    <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
+    <li class="nav-item"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
+    <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
+    <li class="nav-item"><a class="nav-link" href="docu.html">DOCU</a></li>
+    <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+  </ul>
+  <div class="social-icons d-flex gap-3 mt-4 justify-content-center">
+    <a class="text-dark" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+  </div>
+</div>
+
+<style>
+#mainNavbar {
+  position: absolute; /* positioned over hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* keeps it above hero content */
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+/* Always show hamburger */
+.navbar-toggler {
+  display: block !important;
+  border: none;
+  background: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  width: 24px;
+  height: 14px;
+  display: inline-block;
+  background: none;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+/* X toggle animation */
+.navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 6px;
+}
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 6px;
+}
+
+/* Custom drawer styles */
+.custom-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #ece4da;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  transition: right 0.4s ease;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.custom-drawer.open {
+  right: 0;
+}
+
+.custom-drawer .nav-link {
+  color: var(--dark-color);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.custom-drawer .dropdown-menu {
+  background-color: #f8f4ef;
+  border: none;
+  box-shadow: none;
+  margin-top: 0.5rem;
+}
+
+
+
+
+
+#siteLogo {
+  height: 60px;
+  margin-right: 10px;
+}
+.drawer-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.drawer-close-btn:hover {
+  color: #555;
+}
+
+
+@media (max-width: 768px) {
+  #siteLogo {
+    height: 50px;
+  }
+  .custom-drawer {
+    width: 70%;
+  }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+  const drawer = document.getElementById("customDrawer");
+  const body = document.body;
+  const closeBtn = document.getElementById("drawerCloseBtn");
+
+  function closeDrawer() {
+    toggler.classList.remove("active");
+    drawer.classList.remove("open");
+    body.classList.remove("drawer-open");
+  }
+
+  toggler.addEventListener("click", function () {
+    toggler.classList.toggle("active");
+    drawer.classList.toggle("open");
+    body.classList.toggle("drawer-open");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    closeDrawer();
+  });
+
+  // Optional: close drawer when clicking outside
+  document.addEventListener("click", function (e) {
+    if (
+      !drawer.contains(e.target) &&
+      !toggler.contains(e.target) &&
+      drawer.classList.contains("open")
+    ) {
+      closeDrawer();
+    }
+  });
+
+  // Navbar background change on scroll
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("mainNavbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+});
+
+</script>
+
+
+<!---------------------------------------------------------------- Hero Section ---------------------------------------------------------------------->
+
+<section class="parallex-hero" id="hero">
+  <div class="slider-wrapper">
+
+    <!-- SLIDES -->
+    <div class="slider" id="slider">
+      <div class="slide active"><img data-src="wedding1.jpg"></div>
+      <div class="slide"><img data-src="fashion2.jpg"></div>
+      <div class="slide"><img data-src="culture2.jpg" alt="3"></div>
+      <div class="slide"><img data-src="rangat-photo-4.JPG" alt="1"></div>
+      <div class="slide"><img data-src="rangat-photo-11.JPG" alt="2"></div>
+      <div class="slide"><img data-src="rangat-photo-8.JPG" alt="3"></div>
+    </div>
+
+    <!-- DOT INDICATORS -->
+    <div class="slider-dots" id="slider-dots"></div>
+
+    <!-- ARROWS -->
+    <div class="slider-arrows">
+      <div class="arrow prev"><i class="fa fa-chevron-left"></i></div>
+      <div class="arrow next"><i class="fa fa-chevron-right"></i></div>
+    </div>
+
+    <!-- TEXT CONTENT -->
+    <div class="hero-content container">
+      <h1 id="hero-title">Where Stories Begin</h1>
+      <p id="hero-description">
+        We capture your love with timeless elegance and cinematic beauty.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* HERO BASE */
+#hero-title { color:white; }
+#hero { margin-top: 0; }
+
+.parallex-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* SLIDER CONTAINER */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* SLIDES */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* BASE STATE — all slides are visible but transparent */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  transform: translateX(0px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  z-index: 0;
+}
+
+/* ACTIVE SLIDE — fades in smoothly */
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;   /* sits ON TOP during fade */
+}
+
+/* LAST ACTIVE SLIDE — also stays on screen shortly to avoid blinking */
+.slide.fade-out {
+  opacity: 0;
+  transform: translateX(0px); /* optional smooth push */
+  z-index: 1;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT OVERLAY */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-content h1,
+.hero-content p {
+  transition: opacity 0.6s ease;
+}
+
+/* DOTS */
+.slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+/* DOTS */
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  transform: scale(1); /* all dots small by default */
+}
+
+.slider-dots .dot.active {
+  background: white;
+  transform: scale(1.2); /* only active dot is big */
+}
+
+
+/* ARROWS */
+.slider-arrows {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  padding: 0 25px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  /*background: rgba(0,0,0,0.4);*/
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  pointer-events: all;
+  transition: 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content p { padding: 0 15px; }
+.slider-arrows{display:none;}
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("slider-dots");
+  const prevBtn = document.querySelector(".arrow.prev");
+  const nextBtn = document.querySelector(".arrow.next");
+  const heroTitle = document.getElementById("hero-title");
+  const heroDesc = document.getElementById("hero-description");
+
+  /* CAPTIONS */
+  const captions = [
+    { title: "Where Stories Begin", desc: "We capture your love with timeless elegance and cinematic beauty." },
+    { title: "Timeless Wedding Moments", desc: "Our lens tells your story with sincerity, art, and soul." },
+    { title: "Elegant Emotions", desc: "Black-and-white classics and candid moments made eternal." }
+  ];
+
+  let currentIndex = 0;
+
+  /* LAZY-LOAD IMAGES */
+  /* LAZY-LOAD IMAGES */
+function lazyLoadImage(index) {
+  const img = slides[index].querySelector("img");
+  if (!img.src) img.src = img.dataset.src;
+}
+
+// Load first two images immediately
+lazyLoadImage(0);
+lazyLoadImage(1);
+
+
+  /* CREATE DOTS */
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  /* SHOW SLIDE */
+  function showSlide(index) {
+    lazyLoadImage(index);
+
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+
+    heroTitle.style.opacity = 0;
+    heroDesc.style.opacity = 0;
+
+    setTimeout(() => {
+      heroTitle.textContent = captions[index % captions.length].title;
+      heroDesc.textContent = captions[index % captions.length].desc;
+      heroTitle.style.opacity = 1;
+      heroDesc.style.opacity = 1;
+    }, 200);
+  }
+
+  /* NEXT / PREV */
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  /* AUTOPLAY */
+  let autoPlay = setInterval(nextSlide, 7000);
+  const restartAuto = () => {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(nextSlide, 7000);
+  };
+
+  /* ARROWS CLICK */
+  nextBtn.addEventListener("click", () => { nextSlide(); restartAuto(); });
+  prevBtn.addEventListener("click", () => { prevSlide(); restartAuto(); });
+
+  /* DOTS CLICK */
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      currentIndex = Number(dot.dataset.index);
+      showSlide(currentIndex);
+      restartAuto();
+    });
+  });
+
+  /* TOUCH SWIPE */
+  let startX = 0, endX = 0;
+  const slider = document.getElementById("slider");
+
+  slider.addEventListener("touchstart", e => (startX = e.touches[0].clientX));
+  slider.addEventListener("touchmove", e => (endX = e.touches[0].clientX));
+
+  slider.addEventListener("touchend", () => {
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+    restartAuto();
+  });
+});
+</script>
+
+
+
+
+
+<!------------------------------------------------------------------------ About Section ---------------------------------------------------------------------->
+<section class="py-5" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="text-center text-lg-start fade-in">
+        <h1 class="text-center header-text-line-height">
+          Where <span id="changing-word" class="fade-word">Love</span> Meets Art – Wedding Photography &amp; Films
+        </h1>
+        <p class="text-center heading-centre about-lead" id="about-text">
+          "Our photography captures raw, candid moments with a timeless, classic touch. Through documentary-style storytelling and artful black-and-white images, we preserve the
+          essence of your love." <strong>Timeless, elegant images</strong> that reflect the emotion and beauty of your day.
+          My approach blends <em>documentary storytelling</em> with refined portraiture.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<style>
+#about {
+  padding: 100px 0;
+}
+
+.header-text-line-height {
+  line-height: 1.8;
+}
+
+.heading-centre {
+  padding: 10px 150px;
+}
+
+.about-lead {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Animated word fade effect */
+.fade-word {
+  display: inline-block;
+  color: red;
+  transition: opacity 0.2s ease-in-out;
+  will-change: opacity;
+}
+
+/* Scroll animation for paragraph */
+#about-text {
+  transform: scale(0.5);
+  opacity: 0.1;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .heading-centre {
+    padding: 20px 0px;
+  }
+
+  .header-text-line-height {
+    line-height: 1.6;
+  }
+
+  .about-lead {
+    font-size: 1rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Scroll animation for paragraph
+  const aboutText = document.getElementById("about-text");
+
+  function updateScaleOnScroll() {
+    const rect = aboutText.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const start = windowHeight;
+    const end = windowHeight * 0.2;
+    const distance = start - end;
+
+    let progress = (start - rect.top) / distance;
+    progress = Math.min(Math.max(progress, 0), 1);
+
+    const scale = 0.5 + progress * 0.5;
+    const opacity = 0.1 + progress * 0.9;
+
+    aboutText.style.transform = `scale(${scale})`;
+    aboutText.style.opacity = opacity;
+  }
+
+  window.addEventListener("scroll", updateScaleOnScroll);
+  window.addEventListener("resize", updateScaleOnScroll);
+  updateScaleOnScroll();
+
+  // Word switching logic
+  const words = ["Love", "Culture", "Fashion", "Tradition", "Emotion"];
+  let index = 0;
+  const wordEl = document.getElementById("changing-word");
+
+  function changeWord() {
+    // Fade out
+    wordEl.style.opacity = "0";
+
+    // After fade out, change word and fade in immediately
+    setTimeout(() => {
+      index = (index + 1) % words.length;
+      wordEl.textContent = words[index];
+      wordEl.style.opacity = "1";
+    }, 200); // Match fade out duration exactly
+  }
+
+  // Start interval: hold for 2.5s, change in 0.2s
+  setInterval(changeWord, 2500);
+});
+</script>
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------- Wedding Gallery --------------------------------------------------------------------->
+<section class="py-1 gallery-margin" id="gallery">
+<div class="container gallery-padding">
+<!----<h2 class="text-center fw-bold mb-5 fade-in">Wedding Gallery</h2>---->
+<div class="row g-2">
+<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+<div class="gallery-item">
+<img alt="Bride and groom at sunset on the beach." class="img-fluid w-100 gallery-img" src="rangat-photo-2.jpg"/>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+<div class="gallery-item"><img alt="Romantic first dance in a grand ballroom." class="img-fluid w-100 gallery-img" src="rangat-photo-3.jpg"/>
+</div>
+</div>
+</div>
+<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+<div class="gallery-item"><img alt="Groom's emotional reaction during the ceremony." class="img-fluid w-100 gallery-img" src="rangat-photo-5.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<style>
+.scroll-grow-init {
+  opacity: 0;
+  transform: scale(0.8);
+  filter: blur(6px);
+  transition: all 1s ease;
+}
+.grow-left,
+.grow-right,
+.grow-up {
+  opacity: 1 !important;
+  transform: scale(1) translateX(0) translateY(0) !important;
+  filter: blur(0) !important;
+  transition: all 0.3s ease;
+}
+[data-animate="grow-left"].scroll-grow-init {
+  transform: translateX(-60px) scale(0.8);
+}
+[data-animate="grow-right"].scroll-grow-init {
+  transform: translateX(60px) scale(0.8);
+}
+[data-animate="grow-up"].scroll-grow-init {
+  transform: translateY(60px) scale(0.8);
+}
+
+/* Progressive Scroll */
+.scroll-sync-progress {
+  --scroll-progress: 0;
+  opacity: calc(var(--scroll-progress));
+  transform: scale(calc(0.8 + var(--scroll-progress) * 0.2));
+  filter: blur(calc((1 - var(--scroll-progress)) * 6px));
+  transition: opacity 0.2s ease, transform 0.1s ease, filter 0.2s ease;
+  will-change: opacity, transform, filter;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Intersection animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      const anim = el.getAttribute("data-animate");
+
+      if (entry.intersectionRatio >= 0.75) {
+        el.classList.add(anim);
+        el.classList.remove("scroll-grow-init");
+      } else {
+        el.classList.remove(anim);
+        el.classList.add("scroll-grow-init");
+      }
+    });
+  }, {
+    threshold: 0.75
+  });
+
+  document.querySelectorAll("[data-animate]").forEach(el => {
+    observer.observe(el);
+  });
+
+  // Progressive scroll syncing
+  const elements = document.querySelectorAll(".scroll-sync-progress");
+
+  function updateProgressiveScroll() {
+    const windowHeight = window.innerHeight;
+
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const visibleTop = Math.max(0, Math.min(windowHeight, windowHeight - rect.top));
+      const visibleBottom = Math.max(0, Math.min(windowHeight, rect.bottom));
+      const visibleHeight = visibleBottom - (windowHeight - visibleTop);
+      const progress = Math.max(0, Math.min(1, visibleHeight / rect.height));
+      el.style.setProperty('--scroll-progress', progress.toFixed(3));
+    });
+  }
+
+  updateProgressiveScroll();
+  window.addEventListener("scroll", updateProgressiveScroll);
+  window.addEventListener("resize", updateProgressiveScroll);
+});
+</script>
+<style>
+/* Main gallery container spacing */
+#gallery {
+  padding: 100px 0;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 100px;
+}
+
+/* Responsive padding */
+.gallery-padding {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* Gallery section title */
+.gallery-margin h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Gallery item */
+.gallery-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* Gallery thumbnail container - forces 9:16 portrait ratio */
+.gallery-thumb {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Subtle zoom on hover */
+.gallery-thumb:hover {
+  transform: scale(1.03);
+}
+
+/* Image inside thumbnail - fills and covers */
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Remove scale on hover (optional) */
+.gallery-item:hover .gallery-img {
+  transform: scale(1);
+}
+
+
+.nav-btn {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+border-radius: 5px;
+}
+
+   
+    
+    
+    
+    
+    
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .gallery-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .gallery-margin {
+    margin-top: -30px;
+  }
+  #gallery {
+    margin-left: 15px;
+    margin-right: 15px;
+margin-bottom: 50px;
+  }
+}
+       
+        
+
+</style>
+<!------------------ Fullscreen Modal ------------------------->
+
+<!------------------------- Lightbox ------------------------->
+
+
+<!------------------------------------------------------------------------------------->
+
+<!-----------------------------------------------------------------------Image Gallery-------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------- Wedding Gallery --------------------------------------------------------------------->
+<section id="wedding-gallery-services3">
+  <div class="wedding-gallery-container">
+    <div class="wedding-gallery-section-header">
+      <h2 class="fw-bold">
+        Recent Works <span style="color:red"></span>
+      </h2>
+      <a href="gallery.html" class="wedding-gallery-view-all-btn" style="display:none;">
+        View All <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>    
+
+    <div class="wedding-gallery-services-carousel-wrapper position-relative overflow-hidden" id="wedding-gallery-services-wrapper">
+<button class="wg-prev-btn wg-btn"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="wg-next-btn wg-btn"><i class="fa-solid fa-chevron-right"></i></button>
+
+      <div class="wedding-gallery-services-carousel d-flex flex-nowrap" id="wedding-gallery-services-carousel">
+
+        <a href="wedding_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="wedding" style="background-image: url('rangat-photo-4.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & SecondFirst & SecondFirst & SecondFirst & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="fashion_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="culture" style="background-image: url('rangat-photo-10.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="culture_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="travel" style="background-image: url('rangat-photo-1.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="wedding_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="wedding" style="background-image: url('rangat-photo-11.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="fashion_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="culture" style="background-image: url('rangat-photo-7.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="culture_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="travel" style="background-image: url('rangat-photo-6.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="wedding_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="wedding" style="background-image: url('rangat-photo-8.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="fashion_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="culture" style="background-image: url('rangat-photo-3.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+        <a href="culture_individual.html" style="text-decoration:none;"><div class="wedding-gallery-service-card" data-category="travel" style="background-image: url('rangat-photo-5.JPG');">
+          <div class="wedding-gallery-card-overlay"></div>
+          <div class="wedding-gallery-card-content text-white">
+            <p>SEPT - 2024</p>
+            <h5 class="text-white">First & Second</h5>
+          </div>
+        </div></a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#wedding-gallery-services3 {
+  padding: 10px 0;
+margin-left:100px;
+margin-right:100px;
+}
+.wedding-gallery-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.wedding-gallery-view-all-btn {
+  background-color: #333;
+  color: white;
+  padding: 6px 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.wedding-gallery-view-all-btn:hover {
+  background-color: #a3543a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+#wedding-gallery-services3 {
+
+margin-left:20px;
+margin-right:20px;
+}
+  .wedding-gallery-section-header {
+    flex-wrap: wrap;
+  }
+  .wedding-gallery-view-all-btn {
+    margin-left: auto;
+  }
+}
+
+.wedding-gallery-card-content p {
+  margin-bottom: 1px;
+  font-family: 'Lato', sans-serif;
+}
+
+.wedding-gallery-card-content h4 {
+  margin-top: 0;
+}
+
+
+
+.wedding-gallery-services-carousel {
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 0 10px;
+  scroll-padding-left: 10px;
+  gap: 0px; /* 👈 This adds space between cards */
+}
+
+.wedding-gallery-services-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.wedding-gallery-service-card {
+  aspect-ratio: 3 / 4;             /* Maintains 3:4 ratio */
+  padding-bottom: 8px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  scroll-snap-align: start;
+  position: relative;
+  flex: 0 0 auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  padding-left: 20px;
+  margin: 10px 15px;
+  min-width: 350px;                /* Adjust this to control overall size */
+  max-width: 360px;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.wedding-gallery-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+}
+
+.wedding-gallery-card-overlay {
+  border-radius: 16px;
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right:0;
+  width: 100%; 
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+  z-index: 1;
+}
+
+.wedding-gallery-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.wedding-gallery-btn-primary-service {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: transparent !important;
+  border: 2px solid white;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.wedding-gallery-btn-primary-service:hover {
+  background-color: #a3543a;
+  transform: translateY(-2px);
+}
+
+.wedding-gallery-service-tabs {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.wedding-gallery-tab-btn {
+  background: none;
+  border: 0px solid white;
+  border-radius: 20px;
+  color: black;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.wedding-gallery-tab-btn.active {
+  background-color: #333;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .wedding-gallery-service-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .wedding-gallery-tab-btn {
+    flex: 0 0 auto;
+  }
+  .wedding-gallery-service-card {
+    min-width: 280px;              /* Adjusted for smaller screens */
+    width: 300px;
+    aspect-ratio: 4 / 5;           /* Increased mobile height */
+  }
+
+}
+
+@supports (scroll-snap-type: x mandatory) {
+  .wedding-gallery-services-carousel {
+    scroll-snap-type: x mandatory;
+  }
+}
+.wg-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: none;
+  font-size: 20px;     /* FA icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  
+/* CAROUSEL ARROW BUTTONS */
+.wg-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: none;
+  font-size: 20px;     /* FA icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: 0.3s ease;
+}
+}
+.wg-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.wg-prev-btn { left: 5px; }
+.wg-next-btn { right: 5px; }
+
+/* Faded when inactive */
+.wg-btn.inactive {
+  display:none;
+}
+
+/* LEFT SPACING FIX */
+#wedding-gallery-services-carousel {
+  padding-left: 0px !important;
+  scroll-padding-left: 30px !important;
+scroll-padding-right: 30px !important;
+}
+
+#wedding-gallery-services-carousel .wedding-gallery-service-card:first-child {
+  scroll-snap-align: start !important;
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const carousel = document.getElementById("wedding-gallery-services-carousel");
+  const prevBtn = document.querySelector(".wg-prev-btn");
+  const nextBtn = document.querySelector(".wg-next-btn");
+
+  const cardWidth = 360;
+  const gap = 20;
+
+  function updateButtons() {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    if (carousel.scrollLeft <= 0) {
+      prevBtn.classList.add("inactive");
+    } else {
+      prevBtn.classList.remove("inactive");
+    }
+
+    if (carousel.scrollLeft >= maxScroll - 5) {
+      nextBtn.classList.add("inactive");
+    } else {
+      nextBtn.classList.remove("inactive");
+    }
+  }
+
+  nextBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
+  });
+
+  carousel.addEventListener("scroll", updateButtons);
+
+  updateButtons();
+});
+</script>
+
+
+
+<!--------------------------------------------------------------------------->
+<section class="sm-blog-section-header">
+    <h6></h6>
+    <h5>Wedding &bull; Fashion &bull; Portraits &bull; Culture &bull; Docs</h5>
+</section>
+
+<section class="sm-blog-card-container">
+    <div class="sm-blog-card">
+        <a href="wedding.html"><img src="rangat-photo-3.JPG" alt="Cinematic Excellence" /></a>
+        <div class="sm-blog-card-content">
+            <div class="sm-blog-card-subtitle">@rangatfilms</div>
+            <div class="sm-blog-card-title"><a href="wedding.html">Weddings</a></div>
+            <div class="sm-blog-card-text">
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="sm-blog-card">
+        <a href="fashion.html"><img src="rangat-photo-2.JPG" alt="Cinematic Excellence" /></a>
+        <div class="sm-blog-card-content">
+            <div class="sm-blog-card-subtitle">@rangatfilms</div>
+            <div class="sm-blog-card-title"><a href="fashion.html">Fashion</a></div>
+            <div class="sm-blog-card-text">
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="sm-blog-card">
+        <a href="portraits.html"><img src="rangat-photo-5.JPG" alt="Cinematic Excellence" /></a>
+        <div class="sm-blog-card-content">
+            <div class="sm-blog-card-subtitle">@rangatfilms</div>
+            <div class="sm-blog-card-title"><a href="portraits.html">Portraits</a></div>
+            <div class="sm-blog-card-text">
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+                With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="sm-blog-card">
+        <a href="culture.html"><img src="rangat-photo-4.JPG" alt="Cinematic Excellence" /></a>
+        <div class="sm-blog-card-content">
+            <div class="sm-blog-card-subtitle">@rangatfilms</div>
+            <div class="sm-blog-card-title"><a href="culture.html">Culture</a></div>
+            <div class="sm-blog-card-text">
+                Another blog example text to fill the card content. This will ensure all cards look consistent.
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="sm-blog-card">
+        <a href="docs.html"><img src="rangat-photo-6.JPG" alt="Cinematic Excellence" /></a>
+        <div class="sm-blog-card-content">
+            <div class="sm-blog-card-subtitle">@rangatfilms</div>
+            <div class="sm-blog-card-title"><a href="docs.html">Docs</a></div>
+            <div class="sm-blog-card-text">
+                Yet another example blog content to make five cards visible in one row on desktop.
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+.sm-blog-section-header {
+    text-align: center;
+    margin: 40px 20px 20px;
+    color: #222;
+}
+
+.sm-blog-card-title a {
+    display: block;        /* make link behave like block */
+    color: #000 !important; /* force black color */
+    text-decoration: none !important; /* remove underline */
+}
+
+
+
+.sm-blog-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* 5 cards per row on desktop */
+.sm-blog-card {
+    flex: 0 0 calc((100% - 120px) / 3); /* 5 cards, 30px gap each */
+    max-width: calc((100% - 120px) / 3);
+    background: transparent;
+    overflow: hidden;
+    text-align: left;
+}
+
+.sm-blog-card img {
+    width: 100%;            /* Fill the width of the card */
+    height: 350px;          /* Fixed height box */
+    object-fit: cover;     /* Image scales to fit inside box without cropping */
+    border-radius: 20px;
+    background-color: #f0f0f0; /* Optional: shows background if image doesn't fill box */
+    display: block;          /* Remove inline spacing */
+}
+
+
+.sm-blog-card-content {
+    padding: 20px;
+}
+
+.sm-blog-card-subtitle {
+    font-size: 13px;
+    letter-spacing: 1.2px;
+    color: #999;
+  
+    margin-bottom: 5px;
+}
+
+.sm-blog-card-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Antic Didone', serif;
+    letter-spacing: 1.3px;
+}
+
+.sm-blog-card-text {
+    font-family: 'Antic Didone', serif;
+    letter-spacing: 0.9px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+/* Responsive: 3 cards per row on tablets */
+@media (max-width: 1024px) {
+    .sm-blog-card {
+        flex: 0 0 calc((100% - 60px) / 3);
+        max-width: calc((100% - 60px) / 3);
+    }
+}
+
+/* Responsive: 1 card per row on mobile */
+@media (max-width: 768px) {
+    .sm-blog-section-header h1 {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    .sm-blog-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+</style>
+
+
+
+<!-----------------------------------------------------------------------Video Gallery ------------------------------------------------------------------------>
+<section class="py-5" id="services" style="position:relative;">
+  <div class="container">
+    <div class="heading-dropdown d-flex justify-content-between align-items-center flex-wrap mb-3">
+      <div>
+        <h2 class="fw-bold mb-1">Short Stories</h2>
+        <p class="about-lead mb-0">Capturing Your Journey</p>
+      </div>
+    </div>
+
+    <!-- Carousel -->
+    <div class="services-carousel-wrapper position-relative overflow-hidden" id="services-wrapper">
+      <div class="services-carousel d-flex flex-nowrap" id="services-carousel">
+
+        <!-- Example Cards (video autoplay as thumbnail) -->
+        <div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video.mp4"
+     data-preview="video-preview.mp4" > <!-- 5 sec preview -->
+  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video1.mp4"
+     data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+        <div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video.mp4"
+     data-preview="video-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video1.mp4"
+     data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+        <div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video.mp4"
+     data-preview="video-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video1.mp4"
+     data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+        <div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video.mp4"
+     data-preview="video-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="service-card video-has-gallery video-trigger"
+     data-gallery-link="individual.html"
+     data-category="wedding"
+     data-video="video1.mp4"
+     data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
+  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <div class="card-overlay"></div>
+  <div class="card-content text-white">
+    <div class="card-details">
+      <h6 class="username">@rangatfilms</h6>
+      <p class="video-date">SEPT - 2024</p>
+      <h5 class="video-title">Travel Tales</h5>
+    </div>
+  </div>
+</div>
+
+      <!-- Navigation -->
+      <button class="btn-primary-service" id="service-prev" style="display:none;">
+  <i class="fas fa-chevron-left"></i>
+</button>
+
+<button class="btn-primary-service" id="service-next" style="display:none;">
+  <i class="fas fa-chevron-right"></i>
+</button>
+
+    
+  </div>
+
+  <!-- Reels-style Video Popup Modal -->
+  <!-- === Reels-Style Video Popup === -->
+<div class="reel-modal" id="reelModal">
+  <div class="reel-wrapper">
+    <button class="reel-close" id="reelClose">&times;</button>
+
+    <div class="reel-slide" id="reelSlide">
+  <video id="reelVideo" playsinline loop muted preload="auto"></video>
+
+
+<button class="reel-play-toggle" id="reelPlayToggle">
+  <i class="fas fa-play"></i>
+</button>
+
+
+  <div class="reel-info">
+    <h6 class="reel-username"></h6>
+    <p class="reel-date"></p>
+    <h5 class="reel-title"></h5>
+  </div>
+
+  <!-- Buttons at bottom-right -->
+  <div class="reel-controls">
+  <button class="reel-fullscreen" id="reelFullscreen" title="View in Fullscreen">
+    <i class="fas fa-expand"></i>
+  </button>
+  <button class="reel-pip" id="reelPip" title="Picture in Picture">
+    <i class="fas fa-clone"></i>
+  </button>
+  <button class="reel-mute" id="reelMute">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+</div>
+
+
+
+
+    <!-- Navigation arrows -->
+    <div class="reel-nav">
+      <button class="reel-arrow left" id="reelPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="reel-arrow right" id="reelNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- === STYLES === -->
+<style>
+#services-carousel {
+  padding-left: 0px !important;
+  scroll-padding-left: 80px;
+}
+
+#services-carousel .service-card:first-child {
+  scroll-snap-align: start !important; /* keeps snap but respects scroll-padding */
+}
+
+#services-wrapper {
+min-width: 0;
+  position: relative;
+}
+
+/* =========================================
+   CAROUSEL NAVIGATION BUTTONS
+   ========================================= */
+
+.btn-primary-service {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: none;
+  font-size: 20px;     /* FA icon size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: 0.3s ease;
+}
+
+/* Apple hover */
+.btn-primary-service:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Arrow icon style (Font Awesome or custom icon) */
+.btn-primary-service i {
+  color: white;          /* Apple gray */
+  font-size: 18px;         /* Medium arrow size */
+  pointer-events: none;
+}
+
+/* Positioning */
+#service-prev {
+  left: 6px;
+}
+
+#service-next {
+  right: 6px;
+}
+
+
+/* === Reels Modal Styling === */
+.reel-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.reel-modal.active {
+  display: flex;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 90vh;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reel-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel-close {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(3px);
+}
+
+.reel-info {
+  position: absolute;
+  bottom: 20px;
+left:5px;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 20px;
+  color: #fff;
+padding-right: 140px; /* leaves room for control buttons on right */
+  color: #fff;
+  box-sizing: border-box;
+  z-index: 4;
+}
+.reel-info h6,
+.reel-info p,
+.reel-info h5 {
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+.reel-info h6 {
+color:white;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.reel-info p {
+color:white;
+  font-size: 0.8rem;
+  margin: 3px 0;
+  opacity: 0.8;
+}
+
+.reel-info h5 {
+color:white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+/* Pause on popup button */
+/* === Center Play/Pause Button === */
+.reel-play-toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+
+
+.reel-play-toggle.visible {
+  display: flex;
+  animation: fadeInCenter 0.25s ease forwards;
+}
+
+@keyframes fadeInCenter {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Mute button */
+/* --- Reel Controls (Fullscreen + Mute) --- */
+/* --- Reel Controls (Fullscreen + PiP + Mute) --- */
+.reel-controls {
+  position: absolute;
+  bottom: 35px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between buttons */
+  z-index: 10;
+}
+
+/* Individual buttons */
+.reel-controls button {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.reel-controls button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Hide fullscreen and PiP buttons on mobile */
+.reel-fullscreen,
+.reel-pip,
+.reel-mute {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+
+/* Hide fullscreen + PiP buttons on mobile (only mute visible) */
+@media (max-width: 767px) {
+  .reel-fullscreen {
+    display: none !important;
+  }
+
+  /* Reduce padding since we only have 1 button now */
+  .reel-info {
+    margin-right: 10px;
+  }
+
+}
+
+
+/* Nav arrows */
+.reel-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 15px;
+  z-index: 5;
+}
+
+.reel-arrow {
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.reel-arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 768px) {
+  .reel-wrapper {
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+
+/* Hover effect */
+.reel-fullscreen:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Hide fullscreen button on mobile devices */
+@media (max-width: 767px) {
+  .reel-fullscreen {
+    display: none !important;
+  }
+}
+
+/* Carousel card content */
+.card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.card-details {
+  position: absolute;
+  bottom: 8px;
+  left: 15px;
+  text-align: left;
+}
+
+.username {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.video-date {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.video-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.services-carousel {
+  overflow-x: auto;
+  display: flex;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0 10px;
+}
+
+.services-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.service-card {
+  scroll-snap-align: start;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 15px;
+  height: 350px;
+  min-width: 200px;
+  max-width: 230px;
+  width: auto;
+}
+
+.service-card video,
+.service-card iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+flex: 0 0 auto;
+}
+
+.card-overlay {
+  border-radius: 16px;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+/* === Video Modal === */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-modal.active {
+  display: flex;
+}
+
+.video-reel-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.video-reel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: black;
+}
+
+.video-reel-inner video,
+.video-reel-inner iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+@media (max-width: 768px) {
+.video-reel-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.video-reel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  overflow: hidden;
+  background: black;
+}
+}
+/* Bottom-left overlay inside popup */
+.popup-video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 20px;
+  z-index: 5;
+}
+
+.popup-details {
+  text-align: left;
+}
+
+.popup-username {
+color:white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.popup-date {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin: 3px 0;
+}
+
+.popup-title {
+color:white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Mute toggle button */
+.mute-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.mute-toggle:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+.close-video {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.video-reel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 15px;
+  z-index: 10;
+}
+
+.reel-prev, .reel-next {
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /*** =========================
+       SIMPLE HORIZONTAL CAROUSEL
+       ========================= ***/
+  const carousel = document.getElementById("services-carousel");
+  const wrapper = document.getElementById("services-wrapper");
+  const nextBtn = document.getElementById("service-next");
+  const prevBtn = document.getElementById("service-prev");
+
+  const cardWidthBase = 180;
+
+  // Get card width
+  function getCardWidth() {
+    const card = carousel.querySelector(".service-card");
+    if (!card) return cardWidthBase;
+    const style = window.getComputedStyle(card);
+    const width = card.offsetWidth;
+    const marginLeft = parseInt(style.marginLeft) || 0;
+    const marginRight = parseInt(style.marginRight) || 0;
+    return width + marginLeft + marginRight;
+  }
+
+  let cardWidth = getCardWidth();
+
+  // Show/hide buttons based on scroll position
+  function updateButtons() {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+    if (carousel.scrollLeft <= 0) {
+      // At the start → show only NEXT
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "flex";
+    } 
+    else if (carousel.scrollLeft >= maxScroll - 5) {
+      // At the end → show only PREV
+      nextBtn.style.display = "none";
+      prevBtn.style.display = "flex";
+    } 
+    else {
+      // Middle → show both
+      prevBtn.style.display = "flex";
+      nextBtn.style.display = "flex";
+    }
+  }
+
+  updateButtons();
+
+  // Button actions
+  nextBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: cardWidth, behavior: "smooth" });
+    setTimeout(updateButtons, 300);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    carousel.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    setTimeout(updateButtons, 300);
+  });
+
+  // On manual scroll
+  carousel.addEventListener("scroll", updateButtons);
+
+
+
+  /*** =========================
+       REEL MODAL LOGIC (UNCHANGED)
+       ========================= ***/
+  const modal = document.getElementById("reelModal");
+  const videoEl = document.getElementById("reelVideo");
+  const muteBtn = document.getElementById("reelMute");
+  const closeBtn = document.getElementById("reelClose");
+  const nextBtnModal = document.getElementById("reelNext");
+  const prevBtnModal = document.getElementById("reelPrev");
+
+  const pipBtn = document.getElementById("reelPip");
+  const playToggleBtn = document.getElementById("reelPlayToggle");
+  const fullscreenBtn = document.getElementById("reelFullscreen");
+  const videoContainer = document.getElementById("reelSlide");
+
+  const nameEl = document.querySelector(".reel-username");
+  const dateEl = document.querySelector(".reel-date");
+  const titleEl = document.querySelector(".reel-title");
+
+  let cards = [];
+  let index = 0;
+
+  function updateCards() {
+    cards = Array.from(document.querySelectorAll("#services-carousel .service-card"));
+  }
+
+  // Open Modal
+  function openReel(i) {
+    if (i < 0) i = cards.length - 1;
+    if (i >= cards.length) i = 0;
+    index = i;
+
+    const card = cards[index];
+    const fullSrc = card.getAttribute("data-video");
+    const username = card.querySelector(".username")?.innerText || "";
+    const date = card.querySelector(".video-date")?.innerText || "";
+    const title = card.querySelector(".video-title")?.innerText || "";
+
+    nameEl.textContent = username;
+    dateEl.textContent = date;
+    titleEl.textContent = title;
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    if (videoEl.src !== fullSrc) videoEl.src = fullSrc;
+
+    videoEl.loop = true;
+    videoEl.muted = true;
+    videoEl.play().catch(() => {});
+    muteBtn.style.display = "flex";
+  }
+
+  // Close Modal
+  function closeReel() {
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    if (document.pictureInPictureElement) document.exitPictureInPicture().catch(() => {});
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+    videoEl.pause();
+    videoEl.src = "";
+  }
+
+  // Mute toggle
+  muteBtn.addEventListener("click", () => {
+    videoEl.muted = !videoEl.muted;
+    muteBtn.innerHTML = videoEl.muted
+      ? '<i class="fas fa-volume-mute"></i>'
+      : '<i class="fas fa-volume-up"></i>';
+  });
+
+  // Fullscreen
+  fullscreenBtn.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+      (videoContainer.requestFullscreen ||
+        videoContainer.webkitRequestFullscreen ||
+        videoContainer.msRequestFullscreen)?.call(videoContainer);
+      fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+    } else {
+      (document.exitFullscreen ||
+        document.webkitExitFullscreen ||
+        document.msExitFullscreen)?.call(document);
+      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+    }
+  });
+
+  document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) {
+      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+    }
+  });
+
+  // PiP
+  pipBtn.addEventListener("click", async () => {
+    try {
+      if (document.pictureInPictureElement) await document.exitPictureInPicture();
+      else await videoEl.requestPictureInPicture();
+    } catch {}
+  });
+
+  if (!("pictureInPictureEnabled" in document)) pipBtn.style.display = "none";
+
+  // Play/Pause overlay
+  videoEl.addEventListener("pause", () => {
+    playToggleBtn.classList.add("visible");
+    playToggleBtn.innerHTML = '<i class="fas fa-play"></i>';
+  });
+  videoEl.addEventListener("play", () => playToggleBtn.classList.remove("visible"));
+  playToggleBtn.addEventListener("click", () => (videoEl.paused ? videoEl.play() : videoEl.pause()));
+  videoEl.addEventListener("click", () => (videoEl.paused ? videoEl.play() : videoEl.pause()));
+
+  // Modal navigation
+  nextBtnModal.addEventListener("click", () => openReel(index + 1));
+  prevBtnModal.addEventListener("click", () => openReel(index - 1));
+  closeBtn.addEventListener("click", closeReel);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeReel();
+  });
+
+  // Open modal when card clicked
+  carousel.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".video-trigger");
+    if (trigger) {
+      updateCards();
+      index = cards.indexOf(trigger.closest(".service-card"));
+      openReel(index);
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------- Wave Divider --------------------------------------------------------------------------->
+<div class="wave-responsive"style="margin-top:20px;background-color:#f8f9fa">
+<svg class="stat-bg-top" viewbox="0 0 1440 320">
+<path d="M0,128L48,122.7C96,117,192,107,288,128C384,149,480,203,576,202.7C672,203,768,149,864,144C960,139,1056,181,1152,181.3C1248,181,1344,139,1392,117.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="#ece4da" fill-opacity="1">
+</path>
+</svg>
+</div>
+<style>
+@media (max-width: 768px) {
+.wave-responsive{
+display:none;}
+}
+</style>
+<!----------------------------------------------------------------------- Stats Section ----------------------------------------------------------------------->
+<section class="py-5 bg-light stat-top-margin" id="stats" >
+<div class="container text-center">
+<div class="row">
+<div class="col-md-3 col-6">
+<div class="counter-item animate__animated animate__fadeInUp">
+<h2 class="counter" data-target="200"><span class="count-number" data-target="200">0</span>+</h2>
+<p>Weddings</p>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="counter-item animate__animated animate__fadeInUp">
+<h2 class="counter" data-target="15"><span class="count-number" data-target="15">0</span>+</h2>
+<p>Countries</p>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="counter-item animate__animated animate__fadeInUp">
+<h2 class="counter" data-target="5000"><span class="count-number" data-target="5000">0</span>+</h2>
+<p>Photos</p>
+</div>
+</div>
+<div class="col-md-3 col-6">
+<div class="counter-item animate__animated animate__fadeInUp">
+<h2 class="counter" data-target="100"><span class="count-number" data-target="100">0</span>+</h2>
+<p>Happy Couples</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function animateCount(el, target) {
+    let current = 0;
+    const duration = 2000;
+    const steps = Math.ceil(duration / 30);
+    const increment = target / steps;
+
+    const counterInterval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = target;
+        clearInterval(counterInterval);
+      } else {
+        el.textContent = Math.floor(current);
+      }
+    }, 30);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const container = entry.target;
+      if (entry.isIntersecting && !container.classList.contains("counted")) {
+        const numberEl = container.querySelector(".count-number");
+        if (numberEl) {
+          const target = parseInt(numberEl.dataset.target);
+          animateCount(numberEl, target);
+          container.classList.add("counted");
+        }
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll(".counter").forEach(el => observer.observe(el));
+});
+</script>
+<style>
+.stat-top-margin{margin-top:-100px;}
+@media (max-width: 768px) {
+.stat-top-margin{
+margin-top:20px;
+margin-left:20px;
+margin-right:20px;
+border-radius:20px;
+}
+}
+
+.stat-bg-top,
+.stat-bg-bottom {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-top: -50px;
+}
+.counter-item {
+	padding: 30px;
+	margin-bottom: 20px;
+}
+.counter-item h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--accent-color);
+	margin-bottom: 10px;
+}
+.counter-item p {
+	font-size: 1.2rem;
+	color: var(--dark-color);
+}
+
+</style>
+
+
+
+<!----------------------------------------------------------------- Youtube Video Section ----------------------------------------------------------------------->
+<div class="container">
+  <h2 class="text-center fw-bold" style="padding-bottom:10px;margin-top:50px;color:black">
+    Watch a <span style="color:red">Trailer</span>
+  </h2>
+  <p class="text-center mb-5 about-lead">Each package tailored to preserve your unique love story</p>
+</div>
+
+<div class="vid-section">
+  
+  <!-- VIDEO SIDE -->
+  <div class="vid-video-wrapper">
+    <div class="vid-video-box" id="vid-swipe-box">
+      <div id="vid-player"></div>
+    </div>
+  </div>
+
+  <!-- TEXT SIDE -->
+  <div class="vid-text-box">
+    <div class="vid-meta" id="vid-meta"></div>
+
+    <h1 class="vid-title" id="vid-title">
+      <span id="vid-main-title"></span><br />
+      <span class="vid-highlight" id="vid-highlight"></span>
+    </h1>
+
+    <p class="vid-detail" id="vid-detail"></p>
+
+    <div class="vid-tabs-container">
+      <div class="vid-tabs-wrapper">
+        <div class="vid-arrow" id="vid-prev-btn">←</div>
+        <div class="vid-tabs" id="vid-tab-container"></div>
+        <div class="vid-arrow" id="vid-next-btn">→</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- YouTube API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<!-- Vimeo API -->
+<script src="https://player.vimeo.com/api/player.js"></script>
+<style>
+.vid-section {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  background-color: var(--secondary-color, #f5f5f5);
+  margin: 20px auto;
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.vid-video-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.vid-video-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: black; /* in case video has black bars */
+}
+
+#vid-player iframe,
+#vid-player video {
+  position: absolute; /* Make it cover parent */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill entire box, crop if necessary */
+  border: none;
+}
+
+
+.vid-text-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 100px;
+  position: relative;
+}
+
+.vid-meta {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.vid-title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.vid-highlight {
+  color: #e53935;
+  font-weight: bold;
+}
+
+.vid-detail {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #444;
+  max-width: 90%;
+  animation: fadeInUp 0.6s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUp {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.vid-tabs-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px 30px;
+  background-color: var(--secondary-color, #f5f5f5);
+}
+
+.vid-tabs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vid-arrow {
+  cursor: pointer;
+  background: #ece4da;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+.vid-tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  scroll-behavior: smooth;
+  flex: 1;
+  scrollbar-width: none;
+}
+
+.vid-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.vid-tab {
+  color: #333;
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ece4da;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.vid-tab.vid-active {
+  background-color: #333;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .vid-section {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .vid-text-box {
+    padding: 20px 20px 110px;
+    text-align: center;
+  }
+  .vid-detail {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 10px auto 0;
+  }
+
+  /* Adjust video height on mobile */
+  .vid-video-wrapper {
+    padding: 10px;
+  }
+  .vid-video-box {
+    aspect-ratio: 16/9; /* Remove 16:9 ratio */
+    width: 100%;
+    
+  }
+  #vid-player video,
+  #vid-player iframe {
+    height: 100%;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const vidVideos = [
+    { type: "local", url: "video.mp4", content: { meta: "Local Trailer — 2024", title: "My Local Video", highlight: "Local", detail: "This is a locally hosted video example." } },
+    { type: "youtube", url: "https://youtu.be/M33j0t2W6zM", content: { meta: "Hey Jaga — 2022", title: "Hey Jaga", highlight: "Jaga", detail: "An emotional soundtrack capturing the spirit of resilience and hope." } },
+    { type: "vimeo", url: "https://vimeo.com/76979871", content: { meta: "Vimeo Sample", title: "Vimeo Demo", highlight: "Vimeo", detail: "A sample Vimeo video." } },
+    { type: "local", url: "video1.mp4", content: { meta: "Local Trailer — 2024", title: "My Local Video 2", highlight: "Local 2", detail: "Another local video demo." } }
+  ];
+
+  let vidCurrentIndex = 0;
+  let player = null;
+  let autoNextTimer = null;
+  let failSafeTimer = null;
+
+  const playerBox = document.getElementById("vid-player");
+  const metaEl = document.getElementById("vid-meta");
+  const titleEl = document.getElementById("vid-main-title");
+  const highlightEl = document.getElementById("vid-highlight");
+  const detailEl = document.getElementById("vid-detail");
+  const tabContainer = document.getElementById("vid-tab-container");
+
+  function getYouTubeId(url) {
+    const regex = /(?:youtube\.com\/.*[?&]v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  }
+
+  function clearPlayer() {
+    if (autoNextTimer) clearTimeout(autoNextTimer);
+    if (failSafeTimer) clearTimeout(failSafeTimer);
+    autoNextTimer = null;
+    failSafeTimer = null;
+
+    if (player && player.destroy) player.destroy();
+    if (player && player.pause) player.pause();
+    playerBox.innerHTML = "";
+    player = null;
+  }
+
+  function startAutoNextTimer(duration = 10000) {
+    if (autoNextTimer) clearTimeout(autoNextTimer);
+    autoNextTimer = setTimeout(nextVideo, duration);
+  }
+
+  function stopAutoNextTimer() {
+    if (autoNextTimer) clearTimeout(autoNextTimer);
+    autoNextTimer = null;
+  }
+
+  function startFailSafeTimer() {
+    if (failSafeTimer) clearTimeout(failSafeTimer);
+    failSafeTimer = setTimeout(nextVideo, 10000); // Always wait 10s
+  }
+
+  function updateContent(index) {
+    clearPlayer();
+    const video = vidVideos[index];
+    
+    // Start fail-safe timer immediately
+    startFailSafeTimer();
+
+    // Local Video
+    if (video.type === "local") {
+      const v = document.createElement("video");
+      v.src = video.url;
+      v.autoplay = true;
+      v.loop = false;
+      v.muted = false;
+      v.controls = true;
+      v.style.position = "absolute";
+      v.style.top = "0";
+      v.style.left = "0";
+      v.style.width = "100%";
+      v.style.height = "100%";
+      v.style.objectFit = "cover";
+      playerBox.appendChild(v);
+      player = v;
+
+      v.addEventListener("play", () => {
+        startAutoNextTimer(10000);
+        if (failSafeTimer) clearTimeout(failSafeTimer); // Cancel fail-safe once it plays
+      });
+      v.addEventListener("pause", stopAutoNextTimer);
+      v.addEventListener("ended", nextVideo);
+      v.addEventListener("error", () => {
+        /* Do nothing here, let fail-safe timer handle it */
+      });
+
+    } 
+    // YouTube Video
+    else if (video.type === "youtube") {
+      const videoId = getYouTubeId(video.url);
+      if (videoId) {
+        const div = document.createElement("div");
+        div.id = "yt-player";
+        div.style.position = "absolute";
+        div.style.top = "0";
+        div.style.left = "0";
+        div.style.width = "100%";
+        div.style.height = "100%";
+        playerBox.appendChild(div);
+
+        player = new YT.Player("yt-player", {
+          videoId: videoId,
+          playerVars: { autoplay: 1, controls: 1, mute: 0 },
+          events: {
+            onReady: event => {
+              event.target.playVideo();
+            },
+            onStateChange: event => {
+              if (event.data === YT.PlayerState.PLAYING) {
+                startAutoNextTimer(10000);
+                if (failSafeTimer) clearTimeout(failSafeTimer);
+              } else stopAutoNextTimer();
+              if (event.data === YT.PlayerState.ENDED) nextVideo();
+            },
+            onError: () => {
+              /* Do nothing, fail-safe will switch after 10s */
+            }
+          }
+        });
+      }
+    } 
+    // Vimeo Video
+    else if (video.type === "vimeo") {
+      const vimeoId = video.url.split("/").pop();
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://player.vimeo.com/video/${vimeoId}?autoplay=1&muted=1&loop=0&controls=1`;
+      iframe.allow = "autoplay; fullscreen; encrypted-media";
+      iframe.allowFullscreen = true;
+      iframe.style.position = "absolute";
+      iframe.style.top = "0";
+      iframe.style.left = "0";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.objectFit = "cover";
+      playerBox.appendChild(iframe);
+
+      player = new Vimeo.Player(iframe);
+      player.on("play", () => {
+        startAutoNextTimer(10000);
+        if (failSafeTimer) clearTimeout(failSafeTimer);
+      });
+      player.on("pause", stopAutoNextTimer);
+      player.on("ended", nextVideo);
+      player.on("error", () => {
+        /* Do nothing, fail-safe will switch after 10s */
+      });
+    }
+
+    // Update text
+    metaEl.textContent = video.content.meta;
+    titleEl.textContent = video.content.title;
+    highlightEl.textContent = video.content.highlight;
+    detailEl.textContent = video.content.detail;
+
+    document.querySelectorAll(".vid-tab").forEach((tab, i) => {
+      tab.classList.toggle("vid-active", i === index);
+    });
+
+    vidCurrentIndex = index;
+  }
+
+  function renderTabs() {
+    vidVideos.forEach((video, i) => {
+      const btn = document.createElement("button");
+      btn.className = "vid-tab";
+      btn.textContent = video.content.highlight;
+      btn.addEventListener("click", () => updateContent(i));
+      tabContainer.appendChild(btn);
+    });
+  }
+
+  function nextVideo() {
+    updateContent((vidCurrentIndex + 1) % vidVideos.length);
+  }
+
+  function prevVideo() {
+    updateContent((vidCurrentIndex - 1 + vidVideos.length) % vidVideos.length);
+  }
+
+  // Arrow navigation
+  document.getElementById("vid-next-btn").addEventListener("click", nextVideo);
+  document.getElementById("vid-prev-btn").addEventListener("click", prevVideo);
+
+  // Swipe navigation
+  const swipeBox = document.getElementById("vid-swipe-box");
+  let startX = 0;
+  swipeBox.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+  swipeBox.addEventListener("touchend", e => {
+    const diff = e.changedTouches[0].clientX - startX;
+    if (Math.abs(diff) > 50) diff > 0 ? prevVideo() : nextVideo();
+  });
+
+  renderTabs();
+  updateContent(vidCurrentIndex);
+
+});
+
+</script>
+
+
+
+
+<!-------------------------------------- Decoration Box ---------------------------------------------->
+<section class="image-dec-box-section container">
+  <div class="image-dec-box-left">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="image-dec-box-right">
+    <h2 class="image-dec-box-quote">"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day."</h2>
+    <p class="image-dec-box-description">In the quiet moments, in the laughter, in the tears — love is the constant thread that ties every piece of life together. It is felt more than it is seen, spoken more in actions than in words.</p>
+  </div>
+</section>
+<style>
+.image-dec-box-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 70vh;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.image-dec-box-left {
+  flex: 0 0 40%;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+}
+.image-dec-box-left video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-dec-box-right {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.image-dec-box-quote {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.image-dec-box-description {
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.5;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .image-dec-box-left, .image-dec-box-right {
+    flex: 0 0 100%;
+    min-height: 65vh;
+  }
+  .image-dec-box-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+  </style>
+<!----------------------------------------------------------------------- Blog Section ----------------------------------------------------------------------->
+
+<section class="blog-section-header">
+  <h1>BLOGS</h1>
+  <h2>WEDDING &bull; CINEMATIC &bull; CULTURE</h2>
+</section>
+
+<section class="blog-card-container">
+  <div class="blog-card-horizontal">
+    <img src="rangat-photo-3.JPG" alt="Cinematic Excellence" />
+    <div class="blog-card-content">
+      <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+      <div class="blog-card-title">Cinematic Excellence</div>
+      <div class="blog-card-text">
+        With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+        With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+        With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+        With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+        With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+      </div>
+      <a href="blog-details.html" class="read-more">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!--  NEW BUTTON ADDED HERE-->
+<div class="blog-section-footer">
+  <a href="blog.html" class="all-blogs-btn">READ ALL BLOGS</a>
+</div>
+<!--  END NEW BUTTON  -->
+
+<style>
+.blog-section-header {
+  text-align: center;
+  margin: 40px 20px 20px;
+  color: #222;
+}
+
+.blog-section-header h2 {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+}
+
+.blog-section-header h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin: 10px 0;
+}
+
+.blog-card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.blog-card-horizontal {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  width: 100%;
+  background: transparent;
+  overflow: hidden;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.blog-card-horizontal img {
+  width: 60%;
+  object-fit: cover;
+  border-radius: 20px;
+  height:350px;
+}
+
+.blog-card-content {
+  width: 55%;
+  padding: 0 20px;
+}
+
+.blog-card-subtitle {
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.blog-card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 1.3px;
+}
+
+.blog-card-text {
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.9px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: #555;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/*  NEW BUTTON STYLES  */
+.blog-section-footer {
+  text-align: center;
+  margin: 30px 0 60px;
+}
+
+.all-blogs-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  border-radius: 4px; /* square-ish */
+  transition: 0.3s ease-in-out;
+}
+
+.all-blogs-btn:hover {
+  background: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-section-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .blog-card-horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card-horizontal img,
+  .blog-card-content {
+    width: 100%;
+  }
+
+  .blog-card-content {
+    padding: 20px 0 0 0;
+  }
+}
+</style>
+
+<script>
+document.querySelectorAll('.blog-card-content').forEach(content => {
+  const text = content.querySelector('.blog-card-text');
+  const readMore = content.querySelector('.read-more');
+
+  if (text.scrollHeight <= text.clientHeight) {
+    readMore.style.display = 'none';
+  }
+});
+</script>
+
+
+
+
+
+
+
+
+
+<!-------------------------------------------------------------------Testimonial Section ----------------------------------------------------------------------->
+<section class="py-5" id="testimonials" style="background-color:#36302a;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" style="color:white;">In Their Own Words</h2>
+    <div class="testimonial-carousel-wrapper">
+      <!-- Desktop arrows -->
+      <button class="testimonial-arrow left">←</button>
+      <div class="testimonial-carousel" id="testimonial-carousel">
+        <!-- Original cards -->
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-1.JPG" />
+          <p>"Captured beautifully."<br />– First</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-2.JPG" />
+          <p>"Very professional team!"<br />– Second</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-3.JPG" />
+          <p>"Felt like family!"<br />– Third</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-4.JPG" />
+          <p>"Exceptional team!"<br />– Fourth</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-5.JPG" />
+          <p>"Captured beautifully."<br />– Fifth</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-6.JPG" />
+          <p>"Very professional team!"<br />– Sixth</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-7.JPG" />
+          <p>"Felt like family!"<br />– Seventh</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-8.JPG" />
+          <p>"Exceptional team!"<br />– Last</p>
+        </div>
+        <div class="testimonial-card-custom">
+          <img alt="testimonial image" src="rangat-photo-9.JPG" />
+          <p>"Felt like family!"<br />– Seventh</p>
+        </div>
+      </div>
+      <button class="testimonial-arrow right">→</button>
+    </div>
+
+    <!-- Dots with mobile arrows -->
+    <div class="testimonial-pagination-wrapper">
+      <button class="testimonial-arrow-mobile left">←</button>
+      <div class="testimonial-pagination-dots" id="testimonial-pagination"></div>
+      <button class="testimonial-arrow-mobile right">→</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonial-carousel {
+    display: flex;
+    gap: 30px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    padding: 0 40px;
+    scrollbar-width: none;
+    overflow: hidden;
+  }
+
+  .testimonial-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .testimonial-card-custom {
+    flex: 0 0 auto;
+    width: 320px;
+    height: 420px;
+    background: #f9f9f9;
+    border-radius: 0px;
+    padding: 20px;
+    text-align: center;
+    scroll-snap-align: start;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-card-custom img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    
+  }
+
+  .testimonial-card-custom p {
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .testimonial-arrow.left {
+    left: 10px;
+  }
+
+  .testimonial-arrow.right {
+    right: 10px;
+  }
+
+  @media (max-width: 767px) {
+    .testimonial-carousel-wrapper {
+      margin-left: 20px;
+      margin-right: -20px;
+    }
+  }
+
+  .testimonial-pagination-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .testimonial-pagination-dots {
+    display: flex;
+    gap: 8px;
+  }
+
+  .testimonial-pagination-dots .dot {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-pagination-dots .dot.active {
+    width: 50px;
+    border-radius: 6px;
+    background: #ccc;
+  }
+
+  .testimonial-arrow-mobile {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    .testimonial-arrow-mobile {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-arrow {
+      display: none;
+    }
+  }
+</style>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.getElementById("testimonial-carousel");
+    const leftArrows = document.querySelectorAll(".testimonial-arrow.left, .testimonial-arrow-mobile.left");
+    const rightArrows = document.querySelectorAll(".testimonial-arrow.right, .testimonial-arrow-mobile.right");
+    const dotsContainer = document.getElementById("testimonial-pagination");
+
+    const gap = 30;
+    const cardWidth = 320 + gap;
+    const cards = Array.from(carousel.children);
+    const originalCount = cards.length;
+
+    let currentIndex = originalCount;
+
+    // Clone cards to both ends for infinite loop
+    cards.forEach(card => {
+      carousel.appendChild(card.cloneNode(true)); // end
+      carousel.prepend(card.cloneNode(true));     // start
+    });
+
+    const allCards = carousel.querySelectorAll(".testimonial-card-custom");
+
+    // Create pagination dots
+    for (let i = 0; i < originalCount; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+    }
+
+    const dots = dotsContainer.querySelectorAll(".dot");
+
+    function updateDots() {
+      const realIndex = (currentIndex - originalCount) % originalCount;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[(realIndex + originalCount) % originalCount].classList.add("active");
+    }
+
+    function scrollToIndex(index, smooth = true) {
+      carousel.style.scrollBehavior = smooth ? "smooth" : "auto";
+      carousel.scrollLeft = index * cardWidth;
+      currentIndex = index;
+      updateDots();
+    }
+
+    function next() {
+      scrollToIndex(currentIndex + 1);
+    }
+
+    function prev() {
+      scrollToIndex(currentIndex - 1);
+    }
+
+    // On scroll end, jump if on cloned edges
+    carousel.addEventListener("scroll", () => {
+      const newIndex = Math.round(carousel.scrollLeft / cardWidth);
+      currentIndex = newIndex;
+      updateDots();
+
+      if (newIndex >= originalCount * 2) {
+        scrollToIndex(originalCount, false); // jump to first
+      } else if (newIndex < originalCount) {
+        scrollToIndex(originalCount + (newIndex % originalCount), false); // jump to last
+      }
+    });
+
+    // Attach arrow click events
+    rightArrows.forEach(btn => btn.addEventListener("click", next));
+    leftArrows.forEach(btn => btn.addEventListener("click", prev));
+
+    // Auto-scroll
+    setInterval(() => {
+      next();
+    }, 4000);
+
+    // Start at correct scroll position
+    scrollToIndex(currentIndex, false);
+
+    //  Swipe gesture support (mobile/touch)
+    let startX = 0;
+    let isSwiping = false;
+
+    carousel.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      isSwiping = true;
+    });
+
+    carousel.addEventListener("touchmove", (e) => {
+      if (!isSwiping) return;
+      const diffX = e.touches[0].clientX - startX;
+      if (Math.abs(diffX) > 30) {
+        e.preventDefault(); // prevent vertical scroll
+      }
+    }, { passive: false });
+
+    carousel.addEventListener("touchend", (e) => {
+      if (!isSwiping) return;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = endX - startX;
+
+      if (Math.abs(diffX) > 50) {
+        if (diffX < 0) {
+          next(); // swipe left
+        } else {
+          prev(); // swipe right
+        }
+      }
+      isSwiping = false;
+    });
+  });
+</script>
+
+
+
+
+<!--------------------------------------------------------------Instagram Gallery Section ----------------------------------------------------------------------->
+<section class="igram-gallery-section">
+  <h2 class="igram-gallery-title">From the Insta' <span style="color:red;">Gram</span></h2>
+  <div class="igram-gallery-grid" id="igramGalleryGrid"></div>
+
+  <div class="igram-modal" id="igramModal">
+    <span class="igram-modal-close" onclick="igramCloseModal()">&times;</span>
+    <div class="igram-modal-content">
+      <div class="igram-modal-media" id="igramModalMedia"></div>
+      <div class="igram-modal-controls">
+        <button class="igram-modal-prev" onclick="igramPrev()">&#8592;</button>
+        <button class="igram-modal-next" onclick="igramNext()">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.igram-gallery-section {
+  padding: 50px 250px;
+  text-align: center;
+}
+.igram-gallery-title {
+  font-family: 'Antic Didone', serif;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+.igram-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  justify-items: center;
+}
+.igram-gallery-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+.igram-gallery-item img,
+.igram-gallery-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.igram-play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.igram-play-icon::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+
+
+.igram-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.igram-modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.igram-modal-media img,
+.igram-modal-media video {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+.igram-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+.igram-modal-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.igram-modal-prev,
+.igram-modal-next {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 5px 15px;
+  transition: transform 0.2s ease;
+}
+.igram-modal-prev:hover,
+.igram-modal-next:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+.igram-gallery-section {
+  padding: 50px 40px;
+  text-align: center;
+}
+  .igram-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .igram-modal-controls {
+    gap: 20px;
+  }
+}
+</style>
+
+<script>
+const igramItems = [
+  { type: 'image', src: 'rangat-photo-1.JPG'},
+  { type: 'video', src: 'video.mp4' },
+  { type: 'image', src: 'rangat-photo-4.JPG'},
+  { type: 'image', src: 'rangat-photo-6.JPG'},
+  { type: 'image', src: 'rangat-photo-7.JPG'},
+  { type: 'video', src: 'video1.mp4'},
+  { type: 'image', src: 'rangat-photo-7.JPG'},
+  { type: 'image', src: 'rangat-photo-8.JPG'},
+  { type: 'image', src: 'rangat-photo-9.JPG'},
+  { type: 'image', src: 'rangat-photo-10.JPG'}
+];
+
+let igramCurrent = 0;
+
+function igramRenderGallery() {
+  const grid = document.getElementById('igramGalleryGrid');
+  grid.innerHTML = '';
+
+  igramItems.forEach((item, index) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'igram-gallery-item';
+    wrapper.onclick = () => igramOpenModal(index);
+
+    if (item.type === 'image') {
+      const img = document.createElement('img');
+      img.src = item.src;
+      wrapper.appendChild(img);
+    } else if (item.type === 'video') {
+      const video = document.createElement('video');
+      video.src = item.src;
+      video.muted = true;
+      video.playsInline = true;
+      video.autoplay = true;
+      video.loop = true;
+      wrapper.appendChild(video);
+
+      const icon = document.createElement('div');
+      icon.className = 'igram-play-icon';
+      //icon.innerHTML = '&#9654;';
+      wrapper.appendChild(icon);
+    }
+
+    grid.appendChild(wrapper);
+  });
+}
+
+function igramOpenModal(index) {
+  igramCurrent = index;
+  document.getElementById('igramModal').style.display = 'flex';
+  igramLoadMedia();
+}
+function igramCloseModal() {
+  document.getElementById('igramModal').style.display = 'none';
+}
+function igramNext() {
+  igramCurrent = (igramCurrent + 1) % igramItems.length;
+  igramLoadMedia();
+}
+function igramPrev() {
+  igramCurrent = (igramCurrent - 1 + igramItems.length) % igramItems.length;
+  igramLoadMedia();
+}
+function igramLoadMedia() {
+  const container = document.getElementById('igramModalMedia');
+  const item = igramItems[igramCurrent];
+  container.innerHTML = '';
+  if (item.type === 'image') {
+    const img = document.createElement('img');
+    img.src = item.src;
+    container.appendChild(img);
+  } else if (item.type === 'video') {
+    const video = document.createElement('video');
+    video.src = item.src;
+    video.controls = true;
+    video.autoplay = true;
+    container.appendChild(video);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', igramRenderGallery);
+</script>
+
+
+<!-----------------------------------------------------------------------Enquiry Section ----------------------------------------------------------------------->
+<section class="enquiry-section">
+  <div class="enquiry-content">
+    <h2 class="enquiry-title">Contact Us to Create <span style="color:#e53935;">Magic</span></h2>
+    <p class="enquiry-subtitle">Experienced lawyers ready to fight for your rightsExperienced lawyers ready to fight for your rights</p>
+    <div class="enquiry-buttons">
+      <a href="#" class="enquiry-btn enquiry-btn-primary"><i class="fab fa-whatsapp enquiry-whatsapp-icon"></i> Chat Now</a>
+<a href="#" class="enquiry-btn enquiry-btn-primary" style="margin-top:10px;"><i class="fa fa-phone enquiry-call-icon"></i> Call Now</a>
+      <!---<a href="#" class="enquiry-btn enquiry-btn-link">New successes →</a>---->
+    </div>
+  </div>
+  <div class="enquiry-image">
+    <img src="human.png" alt="Human">
+  </div>
+</section>
+<style>
+.enquiry-section {
+margin-left:150px;
+margin-right:150px;
+margin-bottom:50px;
+margin-top:100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: 16px;
+  padding: 40px;
+  overflow: visible; /* allow image to pop out */
+  position: relative;
+}
+
+.enquiry-content {
+  max-width: 55%;
+padding-left:50px;
+}
+
+.enquiry-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.enquiry-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+color:black;
+}
+
+/* .enquiry-buttons { */
+ /* display: flex; */
+ /* gap: 15px;} */
+
+.enquiry-btn {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enquiry-btn-primary {
+  background: black;
+  color: white;
+}
+
+.enquiry-btn-primary:hover {
+  background: #222;
+}
+
+.enquiry-btn-link {
+  color: white;
+  opacity: 0.8;
+}
+
+.enquiry-btn-link:hover {
+  opacity: 1;
+}
+.enquiry-whatsapp-icon {
+  margin-right: 8px;
+  font-size: 22px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-call-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-image {
+  position: absolute;
+  right:15px;
+  top: -99px; /* makes image rise above box */
+}
+
+.enquiry-image img {
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enquiry-section {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    margin-left:20px;
+    margin-right:20px;
+     margin-top:50px;
+  }
+.enquiry-content {
+padding-left:0px;
+    max-width: 100%;
+    margin-bottom: -30px; /* space between text and image */
+  }
+
+  .enquiry-image {
+top: 30px; /* makes image rise above box */
+    position: relative; /* normal flow so it comes after text */
+    left: -40px;
+    transform: none;
+    bottom: 0; /* ensures it touches section bottom */
+    margin-top: auto;
+    display: flex;
+    justify-content: center; /* center horizontally */
+  }
+
+  .enquiry-image img {
+
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+}
+</style>
+<!----------------------------------------------------------------------Footer Section ----------------------------------------------------------------------->
+<footer class="footer">
+  <!-- Top Row -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="rangat-logo2.png" alt="Rangat Films Logo">
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fa-solid fa-phone"></i> +91 1234567890 </a>
+      <a href="#"><i class="fa-solid fa-envelope"></i>  just.chill@123.com</a>
+    </div>
+    <div class="footer-copy">
+  &copy; <span id="currentYear" style=" font-family: 'Lato', sans-serif;"></span> Soumya Patel. All rights reserved
+</div>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+  </div>
+</footer>
+
+
+<style>
+.footer {
+  background: #fff;
+  padding: 20px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Top Row ---------- */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-socials a {
+  color: #001f54;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #3a68ff;
+}
+
+/* ---------- Bottom Row ---------- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #555;
+  gap: 10px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-links a {
+  color: #555;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+padding-left:0px;
+padding-right:0px;
+  }
+.footer-bottom {
+padding-left:0px;
+padding-right:0px;
+}
+  .footer-socials {
+    margin-top: 10px;
+margin-left:-20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+
+
+
+<!--------------------------------------------Delete It Section---------------------->
+
+<!-- =================== REEL SECTION =================== -->
+
+
+
+
+
+
+
+
+
+
+
+<!-----------------------------------------------------------------------JS Section ----------------------------------------------------------------------->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+<!-- Custom JS -->
+<script>
+   // Navbar scroll effect for minimalist navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar'); 
+            if (navbar) { 
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+        // specially used for About text
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Check if slides exist before trying to access elements
+            if (slides.length > 0) {
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+        }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        // Auto slide change every 5 seconds - only if slides exist
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
+
+        
+        
+        // Scroll animation (existing functionality)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+
+            // Animate service cards with staggered delay
+            serviceCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100 && !card.classList.contains('show')) {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 200); // 200ms delay between each card
+                }
+            });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+// Smooth scrolling for anchor links (existing functionality)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+  </script>
+
+
+
+<style>
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; /* start hidden */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 99999;
+    transition: right 0.5s ease, transform 0.2s;
+    font-size: 28px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    #whatsapp-button {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      bottom: 15px;
+      right: -80px;
+    }
+  }
+
+  /* Tooltip bubble */
+  #whatsapp-tooltip {
+    position: fixed;
+    bottom: 90px; /* will adjust via JS also */
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 100000;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    font-size: 14px;
+  }
+
+  /* Chat bubble curved tail */
+  #whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* tip height */
+    right: 12px;  /* align tail with button */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8px 0 8px; /* triangle shape */
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.05));
+  }
+
+  /* Responsive tooltip */
+  @media (max-width: 480px) {
+    #whatsapp-tooltip {
+      bottom: 80px;
+      font-size: 13px;
+      padding: 9px 12px;
+    }
+  }
+
+  .slide-in {
+    right: 20px !important;
+  }
+  .show-tooltip {
+    opacity: 1 !important;
+  }
+
+#whatsapp-button,
+#whatsapp-tooltip {
+    transition: opacity 0.3s ease;
+}
+
+.hide-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+
+<div id="whatsapp-button" onclick="openWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</div>
+<div id="whatsapp-tooltip">Chat with us!</div>
+
+<script>
+  function openWhatsApp() {
+    const phoneNumber = "1234567890";
+    const message = "Hello! I want to chat with you.";
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    /* Slide-in the button */
+    setTimeout(() => button.classList.add("slide-in"), 300);
+
+    /* Show tooltip after 2 seconds */
+    setTimeout(() => {
+      tooltip.classList.add("show-tooltip");
+      positionTooltip();
+    }, 2000);
+
+    /* Hide tooltip after 5 seconds */
+    setTimeout(() => tooltip.classList.remove("show-tooltip"), 15000);
+
+    /* Reposition tooltip on resize */
+    window.addEventListener("resize", positionTooltip);
+  });
+
+  /* Always keep tooltip just above the button */
+  function positionTooltip() {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    const rect = button.getBoundingClientRect();
+
+    tooltip.style.bottom = (window.innerHeight - rect.top + 10) + "px";
+    tooltip.style.right = (window.innerWidth - rect.right) + "px";
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wpBtn = document.getElementById("whatsapp-button");
+    const wpTip = document.getElementById("whatsapp-tooltip");
+
+    function hideWhatsapp() {
+        wpBtn.classList.add("hide-whatsapp");
+        wpTip.classList.add("hide-whatsapp");
+    }
+
+    function showWhatsapp() {
+        wpBtn.classList.remove("hide-whatsapp");
+        wpTip.classList.remove("hide-whatsapp");
+    }
+
+    /* ---  Reel Modal Detect Open/Close --- */
+    const reelModal = document.getElementById("reelModal");
+
+    new MutationObserver(() => {
+        reelModal.classList.contains("active") ? hideWhatsapp() : showWhatsapp();
+    }).observe(reelModal, { attributes: true, attributeFilter: ["class"] });
+
+
+    /* ---  Bootstrap Modals --- */
+    document.addEventListener("show.bs.modal", hideWhatsapp);
+    document.addEventListener("hidden.bs.modal", showWhatsapp);
+
+
+    /* --- Custom Drawer Detect Open/Close --- */
+    const drawer = document.getElementById("customDrawer");
+
+    new MutationObserver(() => {
+        drawer.classList.contains("open") ? hideWhatsapp() : showWhatsapp();
+    }).observe(drawer, { attributes: true, attributeFilter: ["class"] });
+
+});
+</script>
+
+
+</body>
+</html>
