@@ -607,7 +607,7 @@ lazyLoadImage(1);
 
 <!------------------------------------------------------------------------ Fashion Section ---------------------------------------------------------------------->
 
-<section class="all-gallery-section all-gallery-container">
+<section class=" all-gallery-container">
   <h2 class="all-gallery-heading">FASHION <span></span></h2>
   <p class="all-gallery-subheading">Fashion Photography is a visual language that celebrates imagination—turning textures, colors, and silhouettes into powerful stories. With each shot, fashion photography elevates garments beyond fabric, showcasing the personality and emotion behind the style.</p>
 </section>
@@ -646,20 +646,31 @@ lazyLoadImage(1);
 <section class="video-section">
   <div class="video-grid">
 
-    <div class="video-wrapper" data-video="https://youtu.be/oqeUMuRd3Kw?si=cJQ9IK41FDeMFecs" data-title="Sample Video 1">
+    <div class="video-wrapper" data-video="https://youtu.be/oqeUMuRd3Kw?si=SsadblyE8gpxh-Sf" data-title="Tose naina lage x Dua | Tejas & Mitali Collective">
       <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 1"></div>
-      <div class="video-title"></div>
+      <h2 class="video-title"></h2>
     </div>
 
-    <div class="video-wrapper" data-video="https://www.youtube.com/watch?v=9bZkp7q19f0" data-title="Sample Video 2">
+    <div class="video-wrapper" data-video="https://youtu.be/6vvzvrZS9zk?si=LHC1YiRbzMM301Df" data-title="Sanson ki mala x Teri Deewani | Sufi music by Tejas and Mitali Collective">
       <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 2"></div>
-      <div class="video-title"></div>
+      <h2 class="video-title"></h2>
     </div>
 
-    <div class="video-wrapper" data-video="https://www.youtube.com/watch?v=3JZ_D3ELwOQ" data-title="Sample Video 3">
+    <div class="video-wrapper" data-video="https://youtu.be/qsbSdVCtt7M?si=2U_th5Ttz9LkDrI1" data-title="Ishq hai x Ishq Bina | Tejas & Mitali Collective">
       <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 3"></div>
-      <div class="video-title"></div>
+      <h2 class="video-title"></h2>
     </div>
+
+<div class="video-wrapper" data-video="https://youtu.be/cQzQGlppedo?si=4PYhL0GoZa6LRmqM" data-title="MERE DHOLNA BY TEJAS AND MITALI COLLECTIVE">
+      <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 2"></div>
+      <h2 class="video-title"></h2>
+    </div>
+
+    <div class="video-wrapper" data-video="https://youtu.be/4tihAYtQA4M?si=WS6YnTtDzlmWOzNY" data-title="Lambi Judai - Cover Song | Varsha Singh Dhanoa | Reshma | Echoes of Reshma | Sufiscore |Hero">
+      <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 3"></div>
+      <h2 class="video-title"></h2>
+    </div>
+
 
   </div>
 
@@ -667,12 +678,13 @@ lazyLoadImage(1);
   <div class="modal" id="videoModal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true">
       <button class="close-btn" id="closeModal" aria-label="Close video">×</button>
-      <iframe id="videoFrame" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <iframe id="videoFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
 </section>
 
 <style>
+ 
   .video-grid {
     display: grid;
     gap: 20px;
@@ -707,8 +719,6 @@ lazyLoadImage(1);
     overflow: hidden;
   }
 
-  
-
   .video-thumb {
     width: 100%;
     aspect-ratio: 16/9;
@@ -716,12 +726,14 @@ lazyLoadImage(1);
     display: block;
   }
 
-  .video-title {
+  h2.video-title {
     margin-top: 10px;
     text-align: center;
-    font-size: 16px;
     font-weight: bold;
-    color: #333;
+    text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
   }
 
   .modal {
@@ -772,6 +784,18 @@ lazyLoadImage(1);
     cursor: pointer;
     font-weight: bold;
     padding: 6px 10px;
+  }
+  .video-section {
+    padding: 0 70px;
+  }
+@media (max-width: 768px) {
+    .video-section {
+      padding: 0 50px;
+    }
+  @media (max-width: 600px) {
+    .video-section {
+      padding: 0 20px;
+    }
   }
 </style>
 
@@ -862,6 +886,7 @@ lazyLoadImage(1);
     if (e.key === 'Escape' && modal.classList.contains('show')) closeVideo();
   });
 </script>
+
 
 
 
