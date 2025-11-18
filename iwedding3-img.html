@@ -27,10 +27,9 @@
   }
 
   body {
-	 background-color: #e6dccf ;/* #ece4da */
+	 background-color: #ece4da;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-letter-spacing:1.5px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -105,235 +104,60 @@ section {
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 </style>
-<style>
-.logo-side-text{
-color:white;
-letter-spacing:5px;
-font-size:12px;
-font-family: 'Lato', sans-serif;
-font-weight:500;
-}
- @media (max-width: 768px) {
-.logo-side-text {
-  letter-spacing:4px;
-font-size:10px;
-font-family: 'Lato', sans-serif;
-font-weight:500;
-}
-}
-</style>
 </head>
 <body>
 <!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
-<nav class="navbar" id="mainNavbar">
-  <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-      <img alt="Logo" id="siteLogo" src="rangat-logo.png" />
-      <span class="align-self-end logo-side-text" id="toggleText">BY SUMAN MISHRA</span>
-    </a>
-    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
 
-<!-- Right-side slide menu -->
-<div class="custom-drawer" id="customDrawer">
-  <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
-  <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="wedding.html">WEDDINGS</a></li>
-    <!-----<li class="nav-item dropdown">------->
-      <!-----<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">PORTFOLIO</a>------->
-      <!-----<ul class="dropdown-menu">------->
-       <!----- <li><a class="dropdown-item" href="weddinggallery.html">Wedding</a></li>------->
-        <!-----<li><a class="dropdown-item" href="culturegallery.html">Culture</a></li>------->
-        <!-----<li><a class="dropdown-item" href="travelgallery.html">Travel</a></li>------->
-        <!-----<li><hr class="dropdown-divider" /></li>------->
-        <!-----<li><a class="dropdown-item" href="gallery.html">Gallery</a></li>------->
-      <!-----</ul>------->
-    <!-----</li>------->
-    <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
-    <li class="nav-item" style="display:none"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
-    <li class="nav-item" style="display:none"><a class="nav-link" href="culture.html">CULTURE</a></li>
-    <li class="nav-item" style="display:none"><a class="nav-link" href="docu.html">DOCU</a></li>
-    <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
-    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-  </ul>
-  <div class="social-icons d-flex gap-3 mt-4 justify-content-center">
-    <a class="text-dark" href="#"><i class="fab fa-facebook fa-lg"></i></a>
-    <a class="text-dark" href="#"><i class="fab fa-instagram fa-lg"></i></a>
-    <a class="text-dark" href="#"><i class="fab fa-twitter fa-lg"></i></a>
-  </div>
-</div>
 
+
+<!-- Back Button -->
+<button id="backButton" class="back-button" onclick="history_back()">&larr; Back</button>
+
+<!-- CSS Styles -->
 <style>
-#mainNavbar {
-  position: absolute; /* positioned over hero section */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000; /* keeps it above hero content */
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-/* Always show hamburger */
-.navbar-toggler {
-  display: block !important;
-  border: none;
-  background: none;
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-  content: "";
+.back-button {
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
-}
-
-.navbar-toggler-icon {
-  position: relative;
-  width: 24px;
-  height: 14px;
-  display: inline-block;
-  background: none;
-}
-
-.navbar-toggler-icon::before {
-  top: 0;
-}
-
-.navbar-toggler-icon::after {
-  bottom: 0;
-}
-
-/* X toggle animation */
-.navbar-toggler.active .navbar-toggler-icon::before {
-  transform: rotate(45deg);
-  top: 6px;
-}
-.navbar-toggler.active .navbar-toggler-icon::after {
-  transform: rotate(-45deg);
-  bottom: 6px;
-}
-
-/* Custom drawer styles */
-.custom-drawer {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 300px;
-  height: 100%;
-  background-color: #ece4da;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-  padding: 60px 20px 20px;
-  transition: right 0.4s ease;
-  z-index: 1050;
-  overflow-y: auto;
-}
-
-.custom-drawer.open {
-  right: 0;
-}
-
-.custom-drawer .nav-link {
-  color: var(--dark-color);
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-.custom-drawer .dropdown-menu {
-  background-color: #f8f4ef;
-  border: none;
-  box-shadow: none;
-  margin-top: 0.5rem;
-}
-
-
-
-
-
-#siteLogo {
-  height: 60px;
-  margin-right: 10px;
-}
-.drawer-close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #000;
+  top: 20px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 26px;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 11000;  /* Very high to ensure it's on top */
+  pointer-events: auto;  /* Ensure clicks are registered */
+  transition: background-color 0.3s ease;
 }
-
-.drawer-close-btn:hover {
-  color: #555;
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+color:black;
 }
-
-
-@media (max-width: 768px) {
-  #siteLogo {
-    height: 50px;
-  }
-  .custom-drawer {
-    width: 70%;
+@media (max-width: 992px) {
+  .back-button {
+    top: 20px;
+    left: 15px;
   }
 }
-
 </style>
+
+<!-- JavaScript Function -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggler = document.querySelector(".navbar-toggler");
-  const drawer = document.getElementById("customDrawer");
-  const body = document.body;
-  const closeBtn = document.getElementById("drawerCloseBtn");
-
-  function closeDrawer() {
-    toggler.classList.remove("active");
-    drawer.classList.remove("open");
-    body.classList.remove("drawer-open");
-  }
-
-  toggler.addEventListener("click", function () {
-    toggler.classList.toggle("active");
-    drawer.classList.toggle("open");
-    body.classList.toggle("drawer-open");
-  });
-
-  closeBtn.addEventListener("click", function () {
-    closeDrawer();
-  });
-
-  // Optional: close drawer when clicking outside
-  document.addEventListener("click", function (e) {
-    if (
-      !drawer.contains(e.target) &&
-      !toggler.contains(e.target) &&
-      drawer.classList.contains("open")
-    ) {
-      closeDrawer();
-    }
-  });
-
-  // Navbar background change on scroll
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("mainNavbar");
-    if (window.scrollY > 20) {
-      navbar.classList.add("scrolled");
+function history_back() {
+  try {
+    if (window.history.length > 1) {
+      window.history.back();
     } else {
-      navbar.classList.remove("scrolled");
+      // Fallback: Redirect to home or a specific page
+      window.location.href = '/';  // Change '/' to your desired fallback URL, e.g., 'https://yourwebsite.com'
     }
-  });
-});
-
+  } catch (error) {
+    // In case history.back() fails (e.g., browser restrictions), force redirect
+    console.error("History back failed:", error);
+    window.location.href = '/';
+  }
+}
 </script>
 
 
@@ -344,9 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- SLIDES -->
     <div class="slider" id="slider">
-      <div class="slide active"><img src="wedding1.jpg" alt="1"></div>
-      <div class="slide"><img src="wedding2.jpg" alt="2"></div>
-      <div class="slide"><img src="wedding3.jpg" alt="3"></div>
+      <div class="slide active"><img src="i3wedding3.jpg" alt="1"></div>
+      <div class="slide "><img src="i3wedding1.jpg" alt="2"></div>
+      <div class="slide"><img src="i3wedding15.jpg" alt="3"></div>
+
     </div>
 
     <!-- DOT INDICATORS -->
@@ -601,304 +426,198 @@ lazyLoadImage(1);
 
 
 
+<section class="py-5" id="services1">
+  <div class="container">
 
-
-
-
-<!------------------------------------------------------------------------ Wedding Section ---------------------------------------------------------------------->
-
-<section class="all-gallery-section all-gallery-container" >
-  <h2 class="all-gallery-heading">WEDDINGS <span></span></h2>
-<p class="all-gallery-subheading">Wedding photography is the delicate craft of capturing love as it unfolds—each frame painted with soft emotions, whispered promises, and the magic that lingers in the air.</p>
-  
-  
-  <div class="all-gallery-categories" style="display:none;">
-    <button class="all-gallery-category-btn active" data-category="all">All</button>
-    <button class="all-gallery-category-btn" data-category="indian">Indian</button>
-    <button class="all-gallery-category-btn" data-category="vedic">Vedic</button>
-    <button class="all-gallery-category-btn" data-category="destination">Destination</button>
-    <button class="all-gallery-category-btn" data-category="modern">Modern</button>
-    <button class="all-gallery-category-btn" data-category="royal">Royal</button>
-    <button class="all-gallery-category-btn" data-category="traditional">Traditional</button>
-  </div>
-
-  <div class="all-gallery-grid">
-<!-- First -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="indian">
-      <a href="iwedding1-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i1wedding5.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding1-img.html">KULVINDER & ISHA</a></h3>
-      </div>
+		<p style="margin-bottom:4px;">JAIPUR</p>
+    <div class="section-header">
+      <h2 class="fw-bold">JAHNAVI & JANMASTAMI <!---<span style="color:red">Highlights</span>---></h2>
     </div>
-<!-- Second -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="destination">
-      <a href="iwedding2-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i2wedding9.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding2-img.html">SANAT & RUPALI</a></h3>
-      </div>
-    </div>
-<!-- Third -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="vedic">
-      <a href="iwedding3-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i3wedding15.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding3-img.html">JAHNAVI & JANMASTAMI</a></h3>
-      </div>
-    </div>
-<!-- Fourth -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="modern">
-      <a href="iwedding4-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i4wedding1.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding4-img.html">Cinematic Excellence</a></h3>
-      </div>
-    </div>
-<!-- Fifth -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="royal">
-      <a href="iwedding5-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i5wedding1.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding5-img.html">Paradise Weddings</a></h3>
-      </div>
-    </div>
-<!-- Sixth -->
-    <!-- Indian -->
-    <div class="all-gallery-card" data-category="traditional">
-      <a href="iwedding6-img.html" class="all-gallery-image-link">
-        <div class="all-gallery-image-wrapper">
-          <img src="i6wedding1.jpg" alt="Indian Wedding" />
-        </div>
-      </a>
-      <div class="all-gallery-card-text">
-        <p class="all-gallery-subtitle"></p>
-        <h3><a href="iwedding6-img.html">Vedic Rituals</a></h3>
-      </div>
-    </div>
-  </div>
+</div>
 </section>
+<style>
+#services1 {
+      padding: 10px 0;
+      background-color: #ece4da;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between; /* Left & right alignment */
+  align-items: center;
+  padding-bottom: 0px;
+}
+    }
+</style>
+<!--------------------------------------------------------- Gallery Section ---------------------------------------------------------------------->
+
+
+<!----------------------------------------------------  Gallery Section--------------------------------------------------------->
+
+<!----<h2 class="text-center fw-bold " style="padding-bottom:10px;margin-top:0px;color:black">Gallery <span style="color:red"></span></h2>---->
+
+<div class="individual-gallery">
+
+<img src="i3wedding1.jpg" alt="">
+<img src="i3wedding2.jpg" alt="">
+<img src="i3wedding3.jpg" alt="">
+<img src="i3wedding4.jpg" alt="">
+<img src="i3wedding5.jpg" alt="">
+<img src="i3wedding6.jpg" alt="">
+<img src="i3wedding7.jpg" alt="">
+<img src="i3wedding8.jpg" alt="">
+<img src="i3wedding9.jpg" alt="">
+<img src="i3wedding10.jpg" alt="">
+<img src="i3wedding11.jpg" alt="">
+<img src="i3wedding12.jpg" alt="">
+<img src="i3wedding13.jpg" alt="">
+<img src="i3wedding14.jpg" alt="">
+</div>
+
+<div id="individual-lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxLabel">
+  <button id="individual-closeBtn" aria-label="Close">&times;</button>
+  <img id="individual-lightboxImage" src="" alt="Popup Image" />
+  <div class="individual-nav-buttons">
+    <button id="individual-prevBtn" aria-label="Previous Image">&#8592; Prev</button>
+    <button id="individual-nextBtn" aria-label="Next Image">Next &#8594;</button>
+  </div>
+</div>
 
 <style>
-/* Container */
-/* Decorative lines above each image card */
-.all-gallery-card {
-  position: relative;
-  padding-top: 10px; /* space for the lines */
+.individual-gallery {
+    column-count: 4;
+    column-gap: 5px;
+    padding: 0px 60px;
+    box-sizing: border-box;
 }
 
-.all-gallery-card::before,
-.all-gallery-card::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #bfa67a; /* gold-like line color */
-  border-radius: 2px;
+@media (max-width: 900px) {
+    .individual-gallery {
+        column-count: 3;
+        padding: 0px 20px;
+    }
 }
 
-.all-gallery-card::before {
-  top: 0;
-  width: 80%;
-  height: 2px;
-  background-color: #d8c6a3; /* lighter top line */
+@media (max-width: 600px) {
+    .individual-gallery {
+        column-count: 2;
+        padding: 0px 15px;
+    }
 }
 
-.all-gallery-card::after {
-  top: 5px;
-  width: 90%;
-  height: 2px;
-  background-color: #bfa67a; /* darker lower line */
-}
-
-.all-gallery-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-.all-gallery-heading {
-  text-align: center;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-}
-
-.all-gallery-heading span {
-  font-weight: normal;
-  font-size: 1rem;
-  color: #555;
-}
-.all-gallery-subheading {
-  text-align: center;
-  font-size: 1rem;
-  color: #666;
-  margin-top: -5px;
-  margin-bottom: 20px;
-}
-/* Scrollable category tabs */
-.all-gallery-categories {
-  display: flex;
-  gap: 5px;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding: 10px 0;
-  margin-bottom: 2rem;
-  scrollbar-width: none; /* Firefox */
-}
-
-.all-gallery-categories::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
-.all-gallery-category-btn {
-  flex: 0 0 auto;
-  background: none;
-  border: none;
-  padding: 4px 12px;
-  font-size: 1rem;
-  border-radius: 20px;
-  transition: background 0.3s ease;
-  color: #555;
-}
-
-.all-gallery-category-btn.active,
-.all-gallery-category-btn:hover {
-  background: #c9b08b;
-  color: white;
-}
-
-/* Grid Layout */
-.all-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* Card */
-.all-gallery-card {
-  text-align: center;
-}
-
-/* Image Box */
-.all-gallery-image-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 3; /* width:height = 4:3 */
-  border-radius: 12px;
-  overflow: hidden;
-  background: #f8f4ef;
-  transition: transform 0.3s ease;
+.individual-gallery img {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    cursor: pointer; 
 }
 
 
-.all-gallery-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* Lightbox Styling */
+#individual-lightboxModal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#individual-lightboxModal img {
+    max-width: 90%;
+    max-height: 75vh;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+#individual-closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    border: none;
 }
 
 
-
-/* Tablet */
-@media (max-width: 1024px) {
-  .all-gallery-image-wrapper {
-    
+.individual-nav-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 90vw;
   }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .all-gallery-image-wrapper {  }
-.all-gallery-container {
-  padding: 40px;
-}
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-  .all-gallery-image-wrapper {
-    
-  }
-}
-
-/* Text Below Image */
-.all-gallery-card-text {
-  margin-top: 10px;
-}
-
-.all-gallery-subtitle {
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #8a7a63;
-  margin: 0;
-}
-
-.all-gallery-card-text h3 {
-  margin: 5px 0 0;
-  font-size: 1.2rem;
-}
-
-.all-gallery-card-text a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.all-gallery-card-text a:hover {
-  color: #a67c52;
+  .individual-nav-buttons button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  } background: #ddd;
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.all-gallery-category-btn');
-  const cards = document.querySelectorAll('.all-gallery-card');
+  const individualGalleryImages = document.querySelectorAll('.individual-gallery img');
+  const individualLightboxModal = document.getElementById('individual-lightboxModal');
+  const individualLightboxImage = document.getElementById('individual-lightboxImage');
+  const individualCloseBtn = document.getElementById('individual-closeBtn');
+  const individualPrevBtn = document.getElementById('individual-prevBtn');
+  const individualNextBtn = document.getElementById('individual-nextBtn');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  let individualCurrentIndex = 0;
 
-      const category = btn.dataset.category;
+  function individualShowLightbox(index) {
+    individualCurrentIndex = index;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+    individualLightboxModal.style.display = 'flex';
+    individualLightboxModal.setAttribute('aria-hidden', 'false');
+  }
 
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+  individualGalleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      individualShowLightbox(index);
     });
   });
-});
+
+  individualNextBtn.addEventListener('click', () => {
+    individualCurrentIndex = (individualCurrentIndex + 1) % individualGalleryImages.length;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+  });
+
+  individualPrevBtn.addEventListener('click', () => {
+    individualCurrentIndex = (individualCurrentIndex - 1 + individualGalleryImages.length) % individualGalleryImages.length;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+  });
+
+  individualCloseBtn.addEventListener('click', () => {
+    individualLightboxModal.style.display = 'none';
+    individualLightboxModal.setAttribute('aria-hidden', 'true');
+  });
+
+  individualLightboxModal.addEventListener('click', (e) => {
+    if (e.target === individualLightboxModal) {
+      individualLightboxModal.style.display = 'none';
+      individualLightboxModal.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      individualLightboxModal.style.display = 'none';
+      individualLightboxModal.setAttribute('aria-hidden', 'true');
+    }
+  });
 </script>
-<!------------------------------------------------------------------------------------------------------------------------------------>
-
-
 
 
 
@@ -1166,6 +885,7 @@ margin-left:-20px;
   }
 }
 </style>
+
 
 
 
