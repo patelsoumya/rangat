@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Fashion @rangatfilms</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<style>
+:root {
+    --primary-color: #a3b18a;
+    --secondary-color: #dad7cd;
+    --dark-color: #344e41;
+    --accent-color: #C37656;
+    --highlight-color: #3a5a40;
+    --button-bg-color: #C37656;
+    --heading-color: #624332; /* Sage Light Scheme - Headings */
+  }
+
+  body {
+	 background-color: #e6dccf ;/* #ece4da */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+letter-spacing:1.5px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    color: var(--heading-color);
+  }
+span{
+font-family: 'Antic Didone', serif;
+}
+  .lead {
+    font-family: 'Antic Didone', serif;
+    font-weight: 300;
+    color: var(--heading-color);
+  }
+
+  p {
+    font-family: 'Antic Didone', sans-serif;
+    font-weight: 300;
+	line-height: 1.8;
+	font-size: 1rem;
+  	margin-bottom: 1em;
+ 
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-success {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    background-color: var(--button-bg-color);
+    border: none;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-success:hover {
+    background-color: #a3543a;
+  }
+/*  Change to other */
+
+body.no-scroll {
+	overflow: hidden;
+}
+section {
+	position: relative;
+	overflow: hidden;
+}
+        /* Animations */
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.5s ease; /* transition: opacity 0.8s ease, transform 0.8s ease; */
+}
+.fade-in.show {
+	opacity: 1;
+	transform: translateY(0);
+}  
+
+/************************************ Button Primary and  *************************/
+.btn-primary {
+	background-color: var(--accent-color);
+	border: none;
+	padding: 12px 30px;
+	border-radius: 30px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+.btn-primary:hover {
+	background-color: var(--primary-color);
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
+<style>
+.logo-side-text{
+color:white;
+letter-spacing:5px;
+font-size:12px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+ @media (max-width: 768px) {
+.logo-side-text {
+  letter-spacing:4px;
+font-size:10px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+}
+</style>
+</head>
+<body>
+<!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
+<nav class="navbar" id="mainNavbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img alt="Logo" id="siteLogo" src="rangat-logo.png" />
+      <span class="align-self-end logo-side-text" id="toggleText">BY SUMAN MISHRA</span>
+    </a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Right-side slide menu -->
+<div class="custom-drawer" id="customDrawer">
+  <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="wedding.html">WEDDINGS</a></li>
+    <!-----<li class="nav-item dropdown">------->
+      <!-----<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">PORTFOLIO</a>------->
+      <!-----<ul class="dropdown-menu">------->
+       <!----- <li><a class="dropdown-item" href="weddinggallery.html">Wedding</a></li>------->
+        <!-----<li><a class="dropdown-item" href="culturegallery.html">Culture</a></li>------->
+        <!-----<li><a class="dropdown-item" href="travelgallery.html">Travel</a></li>------->
+        <!-----<li><hr class="dropdown-divider" /></li>------->
+        <!-----<li><a class="dropdown-item" href="gallery.html">Gallery</a></li>------->
+      <!-----</ul>------->
+    <!-----</li>------->
+    <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="culture.html">CULTURE</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="docu.html">DOCU</a></li>
+    <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+  </ul>
+  <div class="social-icons d-flex gap-3 mt-4 justify-content-center">
+    <a class="text-dark" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+  </div>
+</div>
+
+<style>
+#mainNavbar {
+  position: absolute; /* positioned over hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* keeps it above hero content */
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+/* Always show hamburger */
+.navbar-toggler {
+  display: block !important;
+  border: none;
+  background: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  width: 24px;
+  height: 14px;
+  display: inline-block;
+  background: none;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+/* X toggle animation */
+.navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 6px;
+}
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 6px;
+}
+
+/* Custom drawer styles */
+.custom-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #ece4da;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  transition: right 0.4s ease;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.custom-drawer.open {
+  right: 0;
+}
+
+.custom-drawer .nav-link {
+  color: var(--dark-color);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.custom-drawer .dropdown-menu {
+  background-color: #f8f4ef;
+  border: none;
+  box-shadow: none;
+  margin-top: 0.5rem;
+}
+
+
+
+
+
+#siteLogo {
+  height: 60px;
+  margin-right: 10px;
+}
+.drawer-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.drawer-close-btn:hover {
+  color: #555;
+}
+
+
+@media (max-width: 768px) {
+  #siteLogo {
+    height: 50px;
+  }
+  .custom-drawer {
+    width: 70%;
+  }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+  const drawer = document.getElementById("customDrawer");
+  const body = document.body;
+  const closeBtn = document.getElementById("drawerCloseBtn");
+
+  function closeDrawer() {
+    toggler.classList.remove("active");
+    drawer.classList.remove("open");
+    body.classList.remove("drawer-open");
+  }
+
+  toggler.addEventListener("click", function () {
+    toggler.classList.toggle("active");
+    drawer.classList.toggle("open");
+    body.classList.toggle("drawer-open");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    closeDrawer();
+  });
+
+  // Optional: close drawer when clicking outside
+  document.addEventListener("click", function (e) {
+    if (
+      !drawer.contains(e.target) &&
+      !toggler.contains(e.target) &&
+      drawer.classList.contains("open")
+    ) {
+      closeDrawer();
+    }
+  });
+
+  // Navbar background change on scroll
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("mainNavbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+});
+
+</script>
+
+
+<!---------------------------------------------------------------- Hero Section ---------------------------------------------------------------------->
+
+<section class="parallex-hero" id="hero">
+  <div class="slider-wrapper">
+
+    <!-- SLIDES -->
+    <div class="slider" id="slider">
+      <div class="slide active"><img src="fashion1.jpg" alt="1"></div>
+      <div class="slide"><img src="fashion2.jpg" alt="2"></div>
+      <div class="slide"><img src="fashion3.jpg" alt="3"></div>
+    </div>
+
+    <!-- DOT INDICATORS -->
+    <div class="slider-dots" id="slider-dots"></div>
+
+    <!-- ARROWS -->
+    <div class="slider-arrows">
+      <div class="arrow prev"><i class="fa fa-chevron-left"></i></div>
+      <div class="arrow next"><i class="fa fa-chevron-right"></i></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* HERO BASE */
+#hero-title { color:white; }
+#hero { margin-top: 0; }
+
+.parallex-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* SLIDER CONTAINER */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* SLIDES */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* BASE STATE — all slides are visible but transparent */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  transform: translateX(0px);
+  transition: transform 1.2s ease;
+  z-index: 0;
+}
+
+/* ACTIVE SLIDE — fades in smoothly */
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;   /* sits ON TOP during fade */
+}
+
+/* LAST ACTIVE SLIDE — also stays on screen shortly to avoid blinking */
+.slide.fade-out {
+  opacity: 0;
+  transform: translateX(0px); /* optional smooth push */
+  z-index: 1;
+  transition: transform 1.2s ease;
+}
+
+
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* DOTS */
+.slider-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 4;
+}
+
+/* DOTS */
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  transform: scale(1); /* all dots small by default */
+}
+
+.slider-dots .dot.active {
+  background: white;
+  transform: scale(1.2); /* only active dot is big */
+}
+
+
+/* ARROWS */
+.slider-arrows {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  padding: 0 25px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  /*background: rgba(0,0,0,0.4);*/
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  pointer-events: all;
+  transition: 0.3s ease;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.3);
+  transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content p { padding: 0 15px; }
+.slider-arrows{display:none;}
+.parallex-hero {
+  height: 80vh;
+}
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const dotsContainer = document.getElementById("slider-dots");
+  const prevBtn = document.querySelector(".arrow.prev");
+  const nextBtn = document.querySelector(".arrow.next");
+  const heroTitle = document.getElementById("hero-title");
+  const heroDesc = document.getElementById("hero-description");
+
+  let currentIndex = 0;
+
+  /* LAZY-LOAD IMAGES */
+  /* LAZY-LOAD IMAGES */
+function lazyLoadImage(index) {
+  const img = slides[index].querySelector("img");
+  if (!img.src) img.src = img.dataset.src;
+}
+
+// Load first two images immediately
+lazyLoadImage(0);
+lazyLoadImage(1);
+
+
+  /* CREATE DOTS */
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    if (i === 0) dot.classList.add("active");
+    dot.dataset.index = i;
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  /* SHOW SLIDE */
+  function showSlide(index) {
+    lazyLoadImage(index);
+
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+
+    
+
+    setTimeout(() => {
+    }, 200);
+  }
+
+  /* NEXT / PREV */
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  /* AUTOPLAY */
+  let autoPlay = setInterval(nextSlide, 7000);
+  const restartAuto = () => {
+    clearInterval(autoPlay);
+    autoPlay = setInterval(nextSlide, 7000);
+  };
+
+  /* ARROWS CLICK */
+  nextBtn.addEventListener("click", () => { nextSlide(); restartAuto(); });
+  prevBtn.addEventListener("click", () => { prevSlide(); restartAuto(); });
+
+  /* DOTS CLICK */
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      currentIndex = Number(dot.dataset.index);
+      showSlide(currentIndex);
+      restartAuto();
+    });
+  });
+
+  /* TOUCH SWIPE */
+  let startX = 0, endX = 0;
+  const slider = document.getElementById("slider");
+
+  slider.addEventListener("touchstart", e => (startX = e.touches[0].clientX));
+  slider.addEventListener("touchmove", e => (endX = e.touches[0].clientX));
+
+  slider.addEventListener("touchend", () => {
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
+    restartAuto();
+  });
+});
+</script>
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------ Fashion Section ---------------------------------------------------------------------->
+
+<section class="all-gallery-section all-gallery-container">
+  <h2 class="all-gallery-heading">FASHION <span></span></h2>
+  <p class="all-gallery-subheading">Fashion Photography is a visual language that celebrates imagination—turning textures, colors, and silhouettes into powerful stories. With each shot, fashion photography elevates garments beyond fabric, showcasing the personality and emotion behind the style.</p>
+</section>
+
+<style>
+.all-gallery-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.all-gallery-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.all-gallery-heading span {
+  font-weight: normal;
+  font-size: 1rem;
+  color: #555;
+}
+
+.all-gallery-subheading {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 20px;
+}
+</style>
+
+<!------------------------------------------------------------------------------------------------------------------------------------>
+
+<section class="video-section">
+  <div class="video-grid">
+
+    <div class="video-wrapper" data-video="https://youtu.be/oqeUMuRd3Kw?si=cJQ9IK41FDeMFecs" data-title="Sample Video 1">
+      <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 1"></div>
+      <div class="video-title"></div>
+    </div>
+
+    <div class="video-wrapper" data-video="https://www.youtube.com/watch?v=9bZkp7q19f0" data-title="Sample Video 2">
+      <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 2"></div>
+      <div class="video-title"></div>
+    </div>
+
+    <div class="video-wrapper" data-video="https://www.youtube.com/watch?v=3JZ_D3ELwOQ" data-title="Sample Video 3">
+      <div class="video-card" role="button" tabindex="0" aria-label="Play Sample Video 3"></div>
+      <div class="video-title"></div>
+    </div>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="close-btn" id="closeModal" aria-label="Close video">×</button>
+      <iframe id="videoFrame" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .video-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1024px) {
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .video-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .video-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    overflow: hidden;
+  }
+
+  
+
+  .video-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .video-title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  .modal.show {
+    display: flex;
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 900px;
+    background: #000;
+    border-radius: 10px;
+    position: relative;
+    padding: 0;
+  }
+
+  .modal iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    border: none;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 6px 10px;
+  }
+</style>
+
+<script>
+  // Helper: safely extract YouTube ID from various URL formats
+  function extractYouTubeID(url) {
+    if (!url) return null;
+    // handle embed URLs too
+    const patterns = [
+      /(?:v=|vi=)([A-Za-z0-9_-]{11})/, // v= or vi=
+      /(?:youtu\.be\/)([A-Za-z0-9_-]{11})/, // youtu.be/
+      /(?:embed\/)([A-Za-z0-9_-]{11})/, // embed/
+      /([A-Za-z0-9_-]{11})/ // fallback: any 11-char id
+    ];
+
+    for (const re of patterns) {
+      const m = url.match(re);
+      if (m && m[1]) return m[1];
+    }
+    return null;
+  }
+
+  const wrappers = document.querySelectorAll('.video-wrapper');
+  const modal = document.getElementById('videoModal');
+  const videoFrame = document.getElementById('videoFrame');
+  const closeModal = document.getElementById('closeModal');
+
+  wrappers.forEach(wrapper => {
+    const videoURL = wrapper.getAttribute('data-video');
+    const titleText = wrapper.getAttribute('data-title') || '';
+    const videoID = extractYouTubeID(videoURL);
+
+    const card = wrapper.querySelector('.video-card');
+    const titleEl = wrapper.querySelector('.video-title');
+
+    // set title text
+    titleEl.textContent = titleText;
+
+    if (videoID) {
+      const thumb = document.createElement('img');
+      thumb.className = 'video-thumb';
+      // use maxresdefault when available, fallback to hqdefault
+      thumb.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+      // If maxres not available the image will be a 120x90 placeholder; swap to hqdefault on error
+      thumb.onerror = () => { thumb.src = `https://img.youtube.com/vi/${videoID}/hqdefault.jpg`; };
+
+      card.appendChild(thumb);
+
+      // click / keyboard handlers on card
+      const openModal = () => {
+        videoFrame.src = `https://www.youtube.com/embed/${videoID}?autoplay=1&rel=0`; // rel=0 to avoid related videos from other channels
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+      };
+
+      card.addEventListener('click', openModal);
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(); } });
+    } else {
+      // no valid video ID: show a friendly placeholder
+      const placeholder = document.createElement('div');
+      placeholder.style.display = 'flex';
+      placeholder.style.alignItems = 'center';
+      placeholder.style.justifyContent = 'center';
+      placeholder.style.height = '100%';
+      placeholder.style.padding = '40px';
+      placeholder.textContent = 'Video unavailable';
+      card.appendChild(placeholder);
+    }
+  });
+
+  // Close handlers
+  function closeVideo() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    // stop video
+    videoFrame.src = '';
+  }
+
+  closeModal.addEventListener('click', closeVideo);
+
+  // click outside to close
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeVideo();
+  });
+
+  // Esc key closes modal
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeVideo();
+  });
+</script>
+
+
+
+<!-----------------------------------------------------------------------Enquiry Section ----------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------Footer Section ----------------------------------------------------------------------->
+<footer class="footer">
+  <!-- Top Row -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="rangat-logo2.png" alt="Rangat Films Logo">
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fa-solid fa-phone"></i> +91 1234567890 </a>
+      <a href="#"><i class="fa-solid fa-envelope"></i>  just.chill@123.com</a>
+    </div>
+    <div class="footer-copy">
+  &copy; <span id="currentYear" style=" font-family: 'Lato', sans-serif;"></span> Soumya Patel. All rights reserved
+</div>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+  </div>
+</footer>
+
+
+<style>
+.footer {
+  background: #fff;
+  padding: 20px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Top Row ---------- */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-socials a {
+  color: #001f54;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #3a68ff;
+}
+
+/* ---------- Bottom Row ---------- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #555;
+  gap: 10px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-links a {
+  color: #555;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+padding-left:0px;
+padding-right:0px;
+  }
+.footer-bottom {
+padding-left:0px;
+padding-right:0px;
+}
+  .footer-socials {
+    margin-top: 10px;
+margin-left:-20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<!-----------------------------------------------------------------------JS Section ----------------------------------------------------------------------->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+<!-- Custom JS -->
+<script>
+   // Navbar scroll effect for minimalist navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar'); 
+            if (navbar) { 
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+        // specially used for About text
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Check if slides exist before trying to access elements
+            if (slides.length > 0) {
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+        }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        // Auto slide change every 5 seconds - only if slides exist
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
+
+        
+        // Lightbox for gallery (existing functionality)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        closeLightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Scroll animation (existing functionality)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+
+            // Animate service cards with staggered delay
+            serviceCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100 && !card.classList.contains('show')) {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 200); // 200ms delay between each card
+                }
+            });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+// Smooth scrolling for anchor links (existing functionality)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+  </script>
+<style>
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; /* start hidden */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 99999;
+    transition: right 0.5s ease, transform 0.2s;
+    font-size: 28px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    #whatsapp-button {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      bottom: 15px;
+      right: -80px;
+    }
+  }
+
+  /* Tooltip bubble */
+  #whatsapp-tooltip {
+    position: fixed;
+    bottom: 90px; /* will adjust via JS also */
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 100000;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    font-size: 14px;
+  }
+
+  /* Chat bubble curved tail */
+  #whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* tip height */
+    right: 12px;  /* align tail with button */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8px 0 8px; /* triangle shape */
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.05));
+  }
+
+  /* Responsive tooltip */
+  @media (max-width: 480px) {
+    #whatsapp-tooltip {
+      bottom: 80px;
+      font-size: 13px;
+      padding: 9px 12px;
+    }
+  }
+
+  .slide-in {
+    right: 20px !important;
+  }
+  .show-tooltip {
+    opacity: 1 !important;
+  }
+
+#whatsapp-button,
+#whatsapp-tooltip {
+    transition: opacity 0.3s ease;
+}
+
+.hide-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+
+<div id="whatsapp-button" onclick="openWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</div>
+<div id="whatsapp-tooltip">Chat with us!</div>
+
+<script>
+  function openWhatsApp() {
+    const phoneNumber = "1234567890";
+    const message = "Hello! I want to chat with you.";
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    /* Slide-in the button */
+    setTimeout(() => button.classList.add("slide-in"), 300);
+
+    /* Show tooltip after 2 seconds */
+    setTimeout(() => {
+      tooltip.classList.add("show-tooltip");
+      positionTooltip();
+    }, 2000);
+
+    /* Hide tooltip after 5 seconds */
+    setTimeout(() => tooltip.classList.remove("show-tooltip"), 15000);
+
+    /* Reposition tooltip on resize */
+    window.addEventListener("resize", positionTooltip);
+  });
+
+  /* Always keep tooltip just above the button */
+  function positionTooltip() {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    const rect = button.getBoundingClientRect();
+
+    tooltip.style.bottom = (window.innerHeight - rect.top + 10) + "px";
+    tooltip.style.right = (window.innerWidth - rect.right) + "px";
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wpBtn = document.getElementById("whatsapp-button");
+    const wpTip = document.getElementById("whatsapp-tooltip");
+
+    function hideWhatsapp() {
+        wpBtn.classList.add("hide-whatsapp");
+        wpTip.classList.add("hide-whatsapp");
+    }
+
+    function showWhatsapp() {
+        wpBtn.classList.remove("hide-whatsapp");
+        wpTip.classList.remove("hide-whatsapp");
+    }
+
+    /* ---  Reel Modal Detect Open/Close --- */
+    const reelModal = document.getElementById("reelModal");
+
+    new MutationObserver(() => {
+        reelModal.classList.contains("active") ? hideWhatsapp() : showWhatsapp();
+    }).observe(reelModal, { attributes: true, attributeFilter: ["class"] });
+
+
+    /* ---  Bootstrap Modals --- */
+    document.addEventListener("show.bs.modal", hideWhatsapp);
+    document.addEventListener("hidden.bs.modal", showWhatsapp);
+
+
+    /* --- Custom Drawer Detect Open/Close --- */
+    const drawer = document.getElementById("customDrawer");
+
+    new MutationObserver(() => {
+        drawer.classList.contains("open") ? hideWhatsapp() : showWhatsapp();
+    }).observe(drawer, { attributes: true, attributeFilter: ["class"] });
+
+});
+</script>
+
+</body>
+</html>
