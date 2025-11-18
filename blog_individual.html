@@ -153,9 +153,9 @@ font-weight:500;
       <!-----</ul>------->
     <!-----</li>------->
     <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
-    <li class="nav-item"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
-    <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
-    <li class="nav-item"><a class="nav-link" href="docu.html">DOCU</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="culture.html">CULTURE</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="docu.html">DOCU</a></li>
     <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
   </ul>
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
     </div>
     <div class="hero-content container">
-      <h1 id="hero-title">Where Stories Begin</h1>
+      <h1 id="hero-title"></h1>
     </div>
   </div>
 </section>
@@ -407,18 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
   font-size: clamp(2rem, 5vw, 4rem);
   margin: 0 0 20px 0;
 }
-/* Dark overlay */
-.slider-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  pointer-events: none;
-}
+
 
 @media (max-width: 768px) {
   .parallex-hero {

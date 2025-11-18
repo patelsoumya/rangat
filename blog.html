@@ -153,9 +153,9 @@ font-weight:500;
       <!-----</ul>------->
     <!-----</li>------->
     <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
-    <li class="nav-item"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
-    <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
-    <li class="nav-item"><a class="nav-link" href="docu.html">DOCU</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="culture.html">CULTURE</a></li>
+    <li class="nav-item" style="display:none"><a class="nav-link" href="docu.html">DOCU</a></li>
     <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
   </ul>
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
     </div>
     <div class="hero-content container">
-      <h1 id="hero-title">Where Stories Begin</h1>
+      <h1 id="hero-title"></h1>
     </div>
   </div>
 </section>
@@ -407,18 +407,7 @@ document.addEventListener("DOMContentLoaded", function () {
   font-size: clamp(2rem, 5vw, 4rem);
   margin: 0 0 20px 0;
 }
-/* Dark overlay */
-.slider-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  pointer-events: none;
-}
+
 
 @media (max-width: 768px) {
   .parallex-hero {
@@ -431,10 +420,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <!--------------------------------------------------------- Gallery Section ---------------------------------------------------------------------->
 <section class="blog-section-header">
     <h1>BLOGS</h1>
-    <h2>WEDDING &bull; CINEMATIC &bull; CULTURE</h2>
+    <h2>Explore our blog, where stories unfold beyond the lens. Here, we share behind-the-scenes moments, photography tips, inspirations, and the little details that make each shoot unforgettable. Dive in and explore the art, passion, and journey behind our work.</h2>
   </section>
 
   <section class="blog-card-container">
+
+<!------------------- First ------------------>
     <div class="blog-card">
   <a href="blog_individual.html"><img src="wedding3.jpg" alt="Cinematic Excellence" /></a>
   <div class="blog-card-content">
@@ -447,67 +438,8 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </div>
 
-    <div class="blog-card">
-  <a href="blog_individual.html"><img src="fashion3.jpg" alt="Cinematic Excellence" /></a>
-  <div class="blog-card-content">
-    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
-    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
-    <div class="blog-card-text">
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
-    </div>
-    <a href="blog_individual.html" class="read-more">Read More</a>
-  </div>
-</div>
-
-<div class="blog-card">
-  <a href="blog_individual.html"><img src="fashion4.jpg" alt="Cinematic Excellence" /></a>
-  <div class="blog-card-content">
-    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
-    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
-    <div class="blog-card-text">
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
-         </div>
-    <a href="blog_individual.html" class="read-more">Read More</a>
-  </div>
-</div>
-<div class="blog-card">
-  <a href="blog_individual.html"><img src="fashion6.jpg" alt="Cinematic Excellence" /></a>
-  <div class="blog-card-content">
-    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
-    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
-    <div class="blog-card-text">
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
-         </div>
-    <a href="blog_individual.html" class="read-more">Read More</a>
-  </div>
-</div>
-<div class="blog-card">
-  <a href="blog_individual.html"><img src="culture1.jpg" alt="Cinematic Excellence" /></a>
-  <div class="blog-card-content">
-    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
-    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
-    <div class="blog-card-text">
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
-         </div>
-    <a href="blog_individual.html" class="read-more">Read More</a>
-  </div>
-</div>
-    <div class="blog-card">
-  <a href="blog_individual.html"><img src="wedding2.jpg" alt="Cinematic Excellence" /></a>
-  <div class="blog-card-content">
-    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
-    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
-    <div class="blog-card-text">
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
-      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
-      
-    </div>
-    <a href="blog_individual.html" class="read-more">Read More</a>
-  </div>
-</div>
-  </section>
+    
+</section>
 
 
  <style>
