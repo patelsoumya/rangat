@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Blog @rangatfilms</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<style>
+:root {
+    --primary-color: #a3b18a;
+    --secondary-color: #dad7cd;
+    --dark-color: #344e41;
+    --accent-color: #C37656;
+    --highlight-color: #3a5a40;
+    --button-bg-color: #C37656;
+    --heading-color: #624332; /* Sage Light Scheme - Headings */
+  }
+
+  body {
+	 background-color: #e6dccf ;/* #ece4da */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+letter-spacing:1.5px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    color: var(--heading-color);
+  }
+span{
+font-family: 'Antic Didone', serif;
+}
+  .lead {
+    font-family: 'Antic Didone', serif;
+    font-weight: 300;
+    color: var(--heading-color);
+  }
+
+  p {
+    font-family: 'Antic Didone', sans-serif;
+    font-weight: 300;
+	line-height: 1.8;
+	font-size: 1rem;
+  	margin-bottom: 1em;
+ 
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-success {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    background-color: var(--button-bg-color);
+    border: none;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-success:hover {
+    background-color: #a3543a;
+  }
+/*  Change to other */
+
+body.no-scroll {
+	overflow: hidden;
+}
+section {
+	position: relative;
+	overflow: hidden;
+}
+        /* Animations */
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.5s ease; /* transition: opacity 0.8s ease, transform 0.8s ease; */
+}
+.fade-in.show {
+	opacity: 1;
+	transform: translateY(0);
+}  
+
+/************************************ Button Primary and  *************************/
+.btn-primary {
+	background-color: var(--accent-color);
+	border: none;
+	padding: 12px 30px;
+	border-radius: 30px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+.btn-primary:hover {
+	background-color: var(--primary-color);
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
+<style>
+.logo-side-text{
+color:white;
+letter-spacing:5px;
+font-size:12px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+ @media (max-width: 768px) {
+.logo-side-text {
+  letter-spacing:4px;
+font-size:10px;
+font-family: 'Lato', sans-serif;
+font-weight:500;
+}
+}
+</style>
+</head>
+<body>
+<!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
+<nav class="navbar" id="mainNavbar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+      <img alt="Logo" id="siteLogo" src="rangat-logo.png" />
+      <span class="align-self-end logo-side-text" id="toggleText">BY SUMAN MISHRA</span>
+    </a>
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Right-side slide menu -->
+<div class="custom-drawer" id="customDrawer">
+  <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">&times;</button>
+  <ul class="navbar-nav">
+    <li class="nav-item"><a class="nav-link" href="wedding.html">WEDDINGS</a></li>
+    <!-----<li class="nav-item dropdown">------->
+      <!-----<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown">PORTFOLIO</a>------->
+      <!-----<ul class="dropdown-menu">------->
+       <!----- <li><a class="dropdown-item" href="weddinggallery.html">Wedding</a></li>------->
+        <!-----<li><a class="dropdown-item" href="culturegallery.html">Culture</a></li>------->
+        <!-----<li><a class="dropdown-item" href="travelgallery.html">Travel</a></li>------->
+        <!-----<li><hr class="dropdown-divider" /></li>------->
+        <!-----<li><a class="dropdown-item" href="gallery.html">Gallery</a></li>------->
+      <!-----</ul>------->
+    <!-----</li>------->
+    <li class="nav-item"><a class="nav-link" href="fashion.html">FASHION</a></li>
+    <li class="nav-item"><a class="nav-link" href="portraits.html">PORTRAITS</a></li>
+    <li class="nav-item"><a class="nav-link" href="culture.html">CULTURE</a></li>
+    <li class="nav-item"><a class="nav-link" href="docu.html">DOCU</a></li>
+    <li class="nav-item"><a class="nav-link" href="testimonial.html">TESTIMONIAL</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+  </ul>
+  <div class="social-icons d-flex gap-3 mt-4 justify-content-center">
+    <a class="text-dark" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+    <a class="text-dark" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+  </div>
+</div>
+
+<style>
+#mainNavbar {
+  position: absolute; /* positioned over hero section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* keeps it above hero content */
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+/* Always show hamburger */
+.navbar-toggler {
+  display: block !important;
+  border: none;
+  background: none;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+.navbar-toggler-icon {
+  position: relative;
+  width: 24px;
+  height: 14px;
+  display: inline-block;
+  background: none;
+}
+
+.navbar-toggler-icon::before {
+  top: 0;
+}
+
+.navbar-toggler-icon::after {
+  bottom: 0;
+}
+
+/* X toggle animation */
+.navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 6px;
+}
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 6px;
+}
+
+/* Custom drawer styles */
+.custom-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #ece4da;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+  padding: 60px 20px 20px;
+  transition: right 0.4s ease;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.custom-drawer.open {
+  right: 0;
+}
+
+.custom-drawer .nav-link {
+  color: var(--dark-color);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.custom-drawer .dropdown-menu {
+  background-color: #f8f4ef;
+  border: none;
+  box-shadow: none;
+  margin-top: 0.5rem;
+}
+
+
+
+
+
+#siteLogo {
+  height: 60px;
+  margin-right: 10px;
+}
+.drawer-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.drawer-close-btn:hover {
+  color: #555;
+}
+
+
+@media (max-width: 768px) {
+  #siteLogo {
+    height: 50px;
+  }
+  .custom-drawer {
+    width: 70%;
+  }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggler = document.querySelector(".navbar-toggler");
+  const drawer = document.getElementById("customDrawer");
+  const body = document.body;
+  const closeBtn = document.getElementById("drawerCloseBtn");
+
+  function closeDrawer() {
+    toggler.classList.remove("active");
+    drawer.classList.remove("open");
+    body.classList.remove("drawer-open");
+  }
+
+  toggler.addEventListener("click", function () {
+    toggler.classList.toggle("active");
+    drawer.classList.toggle("open");
+    body.classList.toggle("drawer-open");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    closeDrawer();
+  });
+
+  // Optional: close drawer when clicking outside
+  document.addEventListener("click", function (e) {
+    if (
+      !drawer.contains(e.target) &&
+      !toggler.contains(e.target) &&
+      drawer.classList.contains("open")
+    ) {
+      closeDrawer();
+    }
+  });
+
+  // Navbar background change on scroll
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("mainNavbar");
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+});
+
+</script>
+<!---------------------------------------------------------------- Hero Section ---------------------------------------------------------------------->
+
+
+<section class="parallex-hero" id="hero">
+  <div class="slider-wrapper">
+    <div class="slider" id="slider">
+      <div class="slide"><img src="rangat-photo-7.JPG" alt="1"></div>
+      
+    </div>
+    <div class="hero-content container">
+      <h1 id="hero-title">Where Stories Begin</h1>
+    </div>
+  </div>
+</section>
+
+
+<style>
+#hero-title{color:white;}
+#hero {
+  margin-top: 0;
+}
+
+.parallex-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Container for sliding images */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Slide container */
+.slider {
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Text Content */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin: 0 0 20px 0;
+}
+/* Dark overlay */
+.slider-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .parallex-hero {
+    height: 80vh;
+  }
+}
+</style>
+
+
+<!--------------------------------------------------------- Gallery Section ---------------------------------------------------------------------->
+<section class="blog-section-header">
+    <h1>BLOGS</h1>
+    <h2>WEDDING &bull; CINEMATIC &bull; CULTURE</h2>
+  </section>
+
+  <section class="blog-card-container">
+    <div class="blog-card">
+  <a href="blog_individual.html"><img src="wedding3.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+         </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+
+    <div class="blog-card">
+  <a href="blog_individual.html"><img src="fashion3.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+    </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+
+<div class="blog-card">
+  <a href="blog_individual.html"><img src="fashion4.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+         </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+<div class="blog-card">
+  <a href="blog_individual.html"><img src="fashion6.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+         </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+<div class="blog-card">
+  <a href="blog_individual.html"><img src="culture1.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+         </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+    <div class="blog-card">
+  <a href="blog_individual.html"><img src="wedding2.jpg" alt="Cinematic Excellence" /></a>
+  <div class="blog-card-content">
+    <div class="blog-card-subtitle">PIONEERING CINEMA</div>
+    <div class="blog-card-title"><a href="blog_individual.html" style="text-decoration:none;color:black">Cinematic Excellence</a></div>
+    <div class="blog-card-text">
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story. 
+      With decades of filmmaking experience, we use state-of-the-art technology to reinvent ourselves for every story.
+      
+    </div>
+    <a href="blog_individual.html" class="read-more">Read More</a>
+  </div>
+</div>
+  </section>
+
+
+ <style>
+/* Container & Columns */
+.blog-card-container {
+  column-count: 3;
+  column-gap: 30px;
+  margin: 0 100px;
+}
+
+@media (max-width: 1024px) {
+  .blog-card-container {
+    column-count: 2; /* 2 columns for medium screens */
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-card-container {
+    column-count: 1; /* stack cards vertically for small screens */
+    margin: 0 20px;
+  }
+}
+
+/* Blog Card */
+.blog-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  break-inside: avoid; /* prevents cards from breaking between columns */
+}
+
+/* Image Styling */
+.blog-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+/* Content Styling */
+.blog-card-content {
+  padding: 20px;
+}
+
+.blog-card-subtitle {
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  color: #999;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.blog-card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 1.3px;
+}
+
+.blog-card-text {
+  font-family: 'Antic Didone', serif;
+  letter-spacing: 0.9px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  color: #555;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* Blog Section Header */
+.blog-section-header {
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin: 40px 20px 20px;
+  color: #222;
+}
+
+.blog-section-header h2 {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: normal;
+}
+
+.blog-section-header h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .blog-section-header h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+}
+  </style>
+<script>
+document.querySelectorAll('.blog-card').forEach(card => {
+  const text = card.querySelector('.blog-card-text');
+  const readMore = card.querySelector('.read-more');
+
+  // Check if the text is overflowing
+  if (text.scrollHeight <= text.clientHeight) {
+    readMore.style.display = 'none';
+  }
+});
+</script>
+
+
+
+<!-----------------------------------------------------------------------Enquiry Section ----------------------------------------------------------------------->
+<section class="enquiry-section">
+  <div class="enquiry-content">
+    <h2 class="enquiry-title">Contact Us to Create <span style="color:#e53935;">Magic</span></h2>
+    <p class="enquiry-subtitle">Experienced lawyers ready to fight for your rightsExperienced lawyers ready to fight for your rights</p>
+    <div class="enquiry-buttons">
+      <a href="#" class="enquiry-btn enquiry-btn-primary"><i class="fab fa-whatsapp enquiry-whatsapp-icon"></i> Chat Now</a>
+<a href="#" class="enquiry-btn enquiry-btn-primary" style="margin-top:10px;"><i class="fa fa-phone enquiry-call-icon"></i> Call Now</a>
+      <!---<a href="#" class="enquiry-btn enquiry-btn-link">New successes →</a>---->
+    </div>
+  </div>
+  <div class="enquiry-image">
+    <img src="human.png" alt="Human">
+  </div>
+</section>
+<style>
+.enquiry-section {
+margin-left:150px;
+margin-right:150px;
+margin-bottom:50px;
+margin-top:100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: 16px;
+  padding: 40px;
+  overflow: visible; /* allow image to pop out */
+  position: relative;
+}
+
+.enquiry-content {
+  max-width: 55%;
+padding-left:50px;
+}
+
+.enquiry-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.enquiry-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+color:black;
+}
+
+/* .enquiry-buttons { */
+ /* display: flex; */
+ /* gap: 15px;} */
+
+.enquiry-btn {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enquiry-btn-primary {
+  background: black;
+  color: white;
+}
+
+.enquiry-btn-primary:hover {
+  background: #222;
+}
+
+.enquiry-btn-link {
+  color: white;
+  opacity: 0.8;
+}
+
+.enquiry-btn-link:hover {
+  opacity: 1;
+}
+.enquiry-whatsapp-icon {
+  margin-right: 8px;
+  font-size: 22px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-call-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-image {
+  position: absolute;
+  right:15px;
+  top: -99px; /* makes image rise above box */
+}
+
+.enquiry-image img {
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enquiry-section {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    margin-left:20px;
+    margin-right:20px;
+     margin-top:50px;
+  }
+.enquiry-content {
+padding-left:0px;
+    max-width: 100%;
+    margin-bottom: -30px; /* space between text and image */
+  }
+
+  .enquiry-image {
+top: 30px; /* makes image rise above box */
+    position: relative; /* normal flow so it comes after text */
+    left: -40px;
+    transform: none;
+    bottom: 0; /* ensures it touches section bottom */
+    margin-top: auto;
+    display: flex;
+    justify-content: center; /* center horizontally */
+  }
+
+  .enquiry-image img {
+
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+}
+</style>
+<!----------------------------------------------------------------------Footer Section ----------------------------------------------------------------------->
+<footer class="footer">
+  <!-- Top Row -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="logo2.png" alt="Mingers Logo">
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fa-solid fa-phone"></i> +91 1234567890 </a>
+      <a href="#"><i class="fa-solid fa-envelope"></i>  just.chill@123.com</a>
+    </div>
+    <div class="footer-copy">
+  &copy; <span id="currentYear" style=" font-family: 'Lato', sans-serif;"></span> Soumya Patel. All rights reserved
+</div>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+  </div>
+</footer>
+
+
+<style>
+.footer {
+  background: #fff;
+  padding: 20px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Top Row ---------- */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-socials a {
+  color: #001f54;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #3a68ff;
+}
+
+/* ---------- Bottom Row ---------- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #555;
+  gap: 10px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-links a {
+  color: #555;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+padding-left:0px;
+padding-right:0px;
+  }
+.footer-bottom {
+padding-left:0px;
+padding-right:0px;
+}
+  .footer-socials {
+    margin-top: 10px;
+margin-left:-20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+<!-----------------------------------------------------------------------JS Section ----------------------------------------------------------------------->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+<!-- Custom JS -->
+<script>
+   // Navbar scroll effect for minimalist navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar'); 
+            if (navbar) { 
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+        // specially used for About text
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Check if slides exist before trying to access elements
+            if (slides.length > 0) {
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+        }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        // Auto slide change every 5 seconds - only if slides exist
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
+
+        
+        // Lightbox for gallery (existing functionality)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        closeLightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Scroll animation (existing functionality)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+
+            // Animate service cards with staggered delay
+            serviceCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100 && !card.classList.contains('show')) {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 200); // 200ms delay between each card
+                }
+            });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+// Smooth scrolling for anchor links (existing functionality)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+  </script>
+
+<style>
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; /* start hidden */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 99999;
+    transition: right 0.5s ease, transform 0.2s;
+    font-size: 28px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    #whatsapp-button {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      bottom: 15px;
+      right: -80px;
+    }
+  }
+
+  /* Tooltip bubble */
+  #whatsapp-tooltip {
+    position: fixed;
+    bottom: 90px; /* will adjust via JS also */
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 100000;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    font-size: 14px;
+  }
+
+  /* Chat bubble curved tail */
+  #whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* tip height */
+    right: 12px;  /* align tail with button */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8px 0 8px; /* triangle shape */
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.05));
+  }
+
+  /* Responsive tooltip */
+  @media (max-width: 480px) {
+    #whatsapp-tooltip {
+      bottom: 80px;
+      font-size: 13px;
+      padding: 9px 12px;
+    }
+  }
+
+  .slide-in {
+    right: 20px !important;
+  }
+  .show-tooltip {
+    opacity: 1 !important;
+  }
+
+#whatsapp-button,
+#whatsapp-tooltip {
+    transition: opacity 0.3s ease;
+}
+
+.hide-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+
+<div id="whatsapp-button" onclick="openWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</div>
+<div id="whatsapp-tooltip">Chat with us!</div>
+
+<script>
+  function openWhatsApp() {
+    const phoneNumber = "1234567890";
+    const message = "Hello! I want to chat with you.";
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    /* Slide-in the button */
+    setTimeout(() => button.classList.add("slide-in"), 300);
+
+    /* Show tooltip after 2 seconds */
+    setTimeout(() => {
+      tooltip.classList.add("show-tooltip");
+      positionTooltip();
+    }, 2000);
+
+    /* Hide tooltip after 5 seconds */
+    setTimeout(() => tooltip.classList.remove("show-tooltip"), 15000);
+
+    /* Reposition tooltip on resize */
+    window.addEventListener("resize", positionTooltip);
+  });
+
+  /* Always keep tooltip just above the button */
+  function positionTooltip() {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    const rect = button.getBoundingClientRect();
+
+    tooltip.style.bottom = (window.innerHeight - rect.top + 10) + "px";
+    tooltip.style.right = (window.innerWidth - rect.right) + "px";
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wpBtn = document.getElementById("whatsapp-button");
+    const wpTip = document.getElementById("whatsapp-tooltip");
+
+    function hideWhatsapp() {
+        wpBtn.classList.add("hide-whatsapp");
+        wpTip.classList.add("hide-whatsapp");
+    }
+
+    function showWhatsapp() {
+        wpBtn.classList.remove("hide-whatsapp");
+        wpTip.classList.remove("hide-whatsapp");
+    }
+
+    /* ---  Reel Modal Detect Open/Close --- */
+    const reelModal = document.getElementById("reelModal");
+
+    new MutationObserver(() => {
+        reelModal.classList.contains("active") ? hideWhatsapp() : showWhatsapp();
+    }).observe(reelModal, { attributes: true, attributeFilter: ["class"] });
+
+
+    /* ---  Bootstrap Modals --- */
+    document.addEventListener("show.bs.modal", hideWhatsapp);
+    document.addEventListener("hidden.bs.modal", showWhatsapp);
+
+
+    /* --- Custom Drawer Detect Open/Close --- */
+    const drawer = document.getElementById("customDrawer");
+
+    new MutationObserver(() => {
+        drawer.classList.contains("open") ? hideWhatsapp() : showWhatsapp();
+    }).observe(drawer, { attributes: true, attributeFilter: ["class"] });
+
+});
+</script>
+</body>
+</html>
