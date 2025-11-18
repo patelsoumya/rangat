@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title> Wedding @rangatfilms</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Animate.css -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<style>
+:root {
+    --primary-color: #a3b18a;
+    --secondary-color: #dad7cd;
+    --dark-color: #344e41;
+    --accent-color: #C37656;
+    --highlight-color: #3a5a40;
+    --button-bg-color: #C37656;
+    --heading-color: #624332; /* Sage Light Scheme - Headings */
+  }
+
+  body {
+	 background-color: #ece4da;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    color: var(--heading-color);
+  }
+span{
+font-family: 'Antic Didone', serif;
+}
+  .lead {
+    font-family: 'Antic Didone', serif;
+    font-weight: 300;
+    color: var(--heading-color);
+  }
+
+  p {
+    font-family: 'Antic Didone', sans-serif;
+    font-weight: 300;
+	line-height: 1.8;
+	font-size: 1rem;
+  	margin-bottom: 1em;
+ 
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-success {
+    font-family: 'Antic Didone', serif;
+    font-weight: 400;
+    background-color: var(--button-bg-color);
+    border: none;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-success:hover {
+    background-color: #a3543a;
+  }
+/*  Change to other */
+
+body.no-scroll {
+	overflow: hidden;
+}
+section {
+	position: relative;
+	overflow: hidden;
+}
+        /* Animations */
+.fade-in {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: all 0.5s ease; /* transition: opacity 0.8s ease, transform 0.8s ease; */
+}
+.fade-in.show {
+	opacity: 1;
+	transform: translateY(0);
+}  
+
+/************************************ Button Primary and  *************************/
+.btn-primary {
+	background-color: var(--accent-color);
+	border: none;
+	padding: 12px 30px;
+	border-radius: 30px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+.btn-primary:hover {
+	background-color: var(--primary-color);
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+<!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
+
+
+<!-- Back Button -->
+<button id="backButton" class="back-button" onclick="history_back()">&larr; Back</button>
+
+<!-- CSS Styles -->
+<style>
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent black */
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 4px 12px;
+  font-size: 1rem;
+  border-radius: 26px;
+  cursor: pointer;
+  z-index: 11000;  /* Very high to ensure it's on top */
+  pointer-events: auto;  /* Ensure clicks are registered */
+  transition: background-color 0.3s ease;
+}
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+color:black;
+}
+@media (max-width: 992px) {
+  .back-button {
+    top: 20px;
+    left: 15px;
+  }
+}
+</style>
+
+<!-- JavaScript Function -->
+<script>
+function history_back() {
+  try {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      // Fallback: Redirect to home or a specific page
+      window.location.href = '/';  // Change '/' to your desired fallback URL, e.g., 'https://yourwebsite.com'
+    }
+  } catch (error) {
+    // In case history.back() fails (e.g., browser restrictions), force redirect
+    console.error("History back failed:", error);
+    window.location.href = '/';
+  }
+}
+</script>
+
+<!---------------------------------------------------------------- Hero Section ---------------------------------------------------------------------->
+
+<section class="parallex-hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="video1.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <button id="watchBtn"><i class="fa fa-play" aria-hidden="true"></i> Watch Now</button>
+</section>
+
+
+<!-- Modal -->
+<div id="videoModal">
+  <div class="modal-content">
+    <button id="closeModal">&times;</button>
+    <video id="popupVideo" controls muted loop style="display:none;"></video>
+    <iframe id="popupIframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
+  </div>
+</div>
+</section>
+
+<style>
+#hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+#video-bg-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60vh; /* same as hero */
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+  will-change: transform;
+}
+#background-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.parallex-hero {
+ position: relative; /* Ensure this is relative */
+  height: 60vh;
+  overflow: hidden;
+  background: black;
+  display: block; /* Remove flex or centering */
+}
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100vh;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+  /* Video styles */
+  #bgVideo {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    transition: position 0.3s ease;
+  }
+  /* When scrolled past, video scrolls with content */
+  #bgVideo.scrolled-past {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* Content inside hero */
+  .hero-content {
+  position: relative;
+  z-index: 10;
+  height: 60vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#watchBtn {
+  position: absolute !important; /* force absolute */
+  bottom: 10px !important;
+  right: 10px !important;
+  z-index: 10;
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  text-align: center;
+}
+
+
+  /* Modal styles */
+  #videoModal {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 0;
+}
+
+#videoModal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#popupIframe, 
+#popupVideo {
+  width: 90%;
+  height: 90%;
+  max-width: none;
+  max-height: none;
+  border: none;
+}
+
+#closeModal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10001;
+}
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-content {
+      width: 90%;
+      padding: 10px;
+    }
+    #watchBtn {
+      position: static;
+      margin-top: 15px;
+      display: inline-block;
+    }
+  }
+
+@media (max-width: 992px) {
+  .parallex-hero {
+    height: 30vh;
+  }
+#hero {
+    
+    height: 30vh;
+    
+  }
+  #watchBtn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .parallex-hero {
+    height: 30vh;
+  }
+
+  #watchBtn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const watchBtn = document.getElementById('watchBtn');
+    const modal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    const popupVideo = document.getElementById('popupVideo');
+    const popupIframe = document.getElementById('popupIframe');
+    const bgVideo = document.getElementById('bgVideo');
+    const heroSection = document.getElementById('hero');
+
+    // Change this to your actual video URL or YouTube embed link
+    // For local .mp4 use full relative path, for YouTube use embed URL
+    //const videoSrc = 'https://www.youtube.com/embed/kZcR4GZrpoo'; // Example YouTube
+
+
+
+
+//Your Youtube Link
+let videoSrc = 'https://www.youtube.com/embed/kZcR4GZrpoo';
+
+
+
+
+
+if (videoSrc.includes('youtu.be')) {
+  videoSrc = videoSrc.replace('youtu.be/', 'www.youtube.com/embed/');
+}
+    // Watch Now button opens modal and plays video
+    watchBtn.addEventListener('click', () => {
+  if (videoSrc.endsWith('.mp4')) {
+    popupVideo.src = videoSrc;
+    popupVideo.style.display = 'block';
+    popupIframe.style.display = 'none';
+    popupVideo.play();
+  } else {
+    popupIframe.src = videoSrc + '?autoplay=1&mute=1';
+    popupIframe.style.display = 'block';
+    popupVideo.style.display = 'none';
+  }
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+});
+
+    // Close modal
+    function closePopup() {
+      modal.classList.remove('active');
+      popupVideo.pause();
+      popupVideo.src = '';
+      popupIframe.src = '';
+      document.body.style.overflow = '';
+    }
+    closeModal.addEventListener('click', closePopup);
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closePopup();
+    });
+
+    // Parallax video toggle on scroll
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const heroHeight = heroSection.offsetHeight;
+
+      if (scrollY >= heroHeight) {
+        // User scrolled past hero section — video scrolls with content
+        if (!bgVideo.classList.contains('scrolled-past')) {
+          bgVideo.classList.add('scrolled-past');
+          // Position video absolutely at bottom of hero to avoid jump
+          bgVideo.style.top = heroHeight + 'px';
+        }
+      } else {
+        // User inside hero section — fixed video for parallax
+        if (bgVideo.classList.contains('scrolled-past')) {
+          bgVideo.classList.remove('scrolled-past');
+          bgVideo.style.top = '0';
+        }
+      }
+    });
+  });
+</script>
+
+
+
+
+
+<!--------------------------------------------------------- Gallery Section ---------------------------------------------------------------------->
+<section class="py-5" id="services1">
+  <div class="container">
+
+		<p style="margin-bottom:4px;">SEPT - 2024</p>
+    <div class="section-header">
+      <h2 class="fw-bold">Wedding <span style="color:red">Highlights</span></h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="service-tabs text-center mb-4">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="wedding">Wedding</button>
+      <button class="tab-btn" data-filter="culture">Culture</button>
+      <button class="tab-btn" data-filter="travel">Travel</button>
+    </div>
+
+    <!-- Carousel -->
+    <div class="services-carousel-wrapper position-relative overflow-hidden" id="services-wrapper">
+      <div class="services-carousel d-flex flex-nowrap" id="services-carousel">
+
+        <div class="service-card" data-category="wedding" style="background-image: url('rangat-photo-1.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="culture" style="background-image: url('rangat-photo-2.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="travel" style="background-image: url('rangat-photo-3.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+        <div class="service-card" data-category="wedding" style="background-image: url('rangat-photo-4.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="culture" style="background-image: url('rangat-photo-5.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="travel" style="background-image: url('rangat-photo-6.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+		<div class="service-card" data-category="wedding" style="background-image: url('rangat-photo-7.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="culture" style="background-image: url('rangat-photo-8.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <div class="service-card" data-category="travel" style="background-image: url('rangat-photo-9.JPG');">
+          <div class="card-overlay"></div>
+        </div>
+
+        <!-- Add more cards as needed -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxLabel">
+  <button id="closeBtn" aria-label="Close">&times;</button>
+  <img id="lightboxImage" src="" alt="Popup Image" />
+  <div class="nav-buttons">
+    <button id="prevBtn" aria-label="Previous Image">&#8592; Prev</button>
+    <button id="nextBtn" aria-label="Next Image">Next &#8594;</button>
+  </div>
+</div>
+
+<style>
+ #lightboxModal {
+    position: fixed;
+    top:0; left:0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+  }
+  #lightboxModal img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    display: block;
+  }
+  #closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  .nav-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 90vw;
+  }
+  .nav-buttons button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+</style>
+<style>
+.section-header {
+  display: flex;
+  justify-content: space-between; /* Left & right alignment */
+  align-items: center;
+  padding-bottom: 0px;
+margin-bottom:20px;
+}
+
+    #services1 {
+      padding: 10px 0;
+      background-color: #ece4da;
+    }
+
+    .services-carousel {
+      overflow-x: auto;
+      display: flex;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      padding: 0 10px;
+      scroll-padding-left: 10px;
+    }
+    .services-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .service-card {
+   
+      padding-bottom:8px;
+      align-items: flex-end; /* Push content to bottom */
+      justify-content: flex-start; /* Align content to left */
+      scroll-snap-align: start;
+      position: relative;
+      flex: 0 0 auto;
+      background-size: cover;
+      background-position: center;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      padding-left: 20px;
+      margin: 10px 15px;
+      height: 250px;
+      min-width: 360px;
+      max-width: 380px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+.service-card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	/*transform: scaleX(0);*/
+	/*transition: transform 0.2s ease;*/
+	/*transform-origin: left;*/
+}
+.card-overlay {
+      border-radius: 16px;
+      position: absolute;
+      bottom: 0; 
+      left: 0;
+      right:0;
+      width: 100%; 
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0,0,0,0));
+      z-index: 1;
+    }
+    
+    
+    .btn-primary-service {
+      display: inline-block;
+      padding: 5px 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: transparent !important;
+      border: 2px solid white;
+      border-radius: 0px;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+    .btn-primary-service:hover {
+      background-color: #a3543a;
+      transform: translateY(-2px);
+    }
+    /* Tabs Styling */
+    .service-tabs {
+      display: flex;
+      justify-content: left;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: none;
+      border:0px solid white;
+      border-radius:20px;
+      color: black;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background-color: #333;
+color:white;
+    }
+
+    /* Mobile Responsive */
+
+    @media (max-width: 768px) {
+      .service-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .tab-btn {
+        flex: 0 0 auto;
+      }
+      .service-card {
+        min-width: 180px;
+	width:280px;
+    height: 180px;
+      }
+      .nav-buttons {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+    @supports (scroll-snap-type: x mandatory) {
+      .services-carousel {
+        scroll-snap-type: x mandatory;
+      }
+    }
+
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const cardsContainer = document.getElementById('services-carousel');
+  const cards = Array.from(document.querySelectorAll('.service-card'));
+  const modal = document.getElementById('lightboxModal');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const closeBtn = document.getElementById('closeBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  const images = cards.map(card => ({
+    src: card.style.backgroundImage.slice(5, -2),
+    category: card.getAttribute('data-category')
+  }));
+
+  // Assign stable original index to each card
+  cards.forEach((card, i) => {
+    card.dataset.index = i;
+  });
+
+  let currentCategory = 'all';
+  let filteredIndices = images.map((_, i) => i);
+  let currentIndex = 0;
+
+  function filterCards(category) {
+    currentCategory = category;
+    if (category === 'all') {
+      filteredIndices = images.map((_, i) => i);
+    } else {
+      filteredIndices = images
+        .map((img, i) => img.category === category ? i : -1)
+        .filter(i => i !== -1);
+    }
+    cards.forEach((card, i) => {
+      card.style.display = filteredIndices.includes(i) ? 'block' : 'none';
+    });
+  }
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImage.src = images[filteredIndices[currentIndex]].src;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % filteredIndices.length;
+    lightboxImage.src = images[filteredIndices[currentIndex]].src;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length;
+    lightboxImage.src = images[filteredIndices[currentIndex]].src;
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeLightbox();
+  });
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      filterCards(tab.getAttribute('data-filter'));
+    });
+  });
+
+  cardsContainer.addEventListener('click', e => {
+    const card = e.target.closest('.service-card');
+    if (!card || card.style.display === 'none') return;
+
+    const originalIndex = Number(card.dataset.index);
+    const filteredIndex = filteredIndices.indexOf(originalIndex);
+
+    if (filteredIndex !== -1) {
+      openLightbox(filteredIndex);
+    }
+  });
+
+  filterCards('all');
+});
+
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("services-carousel");
+  const tabs = document.querySelectorAll(".tab-btn");
+  const allCards = Array.from(carousel.children);
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const filter = tab.getAttribute("data-filter");
+      carousel.innerHTML = "";
+
+      const filteredCards = filter === "all"
+        ? allCards
+        : allCards.filter(card => card.dataset.category === filter);
+
+      // Append filtered cards twice for horizontal scrolling continuity
+      filteredCards.forEach(card => carousel.appendChild(card.cloneNode(true)));
+      filteredCards.forEach(card => carousel.appendChild(card.cloneNode(true)));
+    });
+  });
+});
+</script>
+
+
+<!----------------------------------------------------  Gallery Section--------------------------------------------------------->
+
+<h2 class="text-center fw-bold animate__animated animate__fadeInUp animate__delay-1s" style="padding-bottom:10px;margin-top:50px;color:black">Gallery<span style="color:red"></span></h2>
+
+<div class="individual-gallery">
+    <img src="rangat-photo-12.JPG" alt="">
+    <img src="rangat-photo-11.JPG" alt="">
+    <img src="rangat-photo-10.JPG" alt="">
+    <img src="rangat-photo-9.JPG" alt="">
+    <img src="rangat-photo-8.JPG" alt="">
+    <img src="rangat-photo-7.JPG" alt="">
+	<img src="rangat-photo-6.JPG" alt="">
+    <img src="rangat-photo-5.JPG" alt="">
+	<img src="rangat-photo-4.JPG" alt="">
+    <img src="rangat-photo-3.JPG" alt="">
+	<img src="rangat-photo-2.JPG" alt="">
+</div>
+
+<div id="individual-lightboxModal" role="dialog" aria-modal="true" aria-labelledby="lightboxLabel">
+  <button id="individual-closeBtn" aria-label="Close">&times;</button>
+  <img id="individual-lightboxImage" src="" alt="Popup Image" />
+  <div class="individual-nav-buttons">
+    <button id="individual-prevBtn" aria-label="Previous Image">&#8592; Prev</button>
+    <button id="individual-nextBtn" aria-label="Next Image">Next &#8594;</button>
+  </div>
+</div>
+
+<style>
+.individual-gallery {
+    column-count: 4;
+    column-gap: 5px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .individual-gallery {
+        column-count: 3;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .individual-gallery {
+        column-count: 2;
+        padding: 10px 15px;
+    }
+}
+
+.individual-gallery img {
+    width: 100%;
+    margin-bottom: 5px;
+    border-radius: 0px;
+    cursor: pointer; 
+}
+
+
+/* Lightbox Styling */
+#individual-lightboxModal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#individual-lightboxModal img {
+    max-width: 90%;
+    max-height: 75vh;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+#individual-closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+
+.individual-nav-buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 90vw;
+  }
+  .individual-nav-buttons button {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  } background: #ddd;
+}
+</style>
+
+<script>
+  const individualGalleryImages = document.querySelectorAll('.individual-gallery img');
+  const individualLightboxModal = document.getElementById('individual-lightboxModal');
+  const individualLightboxImage = document.getElementById('individual-lightboxImage');
+  const individualCloseBtn = document.getElementById('individual-closeBtn');
+  const individualPrevBtn = document.getElementById('individual-prevBtn');
+  const individualNextBtn = document.getElementById('individual-nextBtn');
+
+  let individualCurrentIndex = 0;
+
+  function individualShowLightbox(index) {
+    individualCurrentIndex = index;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+    individualLightboxModal.style.display = 'flex';
+    individualLightboxModal.setAttribute('aria-hidden', 'false');
+  }
+
+  individualGalleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      individualShowLightbox(index);
+    });
+  });
+
+  individualNextBtn.addEventListener('click', () => {
+    individualCurrentIndex = (individualCurrentIndex + 1) % individualGalleryImages.length;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+  });
+
+  individualPrevBtn.addEventListener('click', () => {
+    individualCurrentIndex = (individualCurrentIndex - 1 + individualGalleryImages.length) % individualGalleryImages.length;
+    individualLightboxImage.src = individualGalleryImages[individualCurrentIndex].src;
+  });
+
+  individualCloseBtn.addEventListener('click', () => {
+    individualLightboxModal.style.display = 'none';
+    individualLightboxModal.setAttribute('aria-hidden', 'true');
+  });
+
+  individualLightboxModal.addEventListener('click', (e) => {
+    if (e.target === individualLightboxModal) {
+      individualLightboxModal.style.display = 'none';
+      individualLightboxModal.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      individualLightboxModal.style.display = 'none';
+      individualLightboxModal.setAttribute('aria-hidden', 'true');
+    }
+  });
+</script>
+
+
+
+<!--------------------------------------------------- Youtube Video Section -------------------------------------------------------------->
+<div class="container">
+<h2 class="text-center fw-bold animate__animated animate__fadeInUp animate__delay-1s" style="padding-bottom:10px;margin-top:50px;color:black">Watch a <span style="color:red">Trailer</span></h2>
+    <p class="text-center mb-5 about-lead">Each package tailored to preserve your unique love story</p>
+</div>
+	<div class="vid-section">
+		<div class="vid-video-wrapper">
+			<div class="vid-video-box" id="vid-swipe-box">
+				<iframe allow="autoplay; encrypted-media" allowfullscreen="" id="vid-youtube-frame" src=""></iframe>
+			</div>
+		</div>
+	<div class="vid-text-box">
+	<div class="vid-meta" id="vid-meta"></div>
+		<h1 class="vid-title" id="vid-title">
+			<span id="vid-main-title"></span><br/>
+			<span class="vid-highlight" id="vid-highlight"></span>
+		</h1>
+		<p class="vid-detail" id="vid-detail"></p>
+		<div class="vid-tabs-container">
+			<div class="vid-tabs-wrapper">
+				<div class="vid-arrow" id="vid-prev-btn">←</div>
+			<div class="vid-tabs" id="vid-tab-container">
+<!-- Tabs will be filled via JS -->
+		</div>
+		<div class="vid-arrow" id="vid-next-btn">→</div>
+	</div>
+</div>
+</div>
+</div>
+<script>
+  const vidVideos = [
+    {
+      youtubeUrl: "https://youtu.be/M33j0t2W6zM?si=id6bPit6c9KIFpo3",
+      content: {
+        meta: "Hey Jaga — 2022",
+        title: "Hey Jaga",
+        highlight: "Jaga",
+        detail: "An emotional soundtrack capturing the spirit of resilience and hope."
+      }
+    },
+    {
+      youtubeUrl: "https://youtu.be/BSJa1UytM8w?si=5-7umb0tHX5qSgIW",
+      content: {
+        meta: "Saiyaara — 2024",
+        title: "Saiyaara Title Song",
+        highlight: "Saiyaara",
+        detail: "A beautiful romantic melody that resonates deeply with listeners."
+      }
+    },
+    {
+      youtubeUrl: "https://youtu.be/kZcR4GZrpoo?si=b4muSuN2qOtA78ng",
+      content: {
+        meta: "Jagjit Singh — 2013",
+        title: "Pyaar Ka Pehla Khat",
+        highlight: "Bollywood",
+        detail: "A soul-stirring classic by Jagjit Singh that tugs at the heartstrings."
+      }
+    },
+    {
+      youtubeUrl: "https://youtu.be/k8DtPqXjptM?si=Onu6GECSFdd7l4hj",
+      content: {
+        meta: "Mile Sur Mera Tumhara — 2021",
+        title: "Mile Sur Mera Tumhara",
+        highlight: "Hits",
+        detail: "A timeless anthem celebrating unity in diversity."
+      }
+    },
+{
+      youtubeUrl: "https://youtu.be/QQO8S9W8qPA?si=Rw9PUxINtBCnkUs8",
+      content: {
+        meta: "Jagjit Singh — 2021",
+        title: "Koi Fariyaad",
+        highlight: "Evergreen",
+        detail: "A soul-stirring classic by Jagjit Singh that tugs at the heartstrings."
+      }
+    },
+    {
+      youtubeUrl: "https://youtu.be/NIPN-zTqOYw?si=PAlbB9A_wGeH0vsq",
+      content: {
+        meta: "Raja Raja — 2021",
+        title: "Raja Raja",
+        highlight: "CG",
+        detail: "A folk-inspired celebration of culture and rhythm."
+      }
+    }
+
+  ];
+
+  let vidCurrentIndex = 0;
+  let initialLoad = true;
+
+  const iframe = document.getElementById("vid-youtube-frame");
+  const metaEl = document.getElementById("vid-meta");
+  const titleEl = document.getElementById("vid-title");
+  const highlightEl = document.getElementById("vid-highlight");
+  const detailEl = document.getElementById("vid-detail");
+  const tabContainer = document.getElementById("vid-tab-container");
+
+  function getYouTubeId(url) {
+    const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  }
+
+  function updateContent(index) {
+    const video = vidVideos[index];
+    const videoId = getYouTubeId(video.youtubeUrl);
+    if (!videoId) return;
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+    metaEl.textContent = video.content.meta;
+    titleEl.childNodes[0].textContent = video.content.title + " ";
+    highlightEl.textContent = video.content.highlight;
+    detailEl.textContent = video.content.detail || "";
+
+    const allTabs = document.querySelectorAll(".vid-tab");
+    allTabs.forEach((tab, i) => {
+      tab.classList.toggle("vid-active", i === index);
+      if (i === index) {
+        const scrollY = window.scrollY;
+        tab.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        window.scrollTo({ top: scrollY, behavior: 'instant' });
+      }
+    });
+
+    vidCurrentIndex = index;
+  }
+
+  function renderTabs() {
+    vidVideos.forEach((video, i) => {
+      const btn = document.createElement("button");
+      btn.className = "vid-tab";
+      btn.textContent = video.content.highlight;
+      btn.dataset.index = i;
+      btn.addEventListener("click", () => updateContent(i));
+      tabContainer.appendChild(btn);
+    });
+  }
+
+  function nextVideo() {
+    const next = (vidCurrentIndex + 1) % vidVideos.length;
+    updateContent(next);
+  }
+
+  function prevVideo() {
+    const prev = (vidCurrentIndex - 1 + vidVideos.length) % vidVideos.length;
+    updateContent(prev);
+  }
+
+  document.getElementById("vid-next-btn").addEventListener("click", nextVideo);
+  document.getElementById("vid-prev-btn").addEventListener("click", prevVideo);
+
+  const swipeBox = document.getElementById("vid-swipe-box");
+  let startX = 0;
+  swipeBox.addEventListener("touchstart", e => startX = e.touches[0].clientX);
+  swipeBox.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diffX = endX - startX;
+    if (Math.abs(diffX) > 50) {
+      diffX > 0 ? prevVideo() : nextVideo();
+    }
+  });
+
+  setInterval(nextVideo, 20000);
+
+  renderTabs();
+  updateContent(vidCurrentIndex);
+  initialLoad = false;
+</script>
+<style>
+  .vid-section {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    width:
+    max-width: 1200px;
+    overflow: hidden;
+    position: relative;
+margin-left:150px;
+margin-right:150px;
+  }
+  .vid-video-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .vid-video-box {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    touch-action: pan-y;
+  }
+  .vid-video-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  .vid-text-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px 100px;
+    position: relative;
+  }
+  .vid-meta {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .vid-title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .vid-highlight {
+    color: #e53935;
+    font-weight: bold;
+  }
+  .vid-tabs-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 20px 30px;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+  }
+  .vid-tabs-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .vid-arrow {
+    cursor: pointer;
+    background: #ece4da;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    user-select: none;
+  }
+  .vid-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    scroll-behavior: smooth;
+    flex: 1;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .vid-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  .vid-tab {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ece4da;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+  }
+  .vid-tab.vid-active {
+    background-color: #333;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .vid-section {
+      flex-direction: column;
+margin-left:20px;
+margin-right:20px;
+    }
+    .vid-text-box {
+      padding: 20px 20px 110px;
+      text-align: center;
+    }
+    .vid-tabs-container {
+      padding: 10px 10px 30px;
+    }
+  }
+.vid-detail {
+  font-size: 1rem;
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #444;
+  max-width: 90%;
+  animation: fadeInUp 0.6s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .vid-detail {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 10px auto 0;
+  }
+}
+</style>
+
+
+
+<!-----------------------------------------------------------------------Enquiry Section ----------------------------------------------------------------------->
+<section class="enquiry-section">
+  <div class="enquiry-content">
+    <h2 class="enquiry-title">Contact Us to Create <span style="color:#e53935;">Magic</span></h2>
+    <p class="enquiry-subtitle">Experienced lawyers ready to fight for your rightsExperienced lawyers ready to fight for your rights</p>
+    <div class="enquiry-buttons">
+      <a href="#" class="enquiry-btn enquiry-btn-primary"><i class="fab fa-whatsapp enquiry-whatsapp-icon"></i> Chat Now</a>
+<a href="#" class="enquiry-btn enquiry-btn-primary" style="margin-top:10px;"><i class="fa fa-phone enquiry-call-icon"></i> Call Now</a>
+      <!---<a href="#" class="enquiry-btn enquiry-btn-link">New successes →</a>---->
+    </div>
+  </div>
+  <div class="enquiry-image">
+    <img src="human.png" alt="Human">
+  </div>
+</section>
+<style>
+.enquiry-section {
+margin-left:150px;
+margin-right:150px;
+margin-bottom:50px;
+margin-top:100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-color);
+  color: white;
+  border-radius: 16px;
+  padding: 40px;
+  overflow: visible; /* allow image to pop out */
+  position: relative;
+}
+
+.enquiry-content {
+  max-width: 55%;
+padding-left:50px;
+}
+
+.enquiry-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color:black;
+}
+
+.enquiry-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 20px;
+color:black;
+}
+
+/* .enquiry-buttons { */
+ /* display: flex; */
+ /* gap: 15px;} */
+
+.enquiry-btn {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enquiry-btn-primary {
+  background: black;
+  color: white;
+}
+
+.enquiry-btn-primary:hover {
+  background: #222;
+}
+
+.enquiry-btn-link {
+  color: white;
+  opacity: 0.8;
+}
+
+.enquiry-btn-link:hover {
+  opacity: 1;
+}
+.enquiry-whatsapp-icon {
+  margin-right: 8px;
+  font-size: 22px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-call-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+padding-bottom:3px;
+}
+.enquiry-image {
+  position: absolute;
+  right:15px;
+  top: -99px; /* makes image rise above box */
+}
+
+.enquiry-image img {
+  height: 350px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .enquiry-section {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    margin-left:20px;
+    margin-right:20px;
+     margin-top:50px;
+  }
+.enquiry-content {
+padding-left:0px;
+    max-width: 100%;
+    margin-bottom: -30px; /* space between text and image */
+  }
+
+  .enquiry-image {
+top: 30px; /* makes image rise above box */
+    position: relative; /* normal flow so it comes after text */
+    left: -40px;
+    transform: none;
+    bottom: 0; /* ensures it touches section bottom */
+    margin-top: auto;
+    display: flex;
+    justify-content: center; /* center horizontally */
+  }
+
+  .enquiry-image img {
+
+    height: auto;
+    max-width: 100%;
+    display: block;
+  }
+}
+</style>
+<!----------------------------------------------------------------------Footer Section ----------------------------------------------------------------------->
+<footer class="footer">
+  <!-- Top Row -->
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="rangat-logo2.png" alt="Rangat Films Logo">
+    </div>
+    <div class="footer-socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fa-solid fa-phone"></i> +91 1234567890 </a>
+      <a href="#"><i class="fa-solid fa-envelope"></i>  just.chill@123.com</a>
+    </div>
+    <div class="footer-copy">
+  &copy; <span id="currentYear" style=" font-family: 'Lato', sans-serif;"></span> Soumya Patel. All rights reserved
+</div>
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
+  </div>
+</footer>
+
+
+<style>
+.footer {
+  background: #fff;
+  padding: 20px 40px;
+  border-top: 1px solid #eee;
+}
+
+/* ---------- Top Row ---------- */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-socials a {
+  color: #001f54;
+  margin-left: 15px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #3a68ff;
+}
+
+/* ---------- Bottom Row ---------- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: #555;
+  gap: 10px;
+padding-left:100px;
+padding-right:100px;
+}
+
+.footer-links a {
+  color: #555;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+padding-left:0px;
+padding-right:0px;
+  }
+.footer-bottom {
+padding-left:0px;
+padding-right:0px;
+}
+  .footer-socials {
+    margin-top: 10px;
+margin-left:-20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<!-----------------------------------------------------------------------JS Section ----------------------------------------------------------------------->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+</script>
+<!-- Custom JS -->
+<script>
+   // Navbar scroll effect for minimalist navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar'); 
+            if (navbar) { 
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+        // specially used for About text
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Check if slides exist before trying to access elements
+            if (slides.length > 0) {
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+        }
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        // Auto slide change every 5 seconds - only if slides exist
+        if (slides.length > 0) {
+            setInterval(nextSlide, 5000);
+        }
+
+        
+        // Lightbox for gallery (existing functionality)
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const imgSrc = this.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        closeLightbox.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Scroll animation (existing functionality)
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const serviceCards = document.querySelectorAll('.service-card');
+
+        function checkScroll() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+
+            // Animate service cards with staggered delay
+            serviceCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100 && !card.classList.contains('show')) {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 200); // 200ms delay between each card
+                }
+            });
+        }
+        // Initial check
+        checkScroll();
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+// Smooth scrolling for anchor links (existing functionality)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+  </script>
+
+<style>
+  #whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: -100px; /* start hidden */
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 99999;
+    transition: right 0.5s ease, transform 0.2s;
+    font-size: 28px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 480px) {
+    #whatsapp-button {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+      bottom: 15px;
+      right: -80px;
+    }
+  }
+
+  /* Tooltip bubble */
+  #whatsapp-tooltip {
+    position: fixed;
+    bottom: 90px; /* will adjust via JS also */
+    right: 20px;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 100000;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    font-size: 14px;
+  }
+
+  /* Chat bubble curved tail */
+  #whatsapp-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* tip height */
+    right: 12px;  /* align tail with button */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 8px 0 8px; /* triangle shape */
+    border-color: #fff transparent transparent transparent;
+    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.05));
+  }
+
+  /* Responsive tooltip */
+  @media (max-width: 480px) {
+    #whatsapp-tooltip {
+      bottom: 80px;
+      font-size: 13px;
+      padding: 9px 12px;
+    }
+  }
+
+  .slide-in {
+    right: 20px !important;
+  }
+  .show-tooltip {
+    opacity: 1 !important;
+  }
+
+#whatsapp-button,
+#whatsapp-tooltip {
+    transition: opacity 0.3s ease;
+}
+
+.hide-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+</style>
+
+<div id="whatsapp-button" onclick="openWhatsApp()">
+  <i class="fab fa-whatsapp"></i>
+</div>
+<div id="whatsapp-tooltip">Chat with us!</div>
+
+<script>
+  function openWhatsApp() {
+    const phoneNumber = "1234567890";
+    const message = "Hello! I want to chat with you.";
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    /* Slide-in the button */
+    setTimeout(() => button.classList.add("slide-in"), 300);
+
+    /* Show tooltip after 2 seconds */
+    setTimeout(() => {
+      tooltip.classList.add("show-tooltip");
+      positionTooltip();
+    }, 2000);
+
+    /* Hide tooltip after 5 seconds */
+    setTimeout(() => tooltip.classList.remove("show-tooltip"), 15000);
+
+    /* Reposition tooltip on resize */
+    window.addEventListener("resize", positionTooltip);
+  });
+
+  /* Always keep tooltip just above the button */
+  function positionTooltip() {
+    const button = document.getElementById("whatsapp-button");
+    const tooltip = document.getElementById("whatsapp-tooltip");
+
+    const rect = button.getBoundingClientRect();
+
+    tooltip.style.bottom = (window.innerHeight - rect.top + 10) + "px";
+    tooltip.style.right = (window.innerWidth - rect.right) + "px";
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wpBtn = document.getElementById("whatsapp-button");
+    const wpTip = document.getElementById("whatsapp-tooltip");
+
+    function hideWhatsapp() {
+        wpBtn.classList.add("hide-whatsapp");
+        wpTip.classList.add("hide-whatsapp");
+    }
+
+    function showWhatsapp() {
+        wpBtn.classList.remove("hide-whatsapp");
+        wpTip.classList.remove("hide-whatsapp");
+    }
+
+    /* ---  Reel Modal Detect Open/Close --- */
+    const reelModal = document.getElementById("reelModal");
+
+    new MutationObserver(() => {
+        reelModal.classList.contains("active") ? hideWhatsapp() : showWhatsapp();
+    }).observe(reelModal, { attributes: true, attributeFilter: ["class"] });
+
+
+    /* ---  Bootstrap Modals --- */
+    document.addEventListener("show.bs.modal", hideWhatsapp);
+    document.addEventListener("hidden.bs.modal", showWhatsapp);
+
+
+    /* --- Custom Drawer Detect Open/Close --- */
+    const drawer = document.getElementById("customDrawer");
+
+    new MutationObserver(() => {
+        drawer.classList.contains("open") ? hideWhatsapp() : showWhatsapp();
+    }).observe(drawer, { attributes: true, attributeFilter: ["class"] });
+
+});
+</script>
+</body>
+</html>
