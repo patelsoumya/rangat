@@ -340,15 +340,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section class="parallex-hero" id="hero">
   <div class="slider-wrapper">
-
     <!-- SLIDES -->
     <div class="slider" id="slider">
-      <div class="slide active"><img data-src="wedding1.jpg" loading="lazy"></div>
-      <div class="slide"><img data-src="fashion2.jpg" loading="lazy"></div>
-      <div class="slide"><img data-src="culture2.jpg" loading="lazy"></div>
-      <div class="slide"><img data-src="rangat-photo-4.JPG" loading="lazy"></div>
-      <div class="slide"><img data-src="rangat-photo-11.JPG" loading="lazy"></div>
-      <div class="slide"><img data-src="rangat-photo-8.JPG" loading="lazy"></div>
+      <div class="slide active"><img src="wedding1.jpg" loading="lazy"></div>
+      <div class="slide"><img src="fashion2.jpg" loading="lazy"></div>
+      <div class="slide"><img src="culture2.jpg" loading="lazy"></div>
+      <div class="slide"><img src="rangat-photo-4.JPG" loading="lazy"></div>
+      <div class="slide"><img src="rangat-photo-11.JPG" loading="lazy"></div>
+      <div class="slide"><img src="rangat-photo-8.JPG" loading="lazy"></div>
     </div>
 
     <!-- DOT INDICATORS -->
@@ -359,7 +358,6 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="arrow prev"><i class="fa fa-chevron-left"></i></div>
       <div class="arrow next"><i class="fa fa-chevron-right"></i></div>
     </div>
-
   </div>
 </section>
 <style>
@@ -383,14 +381,6 @@ document.addEventListener("DOMContentLoaded", function () {
   height: 100%;
 }
 
-.slider-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
 /* SLIDES */
 .slider {
   position: relative;
@@ -406,8 +396,9 @@ document.addEventListener("DOMContentLoaded", function () {
   height: 100%;
   opacity: 0;
   transform: translateX(0px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 0;
+  will-change: opacity, transform;  /* Optimization */
 }
 
 .slide.active {
@@ -420,7 +411,6 @@ document.addEventListener("DOMContentLoaded", function () {
   opacity: 0;
   transform: translateX(0px);
   z-index: 1;
-  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .slide img {
@@ -456,38 +446,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* ARROWS */ 
 .slider-arrows { 
-position: absolute; 
-bottom: 50%; 
-left: 0; 
-width: 100%; 
-padding: 0 25px; 
-transform: translateY(-50%); 
-display: flex; 
-justify-content: space-between; 
-z-index: 4; 
-pointer-events: none; 
+  position: absolute; 
+  bottom: 50%; 
+  left: 0; 
+  width: 100%; 
+  padding: 0 25px; 
+  transform: translateY(-50%); 
+  display: flex; 
+  justify-content: space-between; 
+  z-index: 4; 
+  pointer-events: none; 
 } 
+
 .arrow { 
-width: 40px; 
-height: 40px; 
-/*background: rgba(0,0,0,0.4);*/ 
-border-radius: 50%; 
-display: flex; 
-align-items: center; 
-justify-content: center; 
-color: white; 
-cursor: pointer; 
-pointer-events: all; 
-transition: 0.3s ease; 
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  cursor: pointer; 
+  pointer-events: all; 
+  transition: 0.3s ease; 
 } 
+
 .arrow:hover { 
-background: rgba(255,255,255,0.3); 
-transform: scale(1.1); 
+  background: rgba(255,255,255,0.3); 
+  transform: scale(1.1); 
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .slider-arrows {  }
+  .slider-arrows { }
 }
 
 </style>
@@ -497,84 +488,74 @@ document.addEventListener("DOMContentLoaded", () => {
   const dotsContainer = document.getElementById("slider-dots");
   const prevBtn = document.querySelector(".arrow.prev");
   const nextBtn = document.querySelector(".arrow.next");
-
+  const dots = [];
+  
   let currentIndex = 0;
+  let autoPlay;
 
-  /* LAZY-LOAD IMAGES */
-  function lazyLoadImage(index) {
-    const img = slides[index].querySelector("img");
-    if (!img.src) img.src = img.dataset.src;
-  }
-
-  lazyLoadImage(0);
-  lazyLoadImage(1);
-
-  /* CREATE DOTS */
+  // Create DOTs and attach click events
   slides.forEach((_, i) => {
     const dot = document.createElement("div");
     dot.classList.add("dot");
     if (i === 0) dot.classList.add("active");
     dot.dataset.index = i;
     dotsContainer.appendChild(dot);
+    dots.push(dot);
   });
 
-  const dots = document.querySelectorAll(".dot");
-
-  /* SHOW SLIDE */
   function showSlide(index) {
-    lazyLoadImage(index);
-
     slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
     dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   }
 
-  /* NEXT / PREV */
   function nextSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
+    resetAutoPlay();
   }
 
   function prevSlide() {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     showSlide(currentIndex);
+    resetAutoPlay();
   }
 
-  /* AUTOPLAY */
-  let autoPlay = setInterval(nextSlide, 7000);
-  const restartAuto = () => {
+  function resetAutoPlay() {
     clearInterval(autoPlay);
     autoPlay = setInterval(nextSlide, 7000);
-  };
+  }
 
-  nextBtn.addEventListener("click", () => { nextSlide(); restartAuto(); });
-  prevBtn.addEventListener("click", () => { prevSlide(); restartAuto(); });
-
-  /* DOT CLICK */
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
       currentIndex = Number(dot.dataset.index);
       showSlide(currentIndex);
-      restartAuto();
+      resetAutoPlay();
     });
   });
 
-  /* TOUCH SWIPE */
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+
   let startX = 0, endX = 0;
   const slider = document.getElementById("slider");
 
   slider.addEventListener("touchstart", e => (startX = e.touches[0].clientX));
   slider.addEventListener("touchmove", e => (endX = e.touches[0].clientX));
-
   slider.addEventListener("touchend", () => {
-    const diff = startX - endX;
-    if (Math.abs(diff) > 50) diff > 0 ? nextSlide() : prevSlide();
-    restartAuto();
+    if (Math.abs(startX - endX) > 50) {
+      startX > endX ? nextSlide() : prevSlide();
+      resetAutoPlay();
+    }
   });
+
+  // Initialize autoplay
+  autoPlay = setInterval(nextSlide, 7000);
+
+  // Start with the first slide
+  showSlide(0);
 });
 
 </script>
-
-
 
 <!------------------------------------------------------------------------ About Section ---------------------------------------------------------------------->
 <section class="py-5" id="about">
