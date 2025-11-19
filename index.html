@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
 <!-- Custom CSS -->
 <style>
 :root {
@@ -334,12 +334,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- SLIDES -->
     <div class="slider" id="slider">
-      <div class="slide active"><img data-src="wedding1.jpg"></div>
-      <div class="slide"><img data-src="fashion2.jpg"></div>
-      <div class="slide"><img data-src="culture2.jpg" alt="3"></div>
-      <div class="slide"><img data-src="rangat-photo-4.JPG" alt="1"></div>
-      <div class="slide"><img data-src="rangat-photo-11.JPG" alt="2"></div>
-      <div class="slide"><img data-src="rangat-photo-8.JPG" alt="3"></div>
+      <div class="slide active"><img data-src="wedding1.jpg" loading="lazy"></div>
+      <div class="slide"><img data-src="fashion2.jpg" loading="lazy"></div>
+      <div class="slide"><img data-src="culture2.jpg" loading="lazy"></div>
+      <div class="slide"><img data-src="rangat-photo-4.JPG" loading="lazy"></div>
+      <div class="slide"><img data-src="rangat-photo-11.JPG" loading="lazy"></div>
+      <div class="slide"><img data-src="rangat-photo-8.JPG" loading="lazy"></div>
     </div>
 
     <!-- DOT INDICATORS -->
@@ -351,20 +351,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="arrow next"><i class="fa fa-chevron-right"></i></div>
     </div>
 
-    <!-- TEXT CONTENT -->
-    <div class="hero-content container">
-      <h1 id="hero-title">Where Stories Begin</h1>
-      <p id="hero-description">
-        We capture your love with timeless elegance and cinematic beauty.
-      </p>
-    </div>
-
   </div>
 </section>
-
 <style>
 /* HERO BASE */
-#hero-title { color:white; }
 #hero { margin-top: 0; }
 
 .parallex-hero {
@@ -388,7 +378,6 @@ document.addEventListener("DOMContentLoaded", function () {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
   z-index: 1;
   pointer-events: none;
 }
@@ -401,54 +390,34 @@ document.addEventListener("DOMContentLoaded", function () {
   z-index: 0;
 }
 
-/* BASE STATE — all slides are visible but transparent */
 .slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.5;
+  opacity: 0;
   transform: translateX(0px);
   transition: opacity 1.2s ease, transform 1.2s ease;
   z-index: 0;
 }
 
-/* ACTIVE SLIDE — fades in smoothly */
 .slide.active {
   opacity: 1;
   transform: translateX(0);
-  z-index: 2;   /* sits ON TOP during fade */
+  z-index: 2;
 }
 
-/* LAST ACTIVE SLIDE — also stays on screen shortly to avoid blinking */
 .slide.fade-out {
   opacity: 0;
-  transform: translateX(0px); /* optional smooth push */
+  transform: translateX(0px);
   z-index: 1;
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
-
-
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* TEXT OVERLAY */
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 3;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.hero-content h1,
-.hero-content p {
-  transition: opacity 0.6s ease;
 }
 
 /* DOTS */
@@ -462,7 +431,6 @@ document.addEventListener("DOMContentLoaded", function () {
   z-index: 4;
 }
 
-/* DOTS */
 .slider-dots .dot {
   width: 8px;
   height: 8px;
@@ -470,84 +438,67 @@ document.addEventListener("DOMContentLoaded", function () {
   border-radius: 50%;
   cursor: pointer;
   transition: transform 0.3s ease, background 0.3s ease;
-  transform: scale(1); /* all dots small by default */
 }
 
 .slider-dots .dot.active {
   background: white;
-  transform: scale(1.2); /* only active dot is big */
+  transform: scale(1.2);
 }
 
-
-/* ARROWS */
-.slider-arrows {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  width: 100%;
-  padding: 0 25px;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  z-index: 4;
-  pointer-events: none;
-}
-
-.arrow {
-  width: 40px;
-  height: 40px;
-  /*background: rgba(0,0,0,0.4);*/
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-  pointer-events: all;
-  transition: 0.3s ease;
-}
-
-.arrow:hover {
-  background: rgba(255,255,255,0.3);
-  transform: scale(1.1);
+/* ARROWS */ 
+.slider-arrows { 
+position: absolute; 
+bottom: 50%; 
+left: 0; 
+width: 100%; 
+padding: 0 25px; 
+transform: translateY(-50%); 
+display: flex; 
+justify-content: space-between; 
+z-index: 4; 
+pointer-events: none; 
+} 
+.arrow { 
+width: 40px; 
+height: 40px; 
+/*background: rgba(0,0,0,0.4);*/ 
+border-radius: 50%; 
+display: flex; 
+align-items: center; 
+justify-content: center; 
+color: white; 
+cursor: pointer; 
+pointer-events: all; 
+transition: 0.3s ease; 
+} 
+.arrow:hover { 
+background: rgba(255,255,255,0.3); 
+transform: scale(1.1); 
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .hero-content p { padding: 0 15px; }
-.slider-arrows{display:none;}
+  .slider-arrows { display:none; }
 }
-</style>
 
+</style>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const dotsContainer = document.getElementById("slider-dots");
   const prevBtn = document.querySelector(".arrow.prev");
   const nextBtn = document.querySelector(".arrow.next");
-  const heroTitle = document.getElementById("hero-title");
-  const heroDesc = document.getElementById("hero-description");
-
-  /* CAPTIONS */
-  const captions = [
-    { title: "Where Stories Begin", desc: "We capture your love with timeless elegance and cinematic beauty." },
-    { title: "Timeless Wedding Moments", desc: "Our lens tells your story with sincerity, art, and soul." },
-    { title: "Elegant Emotions", desc: "Black-and-white classics and candid moments made eternal." }
-  ];
 
   let currentIndex = 0;
 
   /* LAZY-LOAD IMAGES */
-  /* LAZY-LOAD IMAGES */
-function lazyLoadImage(index) {
-  const img = slides[index].querySelector("img");
-  if (!img.src) img.src = img.dataset.src;
-}
+  function lazyLoadImage(index) {
+    const img = slides[index].querySelector("img");
+    if (!img.src) img.src = img.dataset.src;
+  }
 
-// Load first two images immediately
-lazyLoadImage(0);
-lazyLoadImage(1);
-
+  lazyLoadImage(0);
+  lazyLoadImage(1);
 
   /* CREATE DOTS */
   slides.forEach((_, i) => {
@@ -566,16 +517,6 @@ lazyLoadImage(1);
 
     slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
     dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-
-    heroTitle.style.opacity = 0;
-    heroDesc.style.opacity = 0;
-
-    setTimeout(() => {
-      heroTitle.textContent = captions[index % captions.length].title;
-      heroDesc.textContent = captions[index % captions.length].desc;
-      heroTitle.style.opacity = 1;
-      heroDesc.style.opacity = 1;
-    }, 200);
   }
 
   /* NEXT / PREV */
@@ -583,6 +524,7 @@ lazyLoadImage(1);
     currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
   }
+
   function prevSlide() {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     showSlide(currentIndex);
@@ -595,11 +537,10 @@ lazyLoadImage(1);
     autoPlay = setInterval(nextSlide, 7000);
   };
 
-  /* ARROWS CLICK */
   nextBtn.addEventListener("click", () => { nextSlide(); restartAuto(); });
   prevBtn.addEventListener("click", () => { prevSlide(); restartAuto(); });
 
-  /* DOTS CLICK */
+  /* DOT CLICK */
   dots.forEach(dot => {
     dot.addEventListener("click", () => {
       currentIndex = Number(dot.dataset.index);
@@ -621,9 +562,8 @@ lazyLoadImage(1);
     restartAuto();
   });
 });
+
 </script>
-
-
 
 
 
@@ -633,8 +573,9 @@ lazyLoadImage(1);
     <div class="row align-items-center g-5">
       <div class="text-center text-lg-start fade-in">
         <h1 class="text-center header-text-line-height">
-          Where <span id="changing-word" class="fade-word">Love</span> Meets Art – Wedding Photography &amp; Films
+          Where <span id="changing-word" class="fade-word">Love</span> Meets Art – Wedding Photography & Films
         </h1>
+
         <p class="text-center heading-centre about-lead" id="about-text">
           "Our photography captures raw, candid moments with a timeless, classic touch. Through documentary-style storytelling and artful black-and-white images, we preserve the
           essence of your love." <strong>Timeless, elegant images</strong> that reflect the emotion and beauty of your day.
@@ -644,14 +585,6 @@ lazyLoadImage(1);
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
 <style>
 #about {
   padding: 100px 0;
@@ -670,25 +603,23 @@ lazyLoadImage(1);
   line-height: 1.8;
 }
 
-/* Animated word fade effect */
+/* Animated word */
 .fade-word {
   display: inline-block;
   color: red;
   transition: opacity 0.2s ease-in-out;
-  will-change: opacity;
 }
 
-/* Scroll animation for paragraph */
+/* Scroll animation */
 #about-text {
   transform: scale(0.5);
   opacity: 0.1;
   transition: transform 0.3s ease, opacity 0.5s ease;
-  will-change: transform, opacity;
 }
 
 @media (max-width: 768px) {
   .heading-centre {
-    padding: 20px 0px;
+    padding: 20px 0;
   }
 
   .header-text-line-height {
@@ -700,52 +631,57 @@ lazyLoadImage(1);
   }
 }
 </style>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll animation for paragraph
-  const aboutText = document.getElementById("about-text");
 
-  function updateScaleOnScroll() {
+  /* ---------------------------
+     Scroll Scale & Opacity
+  ----------------------------*/
+  const aboutText = document.getElementById("about-text");
+  let ticking = false;
+
+  function updateScale() {
     const rect = aboutText.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-    const start = windowHeight;
-    const end = windowHeight * 0.2;
-    const distance = start - end;
 
-    let progress = (start - rect.top) / distance;
-    progress = Math.min(Math.max(progress, 0), 1);
+    const progress = Math.min(
+      Math.max((windowHeight - rect.top) / (windowHeight * 0.8), 0),
+      1
+    );
 
-    const scale = 0.5 + progress * 0.5;
-    const opacity = 0.1 + progress * 0.9;
-
-    aboutText.style.transform = `scale(${scale})`;
-    aboutText.style.opacity = opacity;
+    aboutText.style.transform = `scale(${0.5 + progress * 0.5})`;
+    aboutText.style.opacity = 0.1 + progress * 0.9;
+    ticking = false;
   }
 
-  window.addEventListener("scroll", updateScaleOnScroll);
-  window.addEventListener("resize", updateScaleOnScroll);
-  updateScaleOnScroll();
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateScale);
+      ticking = true;
+    }
+  }
 
-  // Word switching logic
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("resize", updateScale);
+  updateScale();
+
+
+  /* ---------------------------
+     Word Switching
+  ----------------------------*/
+  const wordEl = document.getElementById("changing-word");
   const words = ["Love", "Culture", "Fashion", "Tradition", "Emotion"];
   let index = 0;
-  const wordEl = document.getElementById("changing-word");
 
-  function changeWord() {
-    // Fade out
+  setInterval(() => {
     wordEl.style.opacity = "0";
 
-    // After fade out, change word and fade in immediately
     setTimeout(() => {
       index = (index + 1) % words.length;
       wordEl.textContent = words[index];
       wordEl.style.opacity = "1";
-    }, 200); // Match fade out duration exactly
-  }
-
-  // Start interval: hold for 2.5s, change in 0.2s
-  setInterval(changeWord, 2500);
+    }, 200);
+  }, 2500);
 });
 </script>
 
@@ -756,49 +692,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-<!------------------------------------------------------------------- Wedding Gallery --------------------------------------------------------------------->
+<!------------------------------------------------------------------- 3 Image Gallery --------------------------------------------------------------------->
 <section class="py-1 gallery-margin" id="gallery">
-<div class="container gallery-padding">
-<!----<h2 class="text-center fw-bold mb-5 fade-in">Wedding Gallery</h2>---->
-<div class="row g-2">
-<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
-<div class="gallery-item">
-<img alt="Bride and groom at sunset on the beach." class="img-fluid w-100 gallery-img" src="rangat-photo-2.jpg"/>
-</div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
-<div class="gallery-item"><img alt="Romantic first dance in a grand ballroom." class="img-fluid w-100 gallery-img" src="rangat-photo-3.jpg"/>
-</div>
-</div>
-</div>
-<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4" fade-in scroll-grow-init scroll-sync-progress" data-animate="grow-left"><div class="gallery-thumb overflow-hidden position-relative shadow-sm">
-<div class="gallery-item"><img alt="Groom's emotional reaction during the ceremony." class="img-fluid w-100 gallery-img" src="rangat-photo-5.jpg"/>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <div class="container gallery-padding">
+    <div class="row g-2">
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 scroll-grow-init scroll-sync-progress" data-animate="grow-left">
+        <div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+          <div class="gallery-item">
+            <img src="rangat-photo-2.jpg" loading="lazy" class="img-fluid w-100 gallery-img" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 scroll-grow-init scroll-sync-progress" data-animate="grow-left">
+        <div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+          <div class="gallery-item">
+            <img src="rangat-photo-3.jpg" loading="lazy" class="img-fluid w-100 gallery-img" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 scroll-grow-init scroll-sync-progress" data-animate="grow-left">
+        <div class="gallery-thumb overflow-hidden position-relative shadow-sm">
+          <div class="gallery-item">
+            <img src="rangat-photo-5.jpg" loading="lazy" class="img-fluid w-100 gallery-img" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-
-
-
-
 <style>
+/* Main gallery container */
+#gallery {
+  padding: 100px 0;
+  margin: 0 100px 100px;
+}
+
+/* Responsive padding */
+.gallery-padding {
+  padding: 0 100px;
+}
+
+/* Scroll Grow Initial */
 .scroll-grow-init {
   opacity: 0;
   transform: scale(0.8);
   filter: blur(6px);
-  transition: all 1s ease;
+  transition: opacity .8s ease, transform .8s ease, filter .8s ease;
 }
+
+/* Activated animation */
 .grow-left,
 .grow-right,
 .grow-up {
   opacity: 1 !important;
-  transform: scale(1) translateX(0) translateY(0) !important;
   filter: blur(0) !important;
-  transition: all 0.3s ease;
+  transform: scale(1) translateX(0) translateY(0) !important;
 }
+
+/* Directions */
 [data-animate="grow-left"].scroll-grow-init {
   transform: translateX(-60px) scale(0.8);
 }
@@ -815,165 +770,102 @@ document.addEventListener("DOMContentLoaded", () => {
   opacity: calc(var(--scroll-progress));
   transform: scale(calc(0.8 + var(--scroll-progress) * 0.2));
   filter: blur(calc((1 - var(--scroll-progress)) * 6px));
-  transition: opacity 0.2s ease, transform 0.1s ease, filter 0.2s ease;
+  transition: opacity .2s ease, transform .2s ease, filter .2s ease;
   will-change: opacity, transform, filter;
 }
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Intersection animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const el = entry.target;
-      const anim = el.getAttribute("data-animate");
 
-      if (entry.intersectionRatio >= 0.75) {
-        el.classList.add(anim);
-        el.classList.remove("scroll-grow-init");
-      } else {
-        el.classList.remove(anim);
-        el.classList.add("scroll-grow-init");
-      }
-    });
-  }, {
-    threshold: 0.75
-  });
-
-  document.querySelectorAll("[data-animate]").forEach(el => {
-    observer.observe(el);
-  });
-
-  // Progressive scroll syncing
-  const elements = document.querySelectorAll(".scroll-sync-progress");
-
-  function updateProgressiveScroll() {
-    const windowHeight = window.innerHeight;
-
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const visibleTop = Math.max(0, Math.min(windowHeight, windowHeight - rect.top));
-      const visibleBottom = Math.max(0, Math.min(windowHeight, rect.bottom));
-      const visibleHeight = visibleBottom - (windowHeight - visibleTop);
-      const progress = Math.max(0, Math.min(1, visibleHeight / rect.height));
-      el.style.setProperty('--scroll-progress', progress.toFixed(3));
-    });
-  }
-
-  updateProgressiveScroll();
-  window.addEventListener("scroll", updateProgressiveScroll);
-  window.addEventListener("resize", updateProgressiveScroll);
-});
-</script>
-<style>
-/* Main gallery container spacing */
-#gallery {
-  padding: 100px 0;
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-bottom: 100px;
-}
-
-/* Responsive padding */
-.gallery-padding {
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
-/* Gallery section title */
-.gallery-margin h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Gallery item */
-.gallery-item {
-  width: 100%;
-  height: 100%;
-}
-
-/* Gallery thumbnail container - forces 9:16 portrait ratio */
+/* Gallery thumbnail (3:4 ratio) */
 .gallery-thumb {
   aspect-ratio: 3 / 4;
   width: 100%;
   overflow: hidden;
+  border-radius: 0px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
   cursor: pointer;
-  border-radius: 5px;
 }
 
-/* Subtle zoom on hover */
-.gallery-thumb:hover {
-  transform: scale(1.03);
-}
 
-/* Image inside thumbnail - fills and covers */
+/* Image */
 .gallery-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  
 }
 
-/* Remove scale on hover (optional) */
-.gallery-item:hover .gallery-img {
-  transform: scale(1);
-}
-
-
-.nav-btn {
-  background: none;
-  border: 2px solid white;
-  color: white;
-  font-size: 1rem;
-  padding: 8px 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-border-radius: 5px;
-}
-
-   
-    
-    
-    
-    
-    
-
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width: 768px) {
   .gallery-padding {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
   }
+
+  #gallery {
+    margin: 0 15px 50px;
+  }
+
   .gallery-margin {
     margin-top: -30px;
   }
-  #gallery {
-    margin-left: 15px;
-    margin-right: 15px;
-margin-bottom: 50px;
-  }
 }
-       
-        
-
 </style>
-<!------------------ Fullscreen Modal ------------------------->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-<!------------------------- Lightbox ------------------------->
+  /* -------------------------------
+     Intersection Grow Animation
+  --------------------------------*/
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        const anim = el.dataset.animate;
+
+        if (entry.isIntersecting) {
+          el.classList.add(anim);
+          el.classList.remove("scroll-grow-init");
+        } else {
+          // Reset back if scrolling up/out
+          el.classList.remove(anim);
+          el.classList.add("scroll-grow-init");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll("[data-animate]").forEach(el => observer.observe(el));
 
 
-<!------------------------------------------------------------------------------------->
+  /* -------------------------------
+     Progressive Scroll Sync Effect
+  --------------------------------*/
+  const elements = document.querySelectorAll(".scroll-sync-progress");
 
-<!-----------------------------------------------------------------------Image Gallery-------------------------------------------------------------------------->
+  function updateProgress() {
+    const winH = window.innerHeight;
+
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const visible = Math.max(0, Math.min(winH, winH - rect.top));
+      const progress = Math.min(1, Math.max(0, visible / rect.height));
+
+      el.style.setProperty("--scroll-progress", progress.toFixed(3));
+    });
+  }
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+
+});
+</script>
 
 
-<!----------------------------------------------------------------------- Wedding Gallery --------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------- Recent Works --------------------------------------------------------------------->
 <section id="wedding-gallery-services3">
   <div class="wedding-gallery-container">
     <div class="wedding-gallery-section-header">
@@ -1351,7 +1243,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-<!--------------------------------------------------------------------------->
+<!---------------------------------Service Section ------------------------------------------>
 <section class="sm-blog-section-header">
     <h6></h6>
     <h5>Wedding &bull; Fashion &bull; Portraits &bull; Culture &bull; Docs</h5>
@@ -1501,7 +1393,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video.mp4"
      data-preview="video-preview.mp4" > <!-- 5 sec preview -->
-  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1519,7 +1414,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video1.mp4"
      data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video1-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1535,7 +1433,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video.mp4"
      data-preview="video-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1553,7 +1454,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video1.mp4"
      data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video1-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1568,7 +1472,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video.mp4"
      data-preview="video-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1586,7 +1493,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video1.mp4"
      data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video1-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1601,7 +1511,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video.mp4"
      data-preview="video-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1619,7 +1532,10 @@ document.addEventListener("DOMContentLoaded", function() {
      data-category="wedding"
      data-video="video1.mp4"
      data-preview="video1-preview.mp4"> <!-- 5 sec preview -->
-  <video class="card-video" src="video1-preview.mp4" muted loop autoplay playsinline></video>
+  <video class="card-video" muted playsinline preload="none" data-src="video1-preview.mp4"></video>
+<div class="play-button-center">
+  <i class="fas fa-play"></i>
+</div>
   <div class="card-overlay"></div>
   <div class="card-content text-white">
     <div class="card-details">
@@ -1708,6 +1624,28 @@ min-width: 0;
 /* =========================================
    CAROUSEL NAVIGATION BUTTONS
    ========================================= */
+.play-button-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* ensures card click still works */
+}
+
+.play-button-center i {
+  font-size: 18px;
+  color: white;
+padding-left:4px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
 
 .btn-primary-service {
   position: absolute;
@@ -2250,9 +2188,9 @@ color:white;
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  /*** =========================
-       SIMPLE HORIZONTAL CAROUSEL
-       ========================= ***/
+  /* ============================================================
+     SIMPLE HORIZONTAL CAROUSEL
+  ============================================================ */
   const carousel = document.getElementById("services-carousel");
   const wrapper = document.getElementById("services-wrapper");
   const nextBtn = document.getElementById("service-next");
@@ -2312,160 +2250,204 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  /*** =========================
-       REEL MODAL LOGIC (UNCHANGED)
-       ========================= ***/
-  const modal = document.getElementById("reelModal");
-  const videoEl = document.getElementById("reelVideo");
+  /* ============================================================
+     LAZY LOAD VIDEO PREVIEWS
+  ============================================================ */
+
+  const previewVideos = document.querySelectorAll(".card-video");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+          // Load video once
+          if (video.dataset.src) {
+            video.src = video.dataset.src;
+            video.load();
+            delete video.dataset.src;
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    previewVideos.forEach(video => observer.observe(video));
+
+  } else {
+    // Fallback for older browsers
+    previewVideos.forEach(video => {
+      if (video.dataset.src) {
+        video.src = video.dataset.src;
+        video.load();
+      }
+    });
+  }
+
+
+
+  /* ============================================================
+     REEL POPUP FUNCTIONALITY
+  ============================================================ */
+
+  const reelModal = document.getElementById("reelModal");
+  const reelVideo = document.getElementById("reelVideo");
+  const reelClose = document.getElementById("reelClose");
+
+  const reelUsername = document.querySelector(".reel-username");
+  const reelDate = document.querySelector(".reel-date");
+  const reelTitle = document.querySelector(".reel-title");
+
+  const cards = document.querySelectorAll(".service-card");
+
+  let currentIndex = 0;
+  let videoList = [];
+
+  // Build an array of all video URLs from cards
+  cards.forEach(card => {
+    videoList.push(card.getAttribute("data-video"));
+  });
+
+
+  /* ============================================================
+     OPEN REEL POPUP
+  ============================================================ */
+  cards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      currentIndex = index;
+      openReel(card);
+    });
+  });
+
+
+  function openReel(card) {
+    // Show modal
+    reelModal.classList.add("active");
+
+    // Load & play video
+    reelVideo.src = card.getAttribute("data-video");
+    reelVideo.load();
+    reelVideo.play().catch(() => {});
+
+    // Fill text
+    reelUsername.textContent = card.querySelector(".username").textContent;
+    reelDate.textContent = card.querySelector(".video-date").textContent;
+    reelTitle.textContent = card.querySelector(".video-title").textContent;
+  }
+
+
+
+  /* ============================================================
+     CLOSE POPUP
+  ============================================================ */
+  reelClose.addEventListener("click", () => {
+    reelModal.classList.remove("active");
+    reelVideo.pause();
+    reelVideo.src = "";
+  });
+
+  // Close on background click
+  reelModal.addEventListener("click", (e) => {
+    if (e.target === reelModal) {
+      reelModal.classList.remove("active");
+      reelVideo.pause();
+      reelVideo.src = "";
+    }
+  });
+
+
+
+  /* ============================================================
+     REEL NAVIGATION (NEXT / PREV)
+  ============================================================ */
+
+  const nextBtnReel = document.getElementById("reelNext");
+  const prevBtnReel = document.getElementById("reelPrev");
+
+  nextBtnReel.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    openReel(cards[currentIndex]);
+  });
+
+  prevBtnReel.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    openReel(cards[currentIndex]);
+  });
+
+
+
+  /* ============================================================
+     PLAY / PAUSE TOGGLE
+  ============================================================ */
+
+  const playToggle = document.getElementById("reelPlayToggle");
+
+  playToggle.addEventListener("click", () => {
+    if (reelVideo.paused) {
+      reelVideo.play();
+      playToggle.innerHTML = `<i class="fas fa-pause"></i>`;
+    } else {
+      reelVideo.pause();
+      playToggle.innerHTML = `<i class="fas fa-play"></i>`;
+    }
+  });
+
+
+
+  /* ============================================================
+     MUTE / UNMUTE
+  ============================================================ */
+
   const muteBtn = document.getElementById("reelMute");
-  const closeBtn = document.getElementById("reelClose");
-  const nextBtnModal = document.getElementById("reelNext");
-  const prevBtnModal = document.getElementById("reelPrev");
+
+  muteBtn.addEventListener("click", () => {
+    reelVideo.muted = !reelVideo.muted;
+    muteBtn.innerHTML = reelVideo.muted
+      ? `<i class="fas fa-volume-mute"></i>`
+      : `<i class="fas fa-volume-up"></i>`;
+  });
+
+
+
+  /* ============================================================
+     FULLSCREEN
+  ============================================================ */
+
+  const fullBtn = document.getElementById("reelFullscreen");
+
+  fullBtn.addEventListener("click", () => {
+    if (reelVideo.requestFullscreen) reelVideo.requestFullscreen();
+  });
+
+
+
+  /* ============================================================
+     PICTURE-IN-PICTURE
+  ============================================================ */
 
   const pipBtn = document.getElementById("reelPip");
-  const playToggleBtn = document.getElementById("reelPlayToggle");
-  const fullscreenBtn = document.getElementById("reelFullscreen");
-  const videoContainer = document.getElementById("reelSlide");
 
-  const nameEl = document.querySelector(".reel-username");
-  const dateEl = document.querySelector(".reel-date");
-  const titleEl = document.querySelector(".reel-title");
-
-  let cards = [];
-  let index = 0;
-
-  function updateCards() {
-    cards = Array.from(document.querySelectorAll("#services-carousel .service-card"));
-  }
-
-  // Open Modal
-  function openReel(i) {
-    if (i < 0) i = cards.length - 1;
-    if (i >= cards.length) i = 0;
-    index = i;
-
-    const card = cards[index];
-    const fullSrc = card.getAttribute("data-video");
-    const username = card.querySelector(".username")?.innerText || "";
-    const date = card.querySelector(".video-date")?.innerText || "";
-    const title = card.querySelector(".video-title")?.innerText || "";
-
-    nameEl.textContent = username;
-    dateEl.textContent = date;
-    titleEl.textContent = title;
-
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
-
-    if (videoEl.src !== fullSrc) videoEl.src = fullSrc;
-
-    videoEl.loop = true;
-    videoEl.muted = true;
-    videoEl.play().catch(() => {});
-    muteBtn.style.display = "flex";
-  }
-
-  // Close Modal
-  function closeReel() {
-    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
-    if (document.pictureInPictureElement) document.exitPictureInPicture().catch(() => {});
-    modal.classList.remove("active");
-    document.body.style.overflow = "";
-    videoEl.pause();
-    videoEl.src = "";
-  }
-
-  // Mute toggle
-  muteBtn.addEventListener("click", () => {
-    videoEl.muted = !videoEl.muted;
-    muteBtn.innerHTML = videoEl.muted
-      ? '<i class="fas fa-volume-mute"></i>'
-      : '<i class="fas fa-volume-up"></i>';
-  });
-
-  // Fullscreen
-  fullscreenBtn.addEventListener("click", () => {
-    if (!document.fullscreenElement) {
-      (videoContainer.requestFullscreen ||
-        videoContainer.webkitRequestFullscreen ||
-        videoContainer.msRequestFullscreen)?.call(videoContainer);
-      fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
-    } else {
-      (document.exitFullscreen ||
-        document.webkitExitFullscreen ||
-        document.msExitFullscreen)?.call(document);
-      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-    }
-  });
-
-  document.addEventListener("fullscreenchange", () => {
-    if (!document.fullscreenElement) {
-      fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
-    }
-  });
-
-  // PiP
   pipBtn.addEventListener("click", async () => {
     try {
-      if (document.pictureInPictureElement) await document.exitPictureInPicture();
-      else await videoEl.requestPictureInPicture();
-    } catch {}
-  });
-
-  if (!("pictureInPictureEnabled" in document)) pipBtn.style.display = "none";
-
-  // Play/Pause overlay
-  videoEl.addEventListener("pause", () => {
-    playToggleBtn.classList.add("visible");
-    playToggleBtn.innerHTML = '<i class="fas fa-play"></i>';
-  });
-  videoEl.addEventListener("play", () => playToggleBtn.classList.remove("visible"));
-  playToggleBtn.addEventListener("click", () => (videoEl.paused ? videoEl.play() : videoEl.pause()));
-  videoEl.addEventListener("click", () => (videoEl.paused ? videoEl.play() : videoEl.pause()));
-
-  // Modal navigation
-  nextBtnModal.addEventListener("click", () => openReel(index + 1));
-  prevBtnModal.addEventListener("click", () => openReel(index - 1));
-  closeBtn.addEventListener("click", closeReel);
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeReel();
-  });
-
-  // Open modal when card clicked
-  carousel.addEventListener("click", (e) => {
-    const trigger = e.target.closest(".video-trigger");
-    if (trigger) {
-      updateCards();
-      index = cards.indexOf(trigger.closest(".service-card"));
-      openReel(index);
+      if (document.pictureInPictureElement) {
+        await document.exitPictureInPicture();
+      } else {
+        await reelVideo.requestPictureInPicture();
+      }
+    } catch (err) {
+      console.warn("PiP not supported", err);
     }
   });
+
 });
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------------------- Wave Divider --------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------------------->
 <br>
 <br>
-
-<!----------------------------------------------------------------------- Stats Section ----------------------------------------------------------------------->
-
-
-
-<!----------------------------------------------------------------- Youtube Video Section ----------------------------------------------------------------------->
 
 
 
@@ -2738,39 +2720,39 @@ document.querySelectorAll('.blog-card-content').forEach(content => {
       <div class="testimonial-carousel" id="testimonial-carousel">
         <!-- Original cards -->
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-1.JPG" />
+          <img alt="testimonial image" src="rangat-photo-1.JPG" loading="lazy"/>
           <p>"Captured beautifully."<br />– First</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-2.JPG" />
+          <img alt="testimonial image" src="rangat-photo-2.JPG" loading="lazy"/>
           <p>"Very professional team!"<br />– Second</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-3.JPG" />
+          <img alt="testimonial image" src="rangat-photo-3.JPG" loading="lazy"/>
           <p>"Felt like family!"<br />– Third</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-4.JPG" />
+          <img alt="testimonial image" src="rangat-photo-4.JPG" loading="lazy"/>
           <p>"Exceptional team!"<br />– Fourth</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-5.JPG" />
+          <img alt="testimonial image" src="rangat-photo-5.JPG" loading="lazy"/>
           <p>"Captured beautifully."<br />– Fifth</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-6.JPG" />
+          <img alt="testimonial image" src="rangat-photo-6.JPG" loading="lazy"/>
           <p>"Very professional team!"<br />– Sixth</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-7.JPG" />
+          <img alt="testimonial image" src="rangat-photo-7.JPG" loading="lazy"/>
           <p>"Felt like family!"<br />– Seventh</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-8.JPG" />
+          <img alt="testimonial image" src="rangat-photo-8.JPG" loading="lazy"/>
           <p>"Exceptional team!"<br />– Last</p>
         </div>
         <div class="testimonial-card-custom">
-          <img alt="testimonial image" src="rangat-photo-9.JPG" />
+          <img alt="testimonial image" src="rangat-photo-9.JPG" loading="lazy"/>
           <p>"Felt like family!"<br />– Seventh</p>
         </div>
       </div>
