@@ -335,7 +335,77 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<div id="preloader">
+        <div class="pre-logo-container">
+            <img src="rangat-logo2.png" alt="Logo" class="pre-logo">
+            <p>Loading, please wait...</p>
+        </div>
+</div>
+<style>
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Slight background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
 
+.pre-logo-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.pre-logo {
+    width: 25vw; /* Logo width as a percentage of viewport width */
+    max-width: 150px; /* Maximum width to avoid too large logos */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+.pre-logo-container p {
+    font-size: 1.5rem; /* Adjust text size */
+    color: #333;
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .pre-logo {
+        width: 40vw; /* Adjust logo size for smaller screens */
+    }
+
+    .pre-logo-container p {
+        font-size: 1.2rem; /* Smaller font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .pre-logo {
+        width: 50vw; /* Adjust logo size for very small screens */
+    }
+
+    .pre-logo-container p {
+        font-size: 1rem; /* Even smaller font size for very small screens */
+    }
+}
+</style>
+<script>
+window.addEventListener("load", function() {
+    // Hide the preloader and show the main content after the page loads
+    const preloader = document.getElementById("preloader");
+    const mainContent = document.getElementById("main-content");
+
+    preloader.style.display = "none"; // Hide the preloader
+    mainContent.style.display = "block"; // Show the main content
+});
+
+</script>
 <!---------------------------------------------------------------- Hero Section ---------------------------------------------------------------------->
 
 <section class="parallex-hero" id="hero">
