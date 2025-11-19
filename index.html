@@ -340,6 +340,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="rangat-logo2.png" alt="Logo" class="pre-logo">
             <p>Loading, please wait...</p>
         </div>
+<div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
 </div>
 <style>
 #preloader {
@@ -348,10 +351,11 @@ document.addEventListener("DOMContentLoaded", function () {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.9); /* Optional: Slight background overlay */
+    background-color: white; 
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 9999;
 }
 
@@ -368,8 +372,28 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 .pre-logo-container p {
-    font-size: 1.5rem; /* Adjust text size */
+    font-size: 1.5rem;
     color: #333;
+    margin-bottom: 20px; /* Added margin to space out the progress bar */
+}
+
+/* Progress Bar Container */
+#progress-container {
+    width: 50%;
+    height: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    border-radius: 4px;
+    transition: width 0.2s ease-in-out;
 }
 
 
@@ -377,32 +401,47 @@ document.addEventListener("DOMContentLoaded", function () {
 /* Responsiveness */
 @media (max-width: 768px) {
     .pre-logo {
-        width: 40vw; /* Adjust logo size for smaller screens */
+        width: 40vw;
     }
 
     .pre-logo-container p {
-        font-size: 1.2rem; /* Smaller font size for mobile */
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
     .pre-logo {
-        width: 50vw; /* Adjust logo size for very small screens */
+        width: 50vw;
     }
 
     .pre-logo-container p {
-        font-size: 1rem; /* Even smaller font size for very small screens */
+        font-size: 1rem;
     }
-}
-</style>
+}</style>
 <script>
 window.addEventListener("load", function() {
-    // Hide the preloader and show the main content after the page loads
+    // Simulate loading progress
+    let progress = 0;
+    const progressBar = document.getElementById("progress-bar");
     const preloader = document.getElementById("preloader");
     const mainContent = document.getElementById("main-content");
 
-    preloader.style.display = "none"; // Hide the preloader
-    mainContent.style.display = "block"; // Show the main content
+    // Function to update the progress bar
+    function updateProgressBar() {
+        if (progress < 100) {
+            progress += 1;
+            progressBar.style.width = `${progress}%`;
+        } else {
+            // Once progress is 100%, hide the preloader and show the main content
+            setTimeout(function() {
+                preloader.style.display = "none"; // Hide the preloader
+                mainContent.style.display = "block"; // Show the main content
+            }, 500);
+        }
+    }
+
+    // Simulate the loading process by incrementing the progress bar
+    const loadingInterval = setInterval(updateProgressBar, 30); // Adjust the speed of loading
 });
 
 </script>
