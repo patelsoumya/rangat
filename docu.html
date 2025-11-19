@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Esteban&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&amp;family=Lato:wght@300&amp;display=swap" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
 <!-- Custom CSS -->
 <style>
 :root {
@@ -31,6 +31,10 @@
     font-family: 'Lato', sans-serif;
     font-weight: 300;
 letter-spacing:1.5px;
+user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer */
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -124,6 +128,11 @@ font-weight:500;
 </style>
 </head>
 <body>
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();  // Disables right-click menu
+});
+</script>
 <!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
 <nav class="navbar" id="mainNavbar">
   <div class="container d-flex justify-content-between align-items-center">
@@ -458,7 +467,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ARROWS */
 .slider-arrows {
   position: absolute;
-  bottom: 5px;
+  bottom: 50%;
   left: 0;
   width: 100%;
   padding: 0 25px;

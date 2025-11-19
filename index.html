@@ -30,7 +30,12 @@
 	 background-color: #e6dccf ;/* #ece4da */
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-letter-spacing:1.5px;
+    letter-spacing:1.5px;
+user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer */
+
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -124,7 +129,11 @@ font-weight:500;
 </style>
 </head>
 <body>
-
+<script>
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();  // Disables right-click menu
+});
+</script>
 <!--------------------------------------------------------------------- Navigation Section ----------------------------------------------------------------->
 <nav class="navbar" id="mainNavbar">
   <div class="container d-flex justify-content-between align-items-center">
@@ -573,13 +582,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="row align-items-center g-5">
       <div class="text-center text-lg-start fade-in">
         <h1 class="text-center header-text-line-height">
-          Where <span id="changing-word" class="fade-word">Love</span> Meets Art – Wedding Photography & Films
+          Our art <span id="changing-word" class="fade-word">Captures</span> – Films & Photography 
         </h1>
 
         <p class="text-center heading-centre about-lead" id="about-text">
-          "Our photography captures raw, candid moments with a timeless, classic touch. Through documentary-style storytelling and artful black-and-white images, we preserve the
-          essence of your love." <strong>Timeless, elegant images</strong> that reflect the emotion and beauty of your day.
-          My approach blends <em>documentary storytelling</em> with refined portraiture.
+          "Our photography is an artful blend of raw emotion and timeless elegance, capturing the unspoken moments that make your love story uniquely yours. Through the lens of documentary-style storytelling and the elegance of black-and-white imagery, we freeze fleeting moments, turning them into lasting memories. <strong>Graceful, enduring images</strong> that echo the depth and beauty of your celebration. With each click, I weave together candid, heartfelt moments with portraits that reflect not just what you look like, but who you are—capturing the essence of your connection in its most authentic form.
         </p>
       </div>
     </div>
@@ -670,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
      Word Switching
   ----------------------------*/
   const wordEl = document.getElementById("changing-word");
-  const words = ["Love", "Culture", "Fashion", "Tradition", "Emotion"];
+  const words = ["Captures", "Cherish", "Treasures" ];
   let index = 0;
 
   setInterval(() => {
