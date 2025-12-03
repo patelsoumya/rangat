@@ -342,9 +342,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <!-- SLIDES -->
     <div class="slider" id="slider">
-      <div class="slide active"><img src="fashion1.jpg" alt="1"></div>
-      <div class="slide"><img src="fashion2.jpg" alt="2"></div>
-      <div class="slide"><img src="fashion3.jpg" alt="3"></div>
+      <div class="slide active"><img src="fashion1.webp" alt="1"></div>
+      <div class="slide"><img src="fashion2.webp" alt="2"></div>
+      <div class="slide"><img src="fashion3.webp" alt="3"></div>
     </div>
 
     <!-- DOT INDICATORS -->
@@ -836,9 +836,9 @@ lazyLoadImage(1);
       const thumb = document.createElement('img');
       thumb.className = 'video-thumb';
       // use maxresdefault when available, fallback to hqdefault
-      thumb.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+      thumb.src = `https://img.youtube.com/vi/${videoID}/maxresdefault.webp`;
       // If maxres not available the image will be a 120x90 placeholder; swap to hqdefault on error
-      thumb.onerror = () => { thumb.src = `https://img.youtube.com/vi/${videoID}/hqdefault.jpg`; };
+      thumb.onerror = () => { thumb.src = `https://img.youtube.com/vi/${videoID}/hqdefault.webp`; };
 
       card.appendChild(thumb);
 
