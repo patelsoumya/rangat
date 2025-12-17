@@ -3801,7 +3801,7 @@ function showFloatingVideoAfterDelay() {
     const container = document.getElementById("floating-video");
     const video = document.getElementById("promoVideo");
 
-    const mobileVideoUrl = "video-preview.mp4";
+    const mobileVideoUrl = "video1-preview.mp4";
     const desktopVideoUrl = "video1-preview.mp4";
 
     // Set video source based on device
@@ -3815,7 +3815,7 @@ function showFloatingVideoAfterDelay() {
         requestAnimationFrame(() => {
             container.style.opacity = 1;
         });
-    }, 7000);
+    }, 5000);
 }
 
 function closeFloatingVideo() {
