@@ -3748,5 +3748,180 @@ document.addEventListener("load", function () {
 </script>
 
 
+
+
+
+
+<div id="floating-video">
+    <div class="video-thumb">
+        <button class="close-btn" onclick="closeFloatingVideo()">✕</button>
+        <video id="promoVideo" autoplay muted loop playsinline></video>
+    </div>
+</div>
+
+
+
+
+
+
+<style>
+#floating-video {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9998;
+    cursor: grab;
+    touch-action: none; /* prevent scrolling when dragging */
+}
+
+.video-thumb {
+    position: relative;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.video-thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Desktop & Tablet */
+@media (min-width: 769px) {
+    .video-thumb {
+        width: 320px;
+        height: 180px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .video-thumb {
+        width: 160px;
+        height: 280px;
+    }
+}
+</style>
+<script>
+window.addEventListener("load", function () {
+    // Hide preloader
+    const preloader = document.getElementById("preloader");
+    const mainContent = document.getElementById("main-content");
+
+    if (preloader) preloader.style.display = "none";
+    if (mainContent) mainContent.style.display = "block";
+
+    // Start floating video **after 5 seconds of preloader hiding**
+    showFloatingVideoAfterDelay();
+});
+
+function showFloatingVideoAfterDelay() {
+    const container = document.getElementById("floating-video");
+    const video = document.getElementById("promoVideo");
+
+    const mobileVideoUrl = "video-preview.mp4";
+    const desktopVideoUrl = "video1-preview.mp4";
+
+    // Set video source based on device
+    video.src = window.innerWidth <= 768 ? mobileVideoUrl : desktopVideoUrl;
+    video.load();
+
+    // 5-second delay
+    setTimeout(() => {
+        container.style.display = "block";
+    }, 20000);
+}
+
+function closeFloatingVideo() {
+    const el = document.getElementById("floating-video");
+    el.style.display = "none";
+}
+
+/* Draggable inside viewport + cancel button works */
+(function () {
+    const el = document.getElementById("floating-video");
+    let isDragging = false;
+    let startX, startY, offsetX, offsetY;
+
+    const startDrag = (e) => {
+        if (e.target.classList.contains("close-btn")) return;
+
+        isDragging = true;
+        const evt = e.touches ? e.touches[0] : e;
+        startX = evt.clientX;
+        startY = evt.clientY;
+
+        const rect = el.getBoundingClientRect();
+        offsetX = startX - rect.left;
+        offsetY = startY - rect.top;
+
+        el.style.cursor = "grabbing";
+        if (e.type === "touchstart") e.preventDefault();
+    };
+
+    const drag = (e) => {
+        if (!isDragging) return;
+
+        const evt = e.touches ? e.touches[0] : e;
+
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        const rect = el.getBoundingClientRect();
+
+        let newX = evt.clientX - offsetX;
+        let newY = evt.clientY - offsetY;
+
+        // Boundaries
+        newX = Math.max(0, Math.min(newX, vw - rect.width));
+        newY = Math.max(0, Math.min(newY, vh - rect.height));
+
+        el.style.left = newX + "px";
+        el.style.top = newY + "px";
+        el.style.bottom = "auto";
+        el.style.right = "auto";
+
+        if (e.type === "touchmove") e.preventDefault();
+    };
+
+    const stopDrag = () => {
+        isDragging = false;
+        el.style.cursor = "grab";
+    };
+
+    el.addEventListener("mousedown", startDrag);
+    el.addEventListener("touchstart", startDrag, { passive: false });
+
+    document.addEventListener("mousemove", drag);
+    document.addEventListener("touchmove", drag, { passive: false });
+
+    document.addEventListener("mouseup", stopDrag);
+    document.addEventListener("touchend", stopDrag);
+})();
+</script>
+
+
+
+
+
+
+
 </body>
 </html>
