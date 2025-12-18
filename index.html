@@ -3572,36 +3572,107 @@ margin-left:-20px;
   }
 
   /* Tooltip bubble */
-  #whatsapp-tooltip {
-    position: fixed;
-    bottom: 90px; /* will adjust via JS also */
-    right: 20px;
-    background-color: #fff;
-    color: #333;
-    padding: 10px 14px;
-    border-radius: 10px;
+/* Chat bubble tooltip */
+#whatsapp-tooltip {
+  position: fixed;
+  background: #ffffff;
+  color: #333;
+  padding: 12px 12px;
+  border-radius: 18px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.12),
+    0 1px 3px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100000;
+
+  transform-origin: bottom center;
+
+}
+
+/* Big bubble — TOUCHING WhatsApp button */
+#whatsapp-tooltip::before {
+  content: "";
+  position: absolute;
+
+  bottom: -10px;          /* starts right above the button */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* Small bubble — between big bubble & chat */
+#whatsapp-tooltip::after {
+  content: "";
+  position: absolute;
+
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 7px;
+  height: 7px;
+  background: #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Show tooltip again when hovering WhatsApp button */
+#whatsapp-button:hover + #whatsapp-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  animation: bubblePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Bubble pop animation */
+@keyframes bubblePop {
+  0% {
     opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 100000;
-    pointer-events: none;
-    white-space: nowrap;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-    font-size: 14px;
+    transform: scale(0.75) translateY(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.show-tooltip {
+  opacity: 1 !important;
+  animation: bubblePop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  #whatsapp-tooltip {
+    bottom: 80px;
+    font-size: 13px;
+    padding: 10px 14px;
   }
 
-  /* Chat bubble curved tail */
   #whatsapp-tooltip::after {
-    content: "";
-    position: absolute;
-    bottom: -10px; /* tip height */
-    right: 12px;  /* align tail with button */
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 8px 0 8px; /* triangle shape */
-    border-color: #fff transparent transparent transparent;
-    filter: drop-shadow(0 -2px 1px rgba(0,0,0,0.05));
+    right: 18px;
   }
+
+  #whatsapp-tooltip::before {
+    right: 10px;
+  }
+}
+
 
   /* Responsive tooltip */
   @media (max-width: 480px) {
@@ -3628,12 +3699,35 @@ margin-left:-20px;
     opacity: 0 !important;
     pointer-events: none !important;
 }
+/* Typing animation for chat text */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;             /* hide text until typed */
+  white-space: nowrap;
+  border-right: 2px solid #25D366;  /* blinking cursor */
+  animation: typing 2.5s steps(16, end), blink 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.show-tooltip .typing-text {
+  animation: typing 2.5s steps(16, end) 0.7s forwards, blink 0.75s step-end infinite 0.7s;
+}
+
 </style>
 
 <div id="whatsapp-button" onclick="openWhatsApp()">
   <i class="fab fa-whatsapp"></i>
 </div>
-<div id="whatsapp-tooltip">Chat with us!</div>
+<div id="whatsapp-tooltip"><span class="typing-text">Chat with us.</span></div>
 
 <script>
   function openWhatsApp() {
@@ -3724,6 +3818,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const wpBtn = document.getElementById("whatsapp-button");
+    const wpTip = document.getElementById("whatsapp-tooltip");
+
+    /* Show tooltip on hover / touch */
+    wpBtn.addEventListener("mouseenter", () => {
+        wpTip.classList.add("show-tooltip");
+    });
+
+    wpBtn.addEventListener("mouseleave", () => {
+        wpTip.classList.remove("show-tooltip");
+    });
+
+    /* Mobile tap preview (tooltip shows briefly) */
+    wpBtn.addEventListener("touchstart", () => {
+        wpTip.classList.add("show-tooltip");
+        setTimeout(() => {
+            wpTip.classList.remove("show-tooltip");
+        }, 2500);
+    });
+
+});
+</script>
+
 
 
 
