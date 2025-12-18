@@ -3642,25 +3642,38 @@ margin-left:-20px;
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("whatsapp-button");
-    const tooltip = document.getElementById("whatsapp-tooltip");
+  window.addEventListener("load", function () {
 
-    /* Slide-in the button */
-    setTimeout(() => button.classList.add("slide-in"), 300);
+  const preloader = document.getElementById("preloader");
+  const mainContent = document.getElementById("main-content");
+  const button = document.getElementById("whatsapp-button");
+  const tooltip = document.getElementById("whatsapp-tooltip");
 
-    /* Show tooltip after 2 seconds */
+  /* Hide preloader */
+  preloader.style.display = "none";
+  if (mainContent) mainContent.style.display = "block";
+
+  /* WhatsApp appears 2 seconds AFTER preloader */
+  setTimeout(() => {
+
+    /* Slide in button */
+    button.classList.add("slide-in");
+
+    /* Show tooltip */
     setTimeout(() => {
       tooltip.classList.add("show-tooltip");
       positionTooltip();
-    }, 2000);
+    }, 700);
 
-    /* Hide tooltip after 5 seconds */
-    setTimeout(() => tooltip.classList.remove("show-tooltip"), 15000);
+    /* Hide tooltip after 15 seconds */
+    setTimeout(() => {
+      tooltip.classList.remove("show-tooltip");
+    }, 15000);
 
-    /* Reposition tooltip on resize */
-    window.addEventListener("resize", positionTooltip);
-  });
+  }, 2000);
+
+  window.addEventListener("resize", positionTooltip);
+});
 
   /* Always keep tooltip just above the button */
   function positionTooltip() {
