@@ -1314,7 +1314,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <!---------------------------------Service Section ------------------------------------------>
 
-
 <div class="service-section-parallax-container">
     <style>
         :root {
@@ -1328,7 +1327,6 @@ document.addEventListener("DOMContentLoaded", function() {
             background-color: #000;
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
         }
 
         .service-section-item {
@@ -1341,12 +1339,24 @@ document.addEventListener("DOMContentLoaded", function() {
             justify-content: center;
             background-color: var(--ss-bg-color);
             overflow: hidden;
-            /* performance: transform and filter are heavy; will-change tells browser to optimize */
-            will-change: transform, filter, opacity;
-            transition: filter 0.1s linear, transform 0.1s linear, opacity 0.1s linear;
-            box-shadow: 0 -10px 50px rgba(0,0,0,0.1);
-            /* content-visibility: auto tells browser to skip rendering if far off-screen */
-            content-visibility: auto;
+            box-shadow: 0 -15px 30px rgba(0,0,0,0.2); 
+            will-change: transform, filter;
+            transition: transform 0.1s linear; 
+        }
+
+        /* Grey Shadow Overlay */
+        .service-section-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); 
+            opacity: 0;
+            z-index: 20;
+            pointer-events: none;
+            will-change: opacity;
         }
 
         .service-section-content {
@@ -1363,27 +1373,13 @@ document.addEventListener("DOMContentLoaded", function() {
         .service-section-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0; font-weight: 400; line-height: 0.9; color: #1a1a1a; order: 2; }
         .service-section-title span { display: block; font-family: 'Georgia', serif; font-style: italic; color: var(--ss-accent-red); }
         .service-section-text { font-size: 1rem; line-height: 1.6; color: #444; margin: 1.5rem auto; order: 4; }
-        .service-section-btn { padding: 10px 30px; border: 1px solid var(--ss-accent-red); background: transparent; color: var(--ss-accent-red); cursor: pointer; text-transform: uppercase; font-size: 0.7rem; align-self: center; order: 5; transition: 0.3s ease; }
+        .service-section-btn { padding: 10px 30px; border: 1px solid var(--ss-accent-red); background: transparent; color: var(--ss-accent-red); cursor: pointer; text-transform: uppercase; font-size: 0.7rem; align-self: center; order: 5; }
 
-        .service-section-img { 
-            position: absolute; 
-            object-fit: cover; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
-            z-index: 1; 
-            /* decoding=async prevents the main thread from blocking while images load */
-        }
+        .service-section-img { position: absolute; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.15); z-index: 1; }
 
         @media (max-width: 767px) {
             .service-section-img-1, .service-section-img-2, .service-section-img-3, .service-section-img-4 { display: none; }
-            .service-section-img-mobile {
-                display: block;
-                position: relative;
-                width: 100%;
-                height: 250px;
-                margin: 1.5rem 0;
-                order: 3;
-                box-shadow: none;
-            }
+            .service-section-img-mobile { display: block; position: relative; width: 100%; height: 250px; margin: 1.5rem 0; order: 3; }
             .service-section-content { width: 90%; padding: 1rem; }
         }
 
@@ -1400,75 +1396,82 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="service-section-content">
             <span class="service-section-label">Elevated Experiences</span>
             <h2 class="service-section-title">Signature <span>Vanity</span></h2>
-            <img src="wedding1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-mobile">
+            <img src="wedding1.webp" class="service-section-img service-section-img-mobile">
             <p class="service-section-text">Every journey carries its own signature—personality, temperament, individuality, uniqueness.</p>
             <button class="service-section-btn">Discover</button>
         </div>
-        <img src="wedding1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-1">
-        <img src="wedding2.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-2">
-        <img src="wedding3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-3">
-        <img src="i1wedding6.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-4">
+        <img src="wedding1.webp" class="service-section-img service-section-img-1">
+        <img src="wedding2.webp" class="service-section-img service-section-img-2">
+        <img src="wedding3.webp" class="service-section-img service-section-img-3">
+        <img src="i1wedding6.webp" class="service-section-img service-section-img-4">
     </section>
 
     <section class="service-section-item">
         <div class="service-section-content">
             <span class="service-section-label">Not Just a Stay</span>
             <h2 class="service-section-title">Authentic <span>Escapes</span></h2>
-            <img src="fashion3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-mobile">
+            <img src="fashion3.webp" class="service-section-img service-section-img-mobile">
             <p class="service-section-text">Indulge in the ultimate escape with our handpicked selection of unique stays.</p>
             <button class="service-section-btn">Discover</button>
         </div>
-        <img src="fashion1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-1">
-        <img src="fashion2.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-2">
-        <img src="fashion3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-3">
-        <img src="fashion4.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-4">
+        <img src="fashion1.webp" class="service-section-img service-section-img-1">
+        <img src="fashion2.webp" class="service-section-img service-section-img-2">
+        <img src="fashion3.webp" class="service-section-img service-section-img-3">
+        <img src="fashion4.webp" class="service-section-img service-section-img-4">
     </section>
 
     <script>
         (function() {
-            const ssElements = document.querySelectorAll('.service-section-item');
+            const items = document.querySelectorAll('.service-section-item');
             
-            // 1. Performance: Use RequestAnimationFrame to prevent "jank"
-            let ticking = false;
+            items.forEach((item, i) => {
+                item.style.zIndex = i + 1;
+            });
 
-            function serviceSectionUpdate() {
-                ssElements.forEach((item, index) => {
-                    const nextItem = ssElements[index + 1];
+            function updateParallax() {
+                items.forEach((item, index) => {
+                    const nextItem = items[index + 1];
+                    const vh = window.innerHeight;
+                    const rect = item.getBoundingClientRect();
+
+                    // Scaling Logic for incoming boxes
+                    // ONLY APPLY IF NOT THE FIRST BOX (index 0)
+                    if (index > 0) {
+                        if (rect.top > 0 && rect.top < vh) {
+                            let enteringProgress = (vh - rect.top) / vh;
+                            enteringProgress = Math.max(0, Math.min(1, enteringProgress));
+                            
+                            const scaleValue = 0.9 + (enteringProgress * 0.15);
+                            item.style.transform = `scale(${scaleValue})`;
+                        } else if (rect.top <= 0) {
+                            item.style.transform = `scale(1)`;
+                        }
+                    } else {
+                        // First box stays at 100% scale
+                        item.style.transform = `scale(1)`;
+                    }
+
+                    // Shadow/Brightness Logic for box being covered
                     if (nextItem) {
                         const nextRect = nextItem.getBoundingClientRect();
-                        const vh = window.innerHeight;
+                        let shadowProgress = (vh - nextRect.top) / vh;
+                        shadowProgress = Math.max(0, Math.min(1, shadowProgress));
 
-                        // Only calculate if the next item is near or in the viewport
-                        if (nextRect.top < vh && nextRect.bottom > 0) {
-                            let scrollProgress = (vh - nextRect.top) / vh;
-                            scrollProgress = Math.max(0, Math.min(1, scrollProgress));
-
-                            item.style.filter = `brightness(${1 - (scrollProgress * 0.65)})`;
-                            item.style.transform = `scale(${1 - (scrollProgress * 0.12)})`;
-                            item.style.opacity = 1 - (scrollProgress * 0.4);
-                        } else if (nextRect.top >= vh) {
-                            // Reset if it's below viewport
-                            item.style.filter = 'brightness(1)';
-                            item.style.transform = 'scale(1)';
-                            item.style.opacity = '1';
-                        }
+                        item.style.filter = `brightness(${1 - (shadowProgress * 0.5)})`;
+                        item.style.setProperty('--shadow-opacity', shadowProgress);
                     }
                 });
-                ticking = false;
             }
 
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(serviceSectionUpdate);
-                    ticking = true;
-                }
-            }, { passive: true }); // passive: true improves scroll performance
+            const style = document.createElement('style');
+            style.innerHTML = '.service-section-item::after { opacity: var(--shadow-opacity, 0); }';
+            document.head.appendChild(style);
 
-            serviceSectionUpdate();
+            window.addEventListener('scroll', updateParallax);
+            updateParallax();
         })();
     </script>
 </div>
-
 <!-----------------------------------------------------------------------Video Gallery ------------------------------------------------------------------------>
 <section class="py-5" id="services" style="position:relative;">
   <div class="container">
