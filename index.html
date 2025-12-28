@@ -16,24 +16,26 @@
 
 <!-- Custom CSS -->
 <style>
+
 :root {
+--font-primary: "Solare", "Helvetica", "Arial", sans-serif;
     --primary-color: #a3b18a;
     --secondary-color: #dad7cd;
     --dark-color: #344e41;
     --accent-color: #C37656;
     --highlight-color: #3a5a40;
     --button-bg-color: #C37656;
-    --heading-color: #624332; /* Sage Light Scheme - Headings */
+    --heading-color: black; /* Sage Light Scheme - Headings */
   }
 html {
             scroll-behavior: smooth;
         }
   body {
-	 background-color: white;/*#e6dccf*/  /*#ece4da */
+	 background-color: #f9f6f2;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing:1.5px;
-user-select: none;
+    user-select: none;
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* Internet Explorer */
@@ -96,7 +98,15 @@ section {
 	opacity: 1;
 	transform: translateY(0);
 }  
+.head-text-font {
+  font-family: var(--font-primary);
+  font-weight: 450;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 
+  /* min-size: 24px | scaling: 4.167vw | max-size: 80px */
+  font-size: clamp(24px, 3.167vw, 80px);
+}
 /************************************ Button Primary and  *************************/
 .btn-primary {
 	background-color: var(--accent-color);
@@ -631,124 +641,143 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 
-<!------------------------------------------------------------------------ About Section ---------------------------------------------------------------------->
-<section class="py-5" id="about">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="text-center text-lg-start fade-in">
-        <h1 class="text-center header-text-line-height">
-          Our art <span id="changing-word" class="fade-word">Captures</span> – Films & Photography 
-        </h1>
 
-        <p class="text-center heading-centre about-lead" id="about-text">
-          "Our photography is an artful blend of raw emotion and timeless elegance, capturing the unspoken moments that make your love story uniquely yours. Through the lens of documentary-style storytelling and the elegance of black-and-white imagery, we freeze fleeting moments, turning them into lasting memories. <strong>Graceful, enduring images</strong> that echo the depth and beauty of your celebration. With each click, I weave together candid, heartfelt moments with portraits that reflect not just what you look like, but who you are—capturing the essence of your connection in its most authentic form.
-        </p>
-      </div>
+
+
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------ About Section ---------------------------------------------------------------------->
+<section class="scroll-container">
+  <div class="scaling-content" id="scaling-target">
+    <h1 class="head-text-font">
+      Our art <span id="changing-word" class="fade-word">Captures</span> –<br> Films & Photography
+    </h1>
+
+    <div class="wysiwyg-group">
+      <p class="wysiwyg-medium">
+        Our photography is an artful blend of raw emotion and timeless elegance, 
+        capturing the unspoken moments that make your love story uniquely yours.
+      </p>
+      
+      <blockquote class="italic-quote">
+        "Graceful, enduring images that echo the depth and beauty of your celebration."
+      </blockquote>
+      
+      <p class="wysiwyg-medium">
+        With each click, I weave together candid, heartfelt moments with portraits 
+        that reflect not just how you looked, but how you felt.
+      </p>
     </div>
   </div>
 </section>
 <style>
-#about {
-  padding: 100px 0;
+:root {
+    --primary-red: #bf1826;
+    --primary-black: #18191c;
+    --font-primary: "Solare", serif;
+    --font-secondary: "Bagoss", sans-serif;
 }
 
-.header-text-line-height {
-  line-height: 1.8;
+.scroll-container {
+    padding: 50px 0; /* Huge padding to allow space for the scroll effect */
+    display: flex;
+    justify-content: center;
+    background-color: #fcfaf8;
 }
 
-.heading-centre {
-  padding: 10px 150px;
+.scaling-content {
+    max-width: 80vw;
+    text-align: center;
+    /* Starting state: tiny and transparent */
+    transform: scale(0.3); 
+    opacity: 0;
+    will-change: transform, opacity;
+    /* transition: none; We want JS to handle the position exactly */
+    transform-origin: center center;
 }
 
-.about-lead {
-  font-size: 1.2rem;
-  line-height: 1.8;
+.head-text-font {
+    font-family: var(--font-primary);
+    font-weight: 450;
+    font-size: clamp(2.2rem, 5vw, 4.167vw);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
 }
 
-/* Animated word */
 .fade-word {
-  display: inline-block;
-  color: red;
-  transition: opacity 0.2s ease-in-out;
+    color: var(--primary-red);
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
 }
 
-/* Scroll animation */
-#about-text {
-  transform: scale(0.5);
-  opacity: 0.1;
-  transition: transform 0.3s ease, opacity 0.5s ease;
+.wysiwyg-medium {
+    font-family: var(--font-secondary);
+    font-size: clamp(1rem, 1.5vw, 1.167vw);
+    line-height: 1.5;
+    color: #858585;
 }
 
-@media (max-width: 768px) {
-  .heading-centre {
-    padding: 20px 0;
-  }
-
-  .header-text-line-height {
-    line-height: 1.6;
-  }
-
-  .about-lead {
-    font-size: 1rem;
-  }
-}
-</style>
+.italic-quote {
+    font-family: var(--font-primary);
+    font-style: italic;
+    font-size: clamp(1.5rem, 3vw, 2.5vw);
+    margin: 3rem 0;
+}</style>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* ---------------------------
-     Scroll Scale & Opacity
-  ----------------------------*/
-  const aboutText = document.getElementById("about-text");
-  let ticking = false;
+  const target = document.getElementById("scaling-target");
+  const wordEl = document.getElementById("changing-word");
+  const words = ["Captures", "Cherish", "Treasures"];
+  let wordIndex = 0;
 
   function updateScale() {
-    const rect = aboutText.getBoundingClientRect();
+    const rect = target.getBoundingClientRect();
     const windowHeight = window.innerHeight;
+    
+    // The "Start" is the bottom of the screen (100% of height)
+    const startPoint = windowHeight;
+    // The "End" is 60% of the screen height (where it should be full size)
+    const endPoint = windowHeight * 0.55; // 0.4 from top is 60% from bottom
+    
+    // Progress calculation: 
+    // When rect.top is at windowHeight, progress is 0.
+    // When rect.top is at endPoint, progress is 1.
+    let progress = (startPoint - rect.top) / (startPoint - endPoint);
+    
+    // Clamp progress between 0 and 1 so it doesn't over-scale
+    progress = Math.max(0, Math.min(1, progress));
 
-    const progress = Math.min(
-      Math.max((windowHeight - rect.top) / (windowHeight * 0.8), 0),
-      1
-    );
+    // Map progress to scale (0.3 to 1.0) and opacity (0 to 1.0)
+    const currentScale = 0.3 + (progress * 0.7);
+    const currentOpacity = progress;
 
-    aboutText.style.transform = `scale(${0.5 + progress * 0.5})`;
-    aboutText.style.opacity = 0.1 + progress * 0.9;
-    ticking = false;
+    target.style.transform = `scale(${currentScale})`;
+    target.style.opacity = currentOpacity;
   }
 
-  function onScroll() {
-    if (!ticking) {
-      requestAnimationFrame(updateScale);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener("scroll", onScroll);
-  window.addEventListener("resize", updateScale);
+  // Listen for scroll events
+  window.addEventListener("scroll", updateScale, { passive: true });
+  
+  // Initial call to set position on page load
   updateScale();
 
-
-  /* ---------------------------
-     Word Switching
-  ----------------------------*/
-  const wordEl = document.getElementById("changing-word");
-  const words = ["Captures", "Cherish", "Treasures" ];
-  let index = 0;
-
+  // Word Changing Loop
   setInterval(() => {
     wordEl.style.opacity = "0";
-
     setTimeout(() => {
-      index = (index + 1) % words.length;
-      wordEl.textContent = words[index];
+      wordIndex = (wordIndex + 1) % words.length;
+      wordEl.textContent = words[wordIndex];
       wordEl.style.opacity = "1";
-    }, 200);
+    }, 300);
   }, 2500);
 });
 </script>
-
-
-
 
 
    
@@ -938,12 +967,9 @@ document.addEventListener("DOMContentLoaded", () => {
 <section id="wedding-gallery-services3">
   <div class="wedding-gallery-container">
     <div class="wedding-gallery-section-header">
-      <h2 class="fw-bold">
-        Recent Works <span style="color:red"></span>
-      </h2>
-      <a href="gallery.html" class="wedding-gallery-view-all-btn" style="display:none;">
-        View All <i class="fa-solid fa-arrow-right"></i>
-      </a>
+      <h2 class="service-section-title-head">
+  <span id="typing-text"></span>
+</h2>
     </div>    
 
     <div class="wedding-gallery-services-carousel-wrapper position-relative overflow-hidden" id="wedding-gallery-services-wrapper">
@@ -1004,6 +1030,60 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <style>
+.service-section-title-head { 
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 22px;
+  background-color: #f6f1ea;
+  border-left: 6px solid red;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 1.3;
+
+  font-style: normal;   /* straight */
+  font-weight: 700;     /* bold */
+}
+
+/* Typing container reset */
+#typing-text {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ONLY span → italic + normal weight */
+.service-section-title-head span {
+  font-style: italic;
+  font-weight: 400;     /* normal */
+}
+
+/* Typing cursor */
+#typing-text::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .service-section-title-head {
+    padding: 0.5em 1em;
+    border-left-width: 4px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .service-section-title-head {
+    font-size: 18px;
+    padding: 0.4em 0.8em;
+    border-left-width: 3px;
+  }
+}
+
+
 #wedding-gallery-services3 {
   padding: 10px 0;
 margin-left:100px;
@@ -1269,6 +1349,38 @@ scroll-padding-right: 30px !important;
 }
 
 </style>
+<script>
+  const text = 'Recent <span>Works</span>';
+  const typingSpeed = 120;
+  const erasingSpeed = 80;
+  const delayAfterTyping = 1500;
+
+  let index = 0;
+  let isDeleting = false;
+  const element = document.getElementById("typing-text");
+
+  function loopTyping() {
+    if (!isDeleting && index <= text.length) {
+      element.innerHTML = text.slice(0, index++);
+    } 
+    else if (isDeleting && index >= 0) {
+      element.innerHTML = text.slice(0, index--);
+    }
+
+    if (index === text.length + 1) {
+      setTimeout(() => isDeleting = true, delayAfterTyping);
+    }
+
+    if (isDeleting && index === 0) {
+      isDeleting = false;
+    }
+
+    setTimeout(loopTyping, isDeleting ? erasingSpeed : typingSpeed);
+  }
+
+  loopTyping();
+</script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -1373,32 +1485,62 @@ document.addEventListener("DOMContentLoaded", function() {
         .service-section-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0; font-weight: 400; line-height: 0.9; color: #1a1a1a; order: 2; }
         .service-section-title span { display: block; font-family: 'Georgia', serif; font-style: italic; color: var(--ss-accent-red); }
         .service-section-text { font-size: 1rem; line-height: 1.6; color: #444; margin: 1.5rem auto; order: 4; }
-        .service-section-btn { padding: 10px 30px; border: 1px solid var(--ss-accent-red); background: transparent; color: var(--ss-accent-red); cursor: pointer; text-transform: uppercase; font-size: 0.7rem; align-self: center; order: 5; }
+       .service-section-btn {
+  padding: 10px 30px;
+  border: 1px solid var(--ss-accent-red);
+  background: transparent;
+  color: var(--ss-accent-red);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  align-self: center;
+  order: 5;
+  text-decoration: none;   /* 🔹 remove underline */
+  display: inline-block;
+  transition: all 0.3s ease;
+}
 
+.service-section-btn:hover {
+  background-color: var(--ss-accent-red);
+  color: #fff;
+}
         .service-section-img { position: absolute; object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.15); z-index: 1; }
 
         @media (max-width: 767px) {
-            .service-section-img-1, .service-section-img-2, .service-section-img-3, .service-section-img-4 { display: none; }
-            .service-section-img-mobile { display: block; position: relative; width: 100%; height: 250px; margin: 1.5rem 0; order: 3; }
+            .service-section-img-1, .service-section-img-2, .service-section-img-3, .service-section-img-4 { 
+                display: none !important; 
+            }
+            .service-section-img-mobile { 
+                display: block !important; 
+                position: relative; 
+                width: 100%; 
+                height: 250px; /* Adjust height as needed */
+                margin: 1rem 0; 
+                order: 3; 
+                object-fit: cover;
+                border-radius: 0px;
+            }
             .service-section-content { width: 90%; padding: 1rem; }
         }
 
         @media (min-width: 768px) {
-            .service-section-img-mobile { display: none; }
+            .service-section-img-mobile { display: none !important; }
             .service-section-img-1 { width: 18%; height: 35%; top: 5%; left: 3%; filter: grayscale(1); }
             .service-section-img-2 { width: 15%; height: 25%; top: 8%; right: 8%; }
             .service-section-img-3 { width: 22%; height: 30%; bottom: 8%; left: 8%; }
             .service-section-img-4 { width: 160px; height: 160px; bottom: 12%; right: 5%; border-radius: 2px; }
         }
     </style>
-
-    <section class="service-section-item">
+<section class="service-section-item">
         <div class="service-section-content">
-            <span class="service-section-label">Elevated Experiences</span>
-            <h2 class="service-section-title">Signature <span>Vanity</span></h2>
-            <img src="wedding1.webp" class="service-section-img service-section-img-mobile">
-            <p class="service-section-text">Every journey carries its own signature—personality, temperament, individuality, uniqueness.</p>
-            <button class="service-section-btn">Discover</button>
+            <span class="service-section-label">Timeless Celebrations</span>
+            <h2 class="service-section-title">Eternal <span>Weddings</span></h2>
+            <img src="wedding1.webp" class="service-section-img-mobile">
+            <p class="service-section-text">Every wedding is a story of love, emotions, and fleeting moments. 
+We capture the unscripted glances, heartfelt rituals, and timeless memories 
+that turn your celebration into a legacy.
+</p>
+            <a href="allwedding.html" class="service-section-btn">Explore Weddings</a>
         </div>
         <img src="wedding1.webp" class="service-section-img service-section-img-1">
         <img src="wedding2.webp" class="service-section-img service-section-img-2">
@@ -1407,11 +1549,13 @@ document.addEventListener("DOMContentLoaded", function() {
     </section>
 <section class="service-section-item">
         <div class="service-section-content">
-            <span class="service-section-label">Not Just a Stay</span>
-            <h2 class="service-section-title">Authentic <span>Escapes</span></h2>
-            <img src="fashion2.webp" class="service-section-img service-section-img-mobile">
-            <p class="service-section-text">Indulge in the ultimate escape with our handpicked selection of unique stays.</p>
-            <button class="service-section-btn">Discover</button>
+            <span class="service-section-label">Style in Motion</span>
+            <h2 class="service-section-title">Modern <span>Fashion</span></h2>
+            <img src="fashion5.webp" class="service-section-img-mobile">
+            <p class="service-section-text">Fashion is more than style—it’s expression. 
+Our fashion photography blends editorial aesthetics with bold storytelling, 
+creating visuals that speak confidence, elegance, and identity.</p>
+            <a href="allfashion.html" class="service-section-btn">View Fashion</a>
         </div>
         <img src="fashion5.webp" class="service-section-img service-section-img-1">
         <img src="fashion6.webp" class="service-section-img service-section-img-2">
@@ -1419,20 +1563,25 @@ document.addEventListener("DOMContentLoaded", function() {
         <img src="fashion8.webp" class="service-section-img service-section-img-4">
     </section>
 
-
     <section class="service-section-item">
         <div class="service-section-content">
-            <span class="service-section-label">Not Just a Stay</span>
-            <h2 class="service-section-title">Authentic <span>Escapes</span></h2>
-            <img src="fashion3.webp" class="service-section-img service-section-img-mobile">
-            <p class="service-section-text">Indulge in the ultimate escape with our handpicked selection of unique stays.</p>
-            <button class="service-section-btn">Discover</button>
+            <span class="service-section-label">Stories of Heritage</span>
+            <h2 class="service-section-title">Living <span>Culture</span></h2>
+            <img src="fashion1.webp" class="service-section-img-mobile">
+            <p class="service-section-text">Culture lives in traditions, colors, rituals, and people. 
+Through our lens, we document authentic cultural narratives—preserving heritage, 
+emotions, and stories that transcend generations.</p>
+            <a href="allculture.html" class="service-section-btn">Discover Culture</a>
         </div>
         <img src="fashion1.webp" class="service-section-img service-section-img-1">
         <img src="fashion2.webp" class="service-section-img service-section-img-2">
         <img src="fashion3.webp" class="service-section-img service-section-img-3">
         <img src="fashion4.webp" class="service-section-img service-section-img-4">
     </section>
+
+
+
+
 
     <script>
         (function() {
@@ -1491,7 +1640,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <div class="container">
     <div class="heading-dropdown d-flex justify-content-between align-items-center flex-wrap mb-3">
       <div>
-        <h2 class="fw-bold mb-1">Short Stories</h2>
+        <h2 class="fw-bold mb-1 service-section-title-head">Short Stories</h2>
         <p class="about-lead mb-0">Capturing Your Journey</p>
       </div>
     </div>
