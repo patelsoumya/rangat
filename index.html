@@ -25,9 +25,11 @@
     --button-bg-color: #C37656;
     --heading-color: #624332; /* Sage Light Scheme - Headings */
   }
-
+html {
+            scroll-behavior: smooth;
+        }
   body {
-	 background-color: #e6dccf ;/* #ece4da */
+	 background-color: white;/*#e6dccf*/  /*#ece4da */
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     letter-spacing:1.5px;
@@ -749,6 +751,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+   
+
+
+
+
+<!---------------------------------------------------------->
+
 
 
 
@@ -1304,134 +1313,161 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <!---------------------------------Service Section ------------------------------------------>
-<section class="sm-blog-section-header">
-    <h6></h6>
-    <h5>Wedding &bull; Fashion &bull; Portraits &bull; Culture &bull; Docs</h5>
-</section>
 
-<section class="sm-blog-card-container">
-    <div class="sm-blog-card">
-        <a href="wedding.html"><img src="i1wedding3.webp" alt="Wedding" /></a>
-        <div class="sm-blog-card-content">
-            <div class="sm-blog-card-subtitle">@rangatfilms</div>
-            <div class="sm-blog-card-title"><a href="wedding.html">Weddings</a></div>
-            <div class="sm-blog-card-text">
-                Wedding photography is the art of bottling emotions—where fleeting glances, gentle touches, and unscripted laughter are preserved for a lifetime.
-            </div>
-            
+
+<div class="service-section-parallax-container">
+    <style>
+        :root {
+            --ss-bg-color: #fdfdfd;
+            --ss-accent-red: #c43a31;
+        }
+
+        .service-section-parallax-container {
+            display: flex;
+            flex-direction: column;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .service-section-item {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--ss-bg-color);
+            overflow: hidden;
+            /* performance: transform and filter are heavy; will-change tells browser to optimize */
+            will-change: transform, filter, opacity;
+            transition: filter 0.1s linear, transform 0.1s linear, opacity 0.1s linear;
+            box-shadow: 0 -10px 50px rgba(0,0,0,0.1);
+            /* content-visibility: auto tells browser to skip rendering if far off-screen */
+            content-visibility: auto;
+        }
+
+        .service-section-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 550px;
+            text-align: center;
+            padding: 1.5rem;
+            z-index: 10;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .service-section-label { color: var(--ss-accent-red); text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; margin-bottom: 0.8rem; order: 1; }
+        .service-section-title { font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0; font-weight: 400; line-height: 0.9; color: #1a1a1a; order: 2; }
+        .service-section-title span { display: block; font-family: 'Georgia', serif; font-style: italic; color: var(--ss-accent-red); }
+        .service-section-text { font-size: 1rem; line-height: 1.6; color: #444; margin: 1.5rem auto; order: 4; }
+        .service-section-btn { padding: 10px 30px; border: 1px solid var(--ss-accent-red); background: transparent; color: var(--ss-accent-red); cursor: pointer; text-transform: uppercase; font-size: 0.7rem; align-self: center; order: 5; transition: 0.3s ease; }
+
+        .service-section-img { 
+            position: absolute; 
+            object-fit: cover; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); 
+            z-index: 1; 
+            /* decoding=async prevents the main thread from blocking while images load */
+        }
+
+        @media (max-width: 767px) {
+            .service-section-img-1, .service-section-img-2, .service-section-img-3, .service-section-img-4 { display: none; }
+            .service-section-img-mobile {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 250px;
+                margin: 1.5rem 0;
+                order: 3;
+                box-shadow: none;
+            }
+            .service-section-content { width: 90%; padding: 1rem; }
+        }
+
+        @media (min-width: 768px) {
+            .service-section-img-mobile { display: none; }
+            .service-section-img-1 { width: 18%; height: 35%; top: 5%; left: 3%; filter: grayscale(1); }
+            .service-section-img-2 { width: 15%; height: 25%; top: 8%; right: 8%; }
+            .service-section-img-3 { width: 22%; height: 30%; bottom: 8%; left: 8%; }
+            .service-section-img-4 { width: 160px; height: 160px; bottom: 12%; right: 5%; border-radius: 2px; }
+        }
+    </style>
+
+    <section class="service-section-item">
+        <div class="service-section-content">
+            <span class="service-section-label">Elevated Experiences</span>
+            <h2 class="service-section-title">Signature <span>Vanity</span></h2>
+            <img src="wedding1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-mobile">
+            <p class="service-section-text">Every journey carries its own signature—personality, temperament, individuality, uniqueness.</p>
+            <button class="service-section-btn">Discover</button>
         </div>
-    </div>
+        <img src="wedding1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-1">
+        <img src="wedding2.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-2">
+        <img src="wedding3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-3">
+        <img src="i1wedding6.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-4">
+    </section>
 
-    <div class="sm-blog-card">
-        <a href="fashion.html"><img src="fashion2.webp" alt="Fashion" /></a>
-        <div class="sm-blog-card-content">
-            <div class="sm-blog-card-subtitle">@rangatfilms</div>
-            <div class="sm-blog-card-title"><a href="fashion.html">Fashion</a></div>
-            <div class="sm-blog-card-text">
-                Fashion photography brings style to life by blending creativity, mood, and attitude in every frame. It transforms clothing into characters, capturing the essence of design through expressive poses, dramatic lighting, and artistic vision.</div>
-            
+    <section class="service-section-item">
+        <div class="service-section-content">
+            <span class="service-section-label">Not Just a Stay</span>
+            <h2 class="service-section-title">Authentic <span>Escapes</span></h2>
+            <img src="fashion3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-mobile">
+            <p class="service-section-text">Indulge in the ultimate escape with our handpicked selection of unique stays.</p>
+            <button class="service-section-btn">Discover</button>
         </div>
-    </div>
-</section>
+        <img src="fashion1.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-1">
+        <img src="fashion2.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-2">
+        <img src="fashion3.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-3">
+        <img src="fashion4.webp" loading="lazy" decoding="async" class="service-section-img service-section-img-4">
+    </section>
 
-<style>
-.sm-blog-section-header {
-    text-align: center;
-    margin: 40px 20px 20px;
-    color: #222;
-}
+    <script>
+        (function() {
+            const ssElements = document.querySelectorAll('.service-section-item');
+            
+            // 1. Performance: Use RequestAnimationFrame to prevent "jank"
+            let ticking = false;
 
-.sm-blog-card-title a {
-    display: block;        /* make link behave like block */
-    color: #000 !important; /* force black color */
-    text-decoration: none !important; /* remove underline */
-}
+            function serviceSectionUpdate() {
+                ssElements.forEach((item, index) => {
+                    const nextItem = ssElements[index + 1];
+                    if (nextItem) {
+                        const nextRect = nextItem.getBoundingClientRect();
+                        const vh = window.innerHeight;
 
+                        // Only calculate if the next item is near or in the viewport
+                        if (nextRect.top < vh && nextRect.bottom > 0) {
+                            let scrollProgress = (vh - nextRect.top) / vh;
+                            scrollProgress = Math.max(0, Math.min(1, scrollProgress));
 
+                            item.style.filter = `brightness(${1 - (scrollProgress * 0.65)})`;
+                            item.style.transform = `scale(${1 - (scrollProgress * 0.12)})`;
+                            item.style.opacity = 1 - (scrollProgress * 0.4);
+                        } else if (nextRect.top >= vh) {
+                            // Reset if it's below viewport
+                            item.style.filter = 'brightness(1)';
+                            item.style.transform = 'scale(1)';
+                            item.style.opacity = '1';
+                        }
+                    }
+                });
+                ticking = false;
+            }
 
-.sm-blog-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-}
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(serviceSectionUpdate);
+                    ticking = true;
+                }
+            }, { passive: true }); // passive: true improves scroll performance
 
-/* 5 cards per row on desktop */
-.sm-blog-card {
-    flex: 0 0 calc((100% - 120px) / 3); /* 5 cards, 30px gap each */
-    max-width: calc((100% - 120px) / 3);
-    background: transparent;
-    overflow: hidden;
-    text-align: left;
-}
-
-.sm-blog-card img {
-    width: 100%;            /* Fill the width of the card */
-    height: 350px;          /* Fixed height box */
-    object-fit: cover;     /* Image scales to fit inside box without cropping */
-    border-radius: 20px;
-    background-color: #f0f0f0; /* Optional: shows background if image doesn't fill box */
-    display: block;          /* Remove inline spacing */
-}
-
-
-.sm-blog-card-content {
-    padding: 20px;
-}
-
-.sm-blog-card-subtitle {
-    font-size: 13px;
-    letter-spacing: 1.2px;
-    color: #999;
-  
-    margin-bottom: 5px;
-}
-
-.sm-blog-card-title {
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-family: 'Antic Didone', serif;
-    letter-spacing: 1.3px;
-}
-
-.sm-blog-card-text {
-    font-family: 'Antic Didone', serif;
-    letter-spacing: 0.9px;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-
-/* Responsive: 3 cards per row on tablets */
-@media (max-width: 1024px) {
-    .sm-blog-card {
-        flex: 0 0 calc((100% - 60px) / 3);
-        max-width: calc((100% - 60px) / 3);
-    }
-}
-
-/* Responsive: 1 card per row on mobile */
-@media (max-width: 768px) {
-    .sm-blog-section-header h1 {
-        font-size: 24px;
-        letter-spacing: 2px;
-    }
-    .sm-blog-card {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-</style>
-
-
+            serviceSectionUpdate();
+        })();
+    </script>
+</div>
 
 <!-----------------------------------------------------------------------Video Gallery ------------------------------------------------------------------------>
 <section class="py-5" id="services" style="position:relative;">
